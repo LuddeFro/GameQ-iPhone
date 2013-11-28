@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "LVFAppDelegate.h"
+#import "LVFDefinitions.h"
+#import "KeychainItemWrapper.h"
 
 @interface LVFDataModel : NSObject
 

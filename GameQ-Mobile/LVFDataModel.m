@@ -84,15 +84,9 @@
 }
 - (NSString *) getPass
 {
-    NSError *error;
-    NSArray *objects = [_context executeFetchRequest:_request error:&error];
-    if (objects == Nil) {
-        NSLog(@"Storage files not found");
-    }
-    for (NSManagedObject *oneObject in objects) {
-        return [oneObject valueForKey:@"pass"];
-    }
-    return nil;
+    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:kAPPID accessGroup:nil];
+    NSString *passString = [keyChain objectForKey:(__bridge id)kSecValueData];
+    return passString;
     
 }
 - (void) setDeviceID:(NSString *)devID
@@ -101,7 +95,8 @@
 }
 - (void) setPass:(NSString *)pass
 {
-    [self setSomething:pass forField:@"pass"];
+    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:kAPPID accessGroup:nil];
+    [keyChain setObject:pass forKey:(__bridge id)kSecValueData];
 }
 - (void) setToken:(NSString *)token
 {

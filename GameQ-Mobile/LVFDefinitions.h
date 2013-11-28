@@ -19,6 +19,7 @@
 //NSString *const getSecretURL = kGameQServerURL@"getSecret.php"
 //NSString *const checkSecretURL = kGameQServerURL@"chkSecret.php"
 #define updateTokenURL kGameQServerURL@"upToken.php"
+#define kAPPID @"GameQ"
 
 #define URL_ABOUT @"https://www.gameQ.com/about"
 
