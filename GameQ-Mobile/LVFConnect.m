@@ -285,7 +285,7 @@
         
         return;
     }
-    if ([returnString isEqualToString: @"no"])
+    if ([returnString isEqualToString: @"no"] || ![returnString isEqualToString: @"no"])
     {
         //should be unreachable, disconnect the bastard!
         disconnected = true;
