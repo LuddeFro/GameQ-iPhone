@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8365A708182BEFFE003F7301 /* LVFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8365A707182BEFFE003F7301 /* LVFTableView.m */; };
+		8365A70B182BF09E003F7301 /* LVFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8365A70A182BF09E003F7301 /* LVFTableViewController.m */; };
 		837422601815B0D4000FCC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8374225F1815B0D4000FCC76 /* Foundation.framework */; };
 		837422621815B0D4000FCC76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837422611815B0D4000FCC76 /* CoreGraphics.framework */; };
 		837422641815B0D4000FCC76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837422631815B0D4000FCC76 /* UIKit.framework */; };
@@ -22,6 +24,18 @@
 		837422811815B0D4000FCC76 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837422651815B0D4000FCC76 /* CoreData.framework */; };
 		837422891815B0D4000FCC76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 837422871815B0D4000FCC76 /* InfoPlist.strings */; };
 		8374228B1815B0D4000FCC76 /* GameQ_MobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8374228A1815B0D4000FCC76 /* GameQ_MobileTests.m */; };
+		8374229E1815B0DF000FCC76 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837422941815B0DF000FCC76 /* Main_iPhone.storyboard */; };
+		8374229F1815B0DF000FCC76 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837422951815B0DF000FCC76 /* Main_iPad.storyboard */; };
+		837422A01815B0DF000FCC76 /* LVFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422971815B0DF000FCC76 /* LVFViewController.m */; };
+		837422A11815B0DF000FCC76 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422991815B0DF000FCC76 /* NSString+MD5.m */; };
+		837422A21815B0DF000FCC76 /* LVFConnections.m in Sources */ = {isa = PBXBuildFile; fileRef = 8374229B1815B0DF000FCC76 /* LVFConnections.m */; };
+		837422A31815B0DF000FCC76 /* LVFConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8374229D1815B0DF000FCC76 /* LVFConnect.m */; };
+		837422A61815B0EC000FCC76 /* GQHomeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 837422A41815B0EC000FCC76 /* GQHomeScreen.png */; };
+		837422A71815B0EC000FCC76 /* GQLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 837422A51815B0EC000FCC76 /* GQLogo.png */; };
+		837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AA18181E7A000FCC76 /* LVFDataModel.m */; };
+		837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AD18184443000FCC76 /* LVFDefinitions.m */; };
+		83E0AD4C182C14970061EB49 /* refreshDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4B182C14970061EB49 /* refreshDefault.png */; };
+		83E0AD4E182C14FB0061EB49 /* refreshHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8365A706182BEFFE003F7301 /* LVFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFTableView.h; sourceTree = "<group>"; };
+		8365A707182BEFFE003F7301 /* LVFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFTableView.m; sourceTree = "<group>"; };
+		8365A709182BF09E003F7301 /* LVFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFTableViewController.h; sourceTree = "<group>"; };
+		8365A70A182BF09E003F7301 /* LVFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFTableViewController.m; sourceTree = "<group>"; };
 		8374225C1815B0D4000FCC76 /* GameQ-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameQ-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8374225F1815B0D4000FCC76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		837422611815B0D4000FCC76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +71,24 @@
 		837422861815B0D4000FCC76 /* GameQ-MobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GameQ-MobileTests-Info.plist"; sourceTree = "<group>"; };
 		837422881815B0D4000FCC76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8374228A1815B0D4000FCC76 /* GameQ_MobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameQ_MobileTests.m; sourceTree = "<group>"; };
+		837422941815B0DF000FCC76 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		837422951815B0DF000FCC76 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		837422961815B0DF000FCC76 /* LVFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFViewController.h; sourceTree = "<group>"; };
+		837422971815B0DF000FCC76 /* LVFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFViewController.m; sourceTree = "<group>"; };
+		837422981815B0DF000FCC76 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		837422991815B0DF000FCC76 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		8374229A1815B0DF000FCC76 /* LVFConnections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFConnections.h; sourceTree = "<group>"; };
+		8374229B1815B0DF000FCC76 /* LVFConnections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFConnections.m; sourceTree = "<group>"; };
+		8374229C1815B0DF000FCC76 /* LVFConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFConnect.h; sourceTree = "<group>"; };
+		8374229D1815B0DF000FCC76 /* LVFConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFConnect.m; sourceTree = "<group>"; };
+		837422A41815B0EC000FCC76 /* GQHomeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQHomeScreen.png; sourceTree = "<group>"; };
+		837422A51815B0EC000FCC76 /* GQLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQLogo.png; sourceTree = "<group>"; };
+		837422A918181E7A000FCC76 /* LVFDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDataModel.h; sourceTree = "<group>"; };
+		837422AA18181E7A000FCC76 /* LVFDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFDataModel.m; sourceTree = "<group>"; };
+		837422AC18184443000FCC76 /* LVFDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDefinitions.h; sourceTree = "<group>"; };
+		837422AD18184443000FCC76 /* LVFDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFDefinitions.m; sourceTree = "<group>"; };
+		83E0AD4B182C14970061EB49 /* refreshDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshDefault.png; sourceTree = "<group>"; };
+		83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshHighlighted.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +153,24 @@
 			children = (
 				837422701815B0D4000FCC76 /* LVFAppDelegate.h */,
 				837422711815B0D4000FCC76 /* LVFAppDelegate.m */,
+				837422941815B0DF000FCC76 /* Main_iPhone.storyboard */,
+				837422951815B0DF000FCC76 /* Main_iPad.storyboard */,
+				837422961815B0DF000FCC76 /* LVFViewController.h */,
+				837422971815B0DF000FCC76 /* LVFViewController.m */,
+				8365A709182BF09E003F7301 /* LVFTableViewController.h */,
+				8365A70A182BF09E003F7301 /* LVFTableViewController.m */,
+				8365A706182BEFFE003F7301 /* LVFTableView.h */,
+				8365A707182BEFFE003F7301 /* LVFTableView.m */,
+				837422981815B0DF000FCC76 /* NSString+MD5.h */,
+				837422991815B0DF000FCC76 /* NSString+MD5.m */,
+				8374229A1815B0DF000FCC76 /* LVFConnections.h */,
+				8374229B1815B0DF000FCC76 /* LVFConnections.m */,
+				8374229C1815B0DF000FCC76 /* LVFConnect.h */,
+				8374229D1815B0DF000FCC76 /* LVFConnect.m */,
+				837422A918181E7A000FCC76 /* LVFDataModel.h */,
+				837422AA18181E7A000FCC76 /* LVFDataModel.m */,
+				837422AC18184443000FCC76 /* LVFDefinitions.h */,
+				837422AD18184443000FCC76 /* LVFDefinitions.m */,
 				837422761815B0D4000FCC76 /* Images.xcassets */,
 				837422731815B0D4000FCC76 /* GameQ_Mobile.xcdatamodeld */,
 				837422681815B0D4000FCC76 /* Supporting Files */,
@@ -127,6 +181,7 @@
 		837422681815B0D4000FCC76 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				837422A81815B0EF000FCC76 /* Images */,
 				837422691815B0D4000FCC76 /* GameQ-Mobile-Info.plist */,
 				8374226A1815B0D4000FCC76 /* InfoPlist.strings */,
 				8374226D1815B0D4000FCC76 /* main.m */,
@@ -151,6 +206,17 @@
 				837422871815B0D4000FCC76 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		837422A81815B0EF000FCC76 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				83E0AD4B182C14970061EB49 /* refreshDefault.png */,
+				83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */,
+				837422A41815B0EC000FCC76 /* GQHomeScreen.png */,
+				837422A51815B0EC000FCC76 /* GQLogo.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +295,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				837422A71815B0EC000FCC76 /* GQLogo.png in Resources */,
+				83E0AD4E182C14FB0061EB49 /* refreshHighlighted.png in Resources */,
 				8374226C1815B0D4000FCC76 /* InfoPlist.strings in Resources */,
+				837422A61815B0EC000FCC76 /* GQHomeScreen.png in Resources */,
+				8374229F1815B0DF000FCC76 /* Main_iPad.storyboard in Resources */,
 				837422771815B0D4000FCC76 /* Images.xcassets in Resources */,
+				83E0AD4C182C14970061EB49 /* refreshDefault.png in Resources */,
+				8374229E1815B0DF000FCC76 /* Main_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8365A708182BEFFE003F7301 /* LVFTableView.m in Sources */,
+				837422A21815B0DF000FCC76 /* LVFConnections.m in Sources */,
 				8374226E1815B0D4000FCC76 /* main.m in Sources */,
+				837422A01815B0DF000FCC76 /* LVFViewController.m in Sources */,
+				837422A31815B0DF000FCC76 /* LVFConnect.m in Sources */,
+				837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */,
+				837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */,
+				837422A11815B0DF000FCC76 /* NSString+MD5.m in Sources */,
 				837422721815B0D4000FCC76 /* LVFAppDelegate.m in Sources */,
 				837422751815B0D4000FCC76 /* GameQ_Mobile.xcdatamodeld in Sources */,
+				8365A70B182BF09E003F7301 /* LVFTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +534,7 @@
 				837422901815B0D4000FCC76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		837422911815B0D4000FCC76 /* Build configuration list for PBXNativeTarget "GameQ-MobileTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +543,7 @@
 				837422931815B0D4000FCC76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

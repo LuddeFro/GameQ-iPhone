@@ -8,6 +8,8 @@
 
 #import "LVFAppDelegate.h"
 
+
+
 @implementation LVFAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -16,11 +18,36 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     return YES;
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    
+	NSLog(@"My token is: %@", deviceToken);
+    
+    LVFDataModel *dataHandler = [[LVFDataModel alloc] init];
+    NSString *oldToken = [dataHandler getToken];
+	NSString *newToken = [deviceToken description];
+	newToken = [newToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+	newToken = [newToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+	NSLog(@"My token is: %@", newToken);
+    [dataHandler setToken:newToken];
+	if ([dataHandler getBolIsLoggedIn] && ![newToken isEqualToString:oldToken])
+	{
+		LVFConnect *connectHandler = [[LVFConnect alloc] init];
+        [connectHandler postNow:[NSString stringWithFormat:@"token=%@&device=%@", newToken, [dataHandler getDeviceID]] to:updateTokenURL];
+	}
+}
+
+
+
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -139,11 +166,12 @@
 }
 
 #pragma mark - Application's Documents directory
-
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+
 
 @end

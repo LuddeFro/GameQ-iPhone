@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LVFViewController.h"
+#import "LVFDefinitions.h"
+
 
 @interface LVFAppDelegate : UIResponder <UIApplicationDelegate>
 
