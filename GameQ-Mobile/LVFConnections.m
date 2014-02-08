@@ -54,7 +54,7 @@
 - (void)upAppPost
 {
     NSString *email = [_mainController.dataHandler getEmail];
-    NSString *postString = [NSString stringWithFormat:@"%@", email];
+    NSString *postString = [NSString stringWithFormat:@"email=%@", email];
     NSString *postUrl = updateURL;
     [_gqConnect postNow:postString to:postUrl];
     NSLog(@"upapppost");
