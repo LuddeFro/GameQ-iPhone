@@ -19,7 +19,7 @@
 @property LVFConnect *gqConnect;
 @property LVFViewController *mainController;
 
-- (void)logoutPost;
+- (void)logoutPostFromToken:(NSString *)token;
 - (void)loginWithUser:(NSString*)username andPass:(NSString*)losenord;
 - (id) initFromController:(LVFViewController *)controller;
 - (void)upAppPost;

@@ -45,7 +45,7 @@
 
 - (IBAction)log:(id)sender {
     if (_bolLoggedIn) {
-        [_connectionsHandler logoutPost];
+        [_connectionsHandler logoutPostFromToken:[_dataHandler getToken]];
         _bolLoggedIn = 0;
     } else {
         [_connectionsHandler loginWithUser:_txtEmail.text andPass:_txtPassword.text];

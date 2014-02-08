@@ -91,38 +91,38 @@
     
     
     
-    
-    if([[returnString substringToIndex:8] isEqualToString:@"updating"]) {
-        NSLog(@"updating");
-        returnString = [returnString substringFromIndex:8];
-        int items = [[returnString substringToIndex:2] intValue];
-        if (items == 0) {
-            [_mainController.tableViewController receiveUpdate:NULL];
+    if (returnString.length>=8) {
+        if([[returnString substringToIndex:8] isEqualToString:@"updating"]) {
+            NSLog(@"updating");
+            returnString = [returnString substringFromIndex:8];
+            int items = [[returnString substringToIndex:2] intValue];
+            if (items == 0) {
+                [_mainController.tableViewController receiveUpdate:NULL];
+                return;
+            }
+            
+            returnString = [returnString substringFromIndex:2];
+            NSMutableArray *deviceArray = [[NSMutableArray alloc] init];
+            for (int i = 0; i<items; i++) {
+                int len = [[returnString substringToIndex:2] intValue];
+                returnString = [returnString substringFromIndex:2];
+                NSString *itemString = [returnString substringToIndex:(len+4)];
+                [deviceArray addObject:itemString];
+                NSLog(@"%@",itemString);
+                
+                
+                
+                if (i == (items-1)) {
+                    returnString = NULL;
+                }
+                else {
+                    returnString = [returnString substringFromIndex:len+4];
+                }
+            }
+            [_mainController.tableViewController receiveUpdate:deviceArray];
             return;
         }
-        
-        returnString = [returnString substringFromIndex:2];
-        NSMutableArray *deviceArray = [[NSMutableArray alloc] init];
-        for (int i = 0; i<items; i++) {
-            int len = [[returnString substringToIndex:2] intValue];
-            returnString = [returnString substringFromIndex:2];
-            NSString *itemString = [returnString substringToIndex:(len+4)];
-            [deviceArray addObject:itemString];
-            NSLog(@"%@",itemString);
-            
-            
-            
-            if (i == (items-1)) {
-                returnString = NULL;
-            }
-            else {
-                returnString = [returnString substringFromIndex:len+4];
-            }
-        }
-        [_mainController.tableViewController receiveUpdate:deviceArray];
-        return;
-    }
-    
+    }    
     
     /* following statements used if support is added in-app for forgotten passwords
      also see getSecret and chkSecret methods in LVFConnections.m
@@ -232,6 +232,7 @@
             disconnected = false;
             NSLog(@"badsession");
         }
+        return;
     }
     /* if forgotten password support is added in-app
     if ([returnString isEqualToString:@"updated me"])
@@ -273,7 +274,7 @@
     {
         //attempt to reconnect? or record disconnection and logout
         disconnected = true;
-        [delegate logoutPost];
+        [delegate logoutPostFromToken:([_mainController.dataHandler getToken])];
         [_mainController setDisconnected];
        
         // mobile alert
@@ -285,11 +286,11 @@
         
         return;
     }
-    if ([returnString isEqualToString: @"no"] || ![returnString isEqualToString: @"no"])
+    if ([returnString isEqualToString: @"no"] /*|| ![returnString isEqualToString: @"no"]*/)
     {
         //should be unreachable, disconnect the bastard!
         disconnected = true;
-        [delegate logoutPost];
+        [delegate logoutPostFromToken:([_mainController.dataHandler getToken])];
         [_mainController setDisconnected];
         
         

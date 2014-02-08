@@ -12,6 +12,7 @@
 #define kHEROES_OF_NEWERTH 1
 #define kDOTA2 2
 #define kCS_GO 3
+#define kOFF 4
 #define kOFFLINE 0
 #define kONLINE 1
 #define kINGAME 2
@@ -84,7 +85,7 @@
 
 -(void) popController
 {
-    [_mainController.connectionsHandler logoutPost];
+    [_mainController.connectionsHandler logoutPostFromToken:[_mainController.dataHandler getToken]];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -115,20 +116,21 @@
     int row = [indexPath row];
     NSString *item = [_deviceArray objectAtIndex:row];
     
-    UIImageView *imgCellImage = [[UIImageView alloc] initWithFrame:CGRectMake(15, 0, 43, 43)];
+    UIImageView *imgCellImage = [[UIImageView alloc] initWithFrame:CGRectMake(32, 11, 21, 21)];
     UILabel *lblDeviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 03, 180, 21)];
     UILabel *lblStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 19
                                                                         , 180, 21)];
     
     [lblStatusLabel setFont:[UIFont systemFontOfSize:12.0f]];
     
-    [imgCellImage setImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
     
     NSString *gameString = nil;
-    
+    BOOL bolCheckStatus = true;
     switch ([[item substringToIndex:2] intValue]) {
         case kNOGAME:
             gameString = Nil;
+        [imgCellImage setImage:[UIImage imageNamed:@"redLight.png"]];
+        lblStatusLabel.text = @"Not gaming";
             break;
         case kHEROES_OF_NEWERTH:
             gameString = @"Heroes of Newerth";
@@ -139,25 +141,38 @@
         case kCS_GO:
             gameString = @"CS: GO";
             break;
-            
+        
+        
         default:
             break;
+    }
+    if (bolCheckStatus)
+    {
+        switch ([[item substringWithRange:NSMakeRange(2, 2)] intValue]) {
+            case kONLINE:
+                lblStatusLabel.text = [NSString stringWithFormat:@"Online on %@", gameString];
+                [imgCellImage setImage:[UIImage imageNamed:@"yellowLight.png"]];
+                break;
+            
+            case kINGAME:
+                lblStatusLabel.text = [NSString stringWithFormat:@"Currently playing %@", gameString];
+                [imgCellImage setImage:[UIImage imageNamed:@"greenLight.png"]];
+                break;
+                
+            case kOFF:
+                [imgCellImage setImage:[UIImage imageNamed:@"greyLight.png"]];
+                lblStatusLabel.text = @"This device is offline";
+                bolCheckStatus = false;
+                break;
+            
+            default:
+                lblStatusLabel.text = @"Not gaming";
+                gameString = Nil;
+                [imgCellImage setImage:[UIImage imageNamed:@"redLight.png"]];
+                break;
+        }
     }
     
-    switch ([[item substringWithRange:NSMakeRange(2, 2)] intValue]) {
-        case kOFFLINE:
-            lblStatusLabel.text = @"Not gaming";
-            break;
-        case kONLINE:
-            lblStatusLabel.text = [NSString stringWithFormat:@"Online on %@", gameString];
-            break;
-        case kINGAME:
-            lblStatusLabel.text = [NSString stringWithFormat:@"Currently Playing %@", gameString];
-            break;
-            
-        default:
-            break;
-    }
     
     
     

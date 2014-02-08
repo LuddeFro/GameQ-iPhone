@@ -42,9 +42,9 @@
 }
 
 //Log the client out
-- (void)logoutPost
+- (void)logoutPostFromToken:(NSString *)token
 {
-    NSString *postString = @"";
+    NSString *postString = [NSString stringWithFormat:@"token=%@&device=iphone", token];
     NSString *postUrl = logoutURL;
     [_gqConnect postNow:postString to:postUrl];
     NSLog(@"logout posted");
@@ -53,7 +53,8 @@
 //update table view
 - (void)upAppPost
 {
-    NSString *postString = @"";
+    NSString *email = [_mainController.dataHandler getEmail];
+    NSString *postString = [NSString stringWithFormat:@"%@", email];
     NSString *postUrl = updateURL;
     [_gqConnect postNow:postString to:postUrl];
     NSLog(@"upapppost");
