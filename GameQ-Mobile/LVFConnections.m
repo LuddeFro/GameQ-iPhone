@@ -60,7 +60,11 @@
     NSLog(@"upapppost");
 }
 
-
+/* not implemented?!?!? directly called from appdell
+- (void) upTokenWithToken:(NSString *)token andDeviceName:(NSString *)name andEmail:(NSString *)email
+{
+    [_gqConnect postNow:[NSString stringWithFormat:@"token=%@&device=%@&email=%@", token, name, email] to:updateTokenURL];
+}*/
 
 
 

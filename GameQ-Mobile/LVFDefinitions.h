@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define kGameQServerURL @"http://www-student.it.uts.edu.au/~lfroberg/servTest/"
+#define kGameQServerURL @"http://185.2.155.172/GameQ_Server_Code/"
 #define serverURL kGameQServerURL
 #define loginURL kGameQServerURL@"signing.php"
 //NSString *const registerURL = kGameQServerURL@"regging.php"

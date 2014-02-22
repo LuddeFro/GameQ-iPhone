@@ -23,5 +23,6 @@
 - (void)loginWithUser:(NSString*)username andPass:(NSString*)losenord;
 - (id) initFromController:(LVFViewController *)controller;
 - (void)upAppPost;
+//- (void) upTokenWithToken:(NSString *)token andDeviceName:(NSString *)name andEmail:(NSString *)email;
 
 @end

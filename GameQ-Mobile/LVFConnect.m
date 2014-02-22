@@ -37,6 +37,7 @@
 
 - (void)postNow:(NSString*)toPost to:(NSString*)link
 {
+    NSLog(@"posting now: %@", toPost);
     NSString *postString = toPost;
     NSData *postData = [postString dataUsingEncoding:NSUTF8StringEncoding];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
@@ -74,6 +75,11 @@
 - (void)connection:(NSURLConnection *)connection
   didFailWithError:(NSError *)error
 {
+    [_mainController.btnLog setEnabled:YES];
+    [_mainController.txtEmail setEnabled:YES];
+    [_mainController.txtPassword setEnabled:YES];
+    [_mainController.txtEmail setTextColor:[UIColor blackColor]];
+    [_mainController.txtPassword setTextColor:[UIColor blackColor]];
     returnData = NULL;
     
     NSLog(@"Connection failed! Error - %@ %@",
@@ -84,6 +90,11 @@
 //connection was successful, handle response here
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    [_mainController.btnLog setEnabled:YES];
+    [_mainController.txtEmail setEnabled:YES];
+    [_mainController.txtPassword setEnabled:YES];
+    [_mainController.txtEmail setTextColor:[UIColor blackColor]];
+    [_mainController.txtPassword setTextColor:[UIColor blackColor]];
     NSLog(@"received data length:%lu", (unsigned long)[returnData length]);
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     NSLog(@"%@", returnString);
@@ -97,7 +108,7 @@
             returnString = [returnString substringFromIndex:8];
             int items = [[returnString substringToIndex:2] intValue];
             if (items == 0) {
-                [_mainController.tableViewController receiveUpdate:NULL];
+                [_mainController.secondViewController.tableViewController receiveUpdate:NULL];
                 return;
             }
             
@@ -106,20 +117,25 @@
             for (int i = 0; i<items; i++) {
                 int len = [[returnString substringToIndex:2] intValue];
                 returnString = [returnString substringFromIndex:2];
-                NSString *itemString = [returnString substringToIndex:(len+4)];
+                NSLog(@"%@", returnString);
+                NSString *itemString = [returnString substringToIndex:(len+2)];
                 [deviceArray addObject:itemString];
                 NSLog(@"%@",itemString);
                 
-                
+                NSLog(@"i : %d", i);
+                NSLog(@"items: %d", items);
                 
                 if (i == (items-1)) {
                     returnString = NULL;
+                    NSLog(@"nulled");
                 }
                 else {
-                    returnString = [returnString substringFromIndex:len+4];
+                    NSLog(@"more items");
+                    returnString = [returnString substringFromIndex:len+2];
                 }
             }
-            [_mainController.tableViewController receiveUpdate:deviceArray];
+            NSLog(@"sending it to the view controller");
+            [_mainController.secondViewController.tableViewController receiveUpdate:deviceArray];
             return;
         }
     }    

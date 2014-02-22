@@ -19,6 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
+    
+    _mainController = [[LVFViewController alloc] init];
+    
+    [self.window setRootViewController:_mainController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -38,7 +45,8 @@
 	if ([dataHandler getBolIsLoggedIn] && ![newToken isEqualToString:oldToken])
 	{
 		LVFConnect *connectHandler = [[LVFConnect alloc] init];
-        [connectHandler postNow:[NSString stringWithFormat:@"token=%@&device=%@", newToken, [dataHandler getDeviceID]] to:updateTokenURL];
+        
+        [connectHandler postNow:[NSString stringWithFormat:@"token=%@&device=%@&email=%@", newToken, [dataHandler getDeviceID], [dataHandler getEmail]] to:updateTokenURL];
 	}
 }
 

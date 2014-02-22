@@ -48,7 +48,7 @@
     CGRect frame2 = CGRectMake(0, 22, 320, 44);
     _navBar = [[UINavigationBar alloc] initWithFrame:frame2];
     UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"Online Devices"];
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(popController)];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(popController)];
     [item setRightBarButtonItem:button];
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refreshDefault.png"] style:UIBarButtonItemStylePlain target:self action:@selector(requestUpdate)];
     [item setLeftBarButtonItem:refreshButton];
@@ -77,15 +77,14 @@
 
 - (void) receiveUpdate:(NSMutableArray*)array
 {
+    NSLog(@"reloading table data");
     _deviceArray = array;
     [_tableView reloadData];
     
-    NSLog(@"reloading table data");
 }
 
 -(void) popController
 {
-    [_mainController.connectionsHandler logoutPostFromToken:[_mainController.dataHandler getToken]];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -107,6 +106,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"celling up");
     static NSString *CellIdentifier = @"Cell";
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -126,7 +126,8 @@
     
     NSString *gameString = nil;
     BOOL bolCheckStatus = true;
-    switch ([[item substringToIndex:2] intValue]) {
+    NSLog(@"deciciding game");
+    switch ([[item substringToIndex:1] intValue]) {
         case kNOGAME:
             gameString = Nil;
         [imgCellImage setImage:[UIImage imageNamed:@"redLight.png"]];
@@ -146,9 +147,10 @@
         default:
             break;
     }
+    NSLog(@"deciciding status");
     if (bolCheckStatus)
     {
-        switch ([[item substringWithRange:NSMakeRange(2, 2)] intValue]) {
+        switch ([[item substringWithRange:NSMakeRange(1, 1)] intValue]) {
             case kONLINE:
                 lblStatusLabel.text = [NSString stringWithFormat:@"Online on %@", gameString];
                 [imgCellImage setImage:[UIImage imageNamed:@"yellowLight.png"]];
@@ -173,11 +175,11 @@
         }
     }
     
+    NSLog(@"setting dev label");
     
     
     
-    
-    lblDeviceLabel.text = [item substringFromIndex:4];
+    lblDeviceLabel.text = [item substringFromIndex:2];
     
     
     [cell.contentView addSubview:imgCellImage];

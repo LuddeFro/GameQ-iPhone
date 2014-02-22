@@ -12,28 +12,38 @@
 #import "LVFAppDelegate.h"
 #import "LVFConnect.h"
 #import "LVFDefinitions.h"
-#import "LVFTableViewController.h"
+#import "LVFViewControllerTwo.h"
+
 
 
 @class LVFDataModel;
 @class LVFTableViewController;
 @class LVFConnections;
+@class LVFViewControllerTwo;
 
-@interface LVFViewController : UIViewController
+@interface LVFViewController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *txtEmail;
-@property (weak, nonatomic) IBOutlet UITextField *txtPassword;
-@property (weak, nonatomic) IBOutlet UIButton *btnLog;
-@property (weak, nonatomic) IBOutlet UILabel *lblChanging;
+@property (strong, nonatomic) UITextField *txtEmail;
+@property (strong, nonatomic) UITextField *txtPassword;
+@property (strong, nonatomic) UIButton *btnLog;
+@property (strong, nonatomic) UILabel *lblChanging;
+@property (strong, nonatomic) UILabel *lblNotChanging;
+@property (strong, nonatomic) UIImageView *imgLogo;
+@property (strong, nonatomic) UIImageView *imgBackground;
+@property (strong, nonatomic) UIButton *btnAbout;
+@property (strong, nonatomic) UIButton *btnResignKeyboard;
+
 @property bool bolLoggedIn;
 @property (strong, nonatomic) LVFDataModel *dataHandler;
-@property (strong, nonatomic) LVFTableViewController *tableViewController;
 @property (strong, nonatomic) UINavigationController *navView;
 @property (strong, nonatomic) LVFConnections* connectionsHandler;
+@property (weak, nonatomic) IBOutlet UIButton *btnKeyboardDown;
+@property (strong, nonatomic) LVFViewControllerTwo *secondViewController;
+- (IBAction)resignKeyboard:(id)sender;
 - (IBAction) log:(id)sender;
 - (IBAction) visitPage:(id)sender;
 - (void) setDisconnected;
 - (void) setConnected;
--(void) popTableViewController;
+-(void) popSecondViewController;
 
 @end

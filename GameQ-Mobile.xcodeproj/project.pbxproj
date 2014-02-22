@@ -64,11 +64,13 @@
 		837422A21815B0DF000FCC76 /* LVFConnections.m in Sources */ = {isa = PBXBuildFile; fileRef = 8374229B1815B0DF000FCC76 /* LVFConnections.m */; };
 		837422A31815B0DF000FCC76 /* LVFConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8374229D1815B0DF000FCC76 /* LVFConnect.m */; };
 		837422A61815B0EC000FCC76 /* GQHomeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 837422A41815B0EC000FCC76 /* GQHomeScreen.png */; };
-		837422A71815B0EC000FCC76 /* GQLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 837422A51815B0EC000FCC76 /* GQLogo.png */; };
 		837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AA18181E7A000FCC76 /* LVFDataModel.m */; };
 		837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AD18184443000FCC76 /* LVFDefinitions.m */; };
+		839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839698F818A67BA900F2C417 /* StoreKit.framework */; };
 		83E0AD4C182C14970061EB49 /* refreshDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4B182C14970061EB49 /* refreshDefault.png */; };
 		83E0AD4E182C14FB0061EB49 /* refreshHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */; };
+		83E473DE18B8C1DB00B128EE /* GQLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E473DD18B8C1DB00B128EE /* GQLogo.png */; };
+		83E473EB18B8CC3F00B128EE /* LVFViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,13 +151,16 @@
 		8374229C1815B0DF000FCC76 /* LVFConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFConnect.h; sourceTree = "<group>"; };
 		8374229D1815B0DF000FCC76 /* LVFConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFConnect.m; sourceTree = "<group>"; };
 		837422A41815B0EC000FCC76 /* GQHomeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQHomeScreen.png; sourceTree = "<group>"; };
-		837422A51815B0EC000FCC76 /* GQLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQLogo.png; sourceTree = "<group>"; };
 		837422A918181E7A000FCC76 /* LVFDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDataModel.h; sourceTree = "<group>"; };
 		837422AA18181E7A000FCC76 /* LVFDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFDataModel.m; sourceTree = "<group>"; };
 		837422AC18184443000FCC76 /* LVFDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDefinitions.h; sourceTree = "<group>"; };
 		837422AD18184443000FCC76 /* LVFDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFDefinitions.m; sourceTree = "<group>"; };
+		839698F818A67BA900F2C417 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		83E0AD4B182C14970061EB49 /* refreshDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshDefault.png; sourceTree = "<group>"; };
 		83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshHighlighted.png; sourceTree = "<group>"; };
+		83E473DD18B8C1DB00B128EE /* GQLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQLogo.png; sourceTree = "<group>"; };
+		83E473E918B8CC3F00B128EE /* LVFViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFViewControllerTwo.h; sourceTree = "<group>"; };
+		83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFViewControllerTwo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +171,7 @@
 				8311E3E71847A27A0011212C /* Security.framework in Frameworks */,
 				837422621815B0D4000FCC76 /* CoreGraphics.framework in Frameworks */,
 				837422661815B0D4000FCC76 /* CoreData.framework in Frameworks */,
+				839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */,
 				837422641815B0D4000FCC76 /* UIKit.framework in Frameworks */,
 				837422601815B0D4000FCC76 /* Foundation.framework in Frameworks */,
 			);
@@ -288,6 +294,7 @@
 		8374225E1815B0D4000FCC76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				839698F818A67BA900F2C417 /* StoreKit.framework */,
 				8311E3E61847A27A0011212C /* Security.framework */,
 				8374225F1815B0D4000FCC76 /* Foundation.framework */,
 				837422611815B0D4000FCC76 /* CoreGraphics.framework */,
@@ -307,6 +314,8 @@
 				837422951815B0DF000FCC76 /* Main_iPad.storyboard */,
 				837422961815B0DF000FCC76 /* LVFViewController.h */,
 				837422971815B0DF000FCC76 /* LVFViewController.m */,
+				83E473E918B8CC3F00B128EE /* LVFViewControllerTwo.h */,
+				83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */,
 				8365A709182BF09E003F7301 /* LVFTableViewController.h */,
 				8365A70A182BF09E003F7301 /* LVFTableViewController.m */,
 				8365A706182BEFFE003F7301 /* LVFTableView.h */,
@@ -367,7 +376,7 @@
 				83E0AD4B182C14970061EB49 /* refreshDefault.png */,
 				83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */,
 				837422A41815B0EC000FCC76 /* GQHomeScreen.png */,
-				837422A51815B0EC000FCC76 /* GQLogo.png */,
+				83E473DD18B8C1DB00B128EE /* GQLogo.png */,
 				8311E3FF184B647D0011212C /* yellowLight.png */,
 				8311E400184B647D0011212C /* greyLight.png */,
 				8311E401184B647D0011212C /* greenLight.png */,
@@ -425,6 +434,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Ludvig Fröberg";
 				TargetAttributes = {
+					8374225B1815B0D4000FCC76 = {
+						DevelopmentTeam = NZ5DEAP476;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
 					8374227B1815B0D4000FCC76 = {
 						TestTargetID = 8374225B1815B0D4000FCC76;
 					};
@@ -464,10 +481,10 @@
 				8311E47C184B7BDF0011212C /* updateMe.php in Resources */,
 				8311E474184B7BDF0011212C /* getSecret.php in Resources */,
 				8311E465184B7BDF0011212C /* Abstract.php in Resources */,
+				83E473DE18B8C1DB00B128EE /* GQLogo.png in Resources */,
 				8311E478184B7BDF0011212C /* regging.php in Resources */,
 				8311E467184B7BDF0011212C /* Exception.php in Resources */,
 				8311E407184B647D0011212C /* blueLight.png in Resources */,
-				837422A71815B0EC000FCC76 /* GQLogo.png in Resources */,
 				8311E479184B7BDF0011212C /* signing.php in Resources */,
 				83E0AD4E182C14FB0061EB49 /* refreshHighlighted.png in Resources */,
 				8311E47D184B7BDF0011212C /* upMacToken.php in Resources */,
@@ -516,6 +533,7 @@
 				837422A01815B0DF000FCC76 /* LVFViewController.m in Sources */,
 				837422A31815B0DF000FCC76 /* LVFConnect.m in Sources */,
 				837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */,
+				83E473EB18B8CC3F00B128EE /* LVFViewControllerTwo.m in Sources */,
 				837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */,
 				837422A11815B0DF000FCC76 /* NSString+MD5.m in Sources */,
 				8311E3E51847A1DF0011212C /* KeychainItemWrapper.m in Sources */,
@@ -642,10 +660,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameQ-Mobile/GameQ-Mobile-Prefix.pch";
 				INFOPLIST_FILE = "GameQ-Mobile/GameQ-Mobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2C2462CF-3ECE-4D93-AC4B-7B8985D51B4D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -655,10 +676,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameQ-Mobile/GameQ-Mobile-Prefix.pch";
 				INFOPLIST_FILE = "GameQ-Mobile/GameQ-Mobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2C2462CF-3ECE-4D93-AC4B-7B8985D51B4D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
