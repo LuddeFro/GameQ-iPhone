@@ -27,14 +27,28 @@
 - (void)viewDidLoad
 {
     _imgBackgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
-    _imgLogoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 50, 304, 90)];
+    _imgLogoImageView = [[UIImageView alloc] init];
     [_imgLogoImageView setImage:[UIImage imageNamed:@"GQLogo.png"]];
+    
+    
+    
+    if(self.view.frame.size.height < 568) {
+        [_imgLogoImageView setFrame:CGRectMake(7, 35, 306, 87)];
+        
+    } else if (self.view.frame.size.height == 568) {
+        [_imgLogoImageView setFrame:CGRectMake(7, 65, 306, 87)];
+        
+    }
+    
     
     _btnMyDevices = [[UIButton alloc] initWithFrame:CGRectMake(0, 194, self.view.frame.size.width, 30)];
     _btnSettings = [[UIButton alloc] initWithFrame:CGRectMake(0, 232, self.view.frame.size.width, 30)];
     _btnAbout = [[UIButton alloc] initWithFrame:CGRectMake(0, 270, self.view.frame.size.width, 30)];
-    
     _btnLog = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-50, self.view.frame.size.width, 30)];
+    
+    
+    
+    
     
     
     [_btnMyDevices setTitle:@"My Devices" forState:UIControlStateNormal];

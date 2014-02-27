@@ -110,16 +110,23 @@
     static NSString *CellIdentifier = @"Cell";
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UIImageView *imgCellImage;
+    UILabel *lblDeviceLabel;
+    UILabel *lblStatusLabel;
     if (cell == Nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        imgCellImage = [[UIImageView alloc] initWithFrame:CGRectMake(32, 11, 21, 21)];
+        lblDeviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 03, 180, 21)];
+        lblStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 19
+                                                                            , 180, 21)];
+        [cell.contentView addSubview:imgCellImage];
+        [cell.contentView addSubview:lblStatusLabel];
+        [cell.contentView addSubview:lblDeviceLabel];
     }
-    int row = [indexPath row];
+    int row = (int)[indexPath row];
     NSString *item = [_deviceArray objectAtIndex:row];
     
-    UIImageView *imgCellImage = [[UIImageView alloc] initWithFrame:CGRectMake(32, 11, 21, 21)];
-    UILabel *lblDeviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 03, 180, 21)];
-    UILabel *lblStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 19
-                                                                        , 180, 21)];
+    
     
     [lblStatusLabel setFont:[UIFont systemFontOfSize:12.0f]];
     
@@ -182,9 +189,7 @@
     lblDeviceLabel.text = [item substringFromIndex:2];
     
     
-    [cell.contentView addSubview:imgCellImage];
-    [cell.contentView addSubview:lblStatusLabel];
-    [cell.contentView addSubview:lblDeviceLabel];
+    
     
     
     

@@ -42,6 +42,7 @@
 		8311E47E184B7BDF0011212C /* upToken.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E464184B7BDF0011212C /* upToken.php */; };
 		8365A708182BEFFE003F7301 /* LVFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8365A707182BEFFE003F7301 /* LVFTableView.m */; };
 		8365A70B182BF09E003F7301 /* LVFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8365A70A182BF09E003F7301 /* LVFTableViewController.m */; };
+		836DA58918BAF078007DBC1F /* GQLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 836DA58818BAF078007DBC1F /* GQLogo.png */; };
 		837422601815B0D4000FCC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8374225F1815B0D4000FCC76 /* Foundation.framework */; };
 		837422621815B0D4000FCC76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837422611815B0D4000FCC76 /* CoreGraphics.framework */; };
 		837422641815B0D4000FCC76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837422631815B0D4000FCC76 /* UIKit.framework */; };
@@ -69,7 +70,6 @@
 		839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839698F818A67BA900F2C417 /* StoreKit.framework */; };
 		83E0AD4C182C14970061EB49 /* refreshDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4B182C14970061EB49 /* refreshDefault.png */; };
 		83E0AD4E182C14FB0061EB49 /* refreshHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */; };
-		83E473DE18B8C1DB00B128EE /* GQLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E473DD18B8C1DB00B128EE /* GQLogo.png */; };
 		83E473EB18B8CC3F00B128EE /* LVFViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +122,7 @@
 		8365A707182BEFFE003F7301 /* LVFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFTableView.m; sourceTree = "<group>"; };
 		8365A709182BF09E003F7301 /* LVFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFTableViewController.h; sourceTree = "<group>"; };
 		8365A70A182BF09E003F7301 /* LVFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFTableViewController.m; sourceTree = "<group>"; };
+		836DA58818BAF078007DBC1F /* GQLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQLogo.png; sourceTree = "<group>"; };
 		8374225C1815B0D4000FCC76 /* GameQ-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameQ-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8374225F1815B0D4000FCC76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		837422611815B0D4000FCC76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -158,7 +159,6 @@
 		839698F818A67BA900F2C417 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		83E0AD4B182C14970061EB49 /* refreshDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshDefault.png; sourceTree = "<group>"; };
 		83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshHighlighted.png; sourceTree = "<group>"; };
-		83E473DD18B8C1DB00B128EE /* GQLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQLogo.png; sourceTree = "<group>"; };
 		83E473E918B8CC3F00B128EE /* LVFViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFViewControllerTwo.h; sourceTree = "<group>"; };
 		83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFViewControllerTwo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -376,7 +376,7 @@
 				83E0AD4B182C14970061EB49 /* refreshDefault.png */,
 				83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */,
 				837422A41815B0EC000FCC76 /* GQHomeScreen.png */,
-				83E473DD18B8C1DB00B128EE /* GQLogo.png */,
+				836DA58818BAF078007DBC1F /* GQLogo.png */,
 				8311E3FF184B647D0011212C /* yellowLight.png */,
 				8311E400184B647D0011212C /* greyLight.png */,
 				8311E401184B647D0011212C /* greenLight.png */,
@@ -481,8 +481,8 @@
 				8311E47C184B7BDF0011212C /* updateMe.php in Resources */,
 				8311E474184B7BDF0011212C /* getSecret.php in Resources */,
 				8311E465184B7BDF0011212C /* Abstract.php in Resources */,
-				83E473DE18B8C1DB00B128EE /* GQLogo.png in Resources */,
 				8311E478184B7BDF0011212C /* regging.php in Resources */,
+				836DA58918BAF078007DBC1F /* GQLogo.png in Resources */,
 				8311E467184B7BDF0011212C /* Exception.php in Resources */,
 				8311E407184B647D0011212C /* blueLight.png in Resources */,
 				8311E479184B7BDF0011212C /* signing.php in Resources */,

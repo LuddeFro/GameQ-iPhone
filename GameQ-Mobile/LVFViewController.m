@@ -36,7 +36,7 @@
         
         
         if(self.view.frame.size.height < 568) {
-            [_imgLogo setFrame:CGRectMake(8, 34, 304, 90)];
+            [_imgLogo setFrame:CGRectMake(7, 35, 306, 87)];
             [_txtEmail setFrame:CGRectMake(78, 162, 165, 30)];
             [_txtPassword setFrame:CGRectMake(95, 200, 131, 30)];
             [_btnLog setFrame:CGRectMake(0, 240, self.view.frame.size.width, 30)];
@@ -44,7 +44,7 @@
             [_lblNotChanging setFrame:CGRectMake(33, 353, 254, 67)];
             [_btnAbout setFrame:CGRectMake(0, 428, self.view.frame.size.width, 30)];
         } else if (self.view.frame.size.height == 568) {
-            [_imgLogo setFrame:CGRectMake(8, 64, 304, 90)];
+            [_imgLogo setFrame:CGRectMake(7, 65, 306, 87)];
             [_txtEmail setFrame:CGRectMake(78, 203, 165, 30)];
             [_txtPassword setFrame:CGRectMake(95, 241, 131, 30)];
             [_btnLog setFrame:CGRectMake(0, 279, self.view.frame.size.width, 30)];
