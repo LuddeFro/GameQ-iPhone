@@ -91,28 +91,31 @@
 
 -(void)pushAboutController
 {
-    [_mainController visitPage:nil];
+    _aboutController = [[LVFAboutController alloc] init];
+    [self presentViewController:_aboutController animated:YES completion:NULL];
 }
 
 -(void)pushSettingsController
 {
-    
+    _settingsController = [[LVFSettingsController alloc] init];
+    [self presentViewController:_settingsController animated:YES completion:NULL];
 }
 
 -(void) popController
 {
-    [_mainController.btnLog setEnabled:NO];
+    [_mainController.btnTop setEnabled:NO];
+    [_mainController.btnBot setEnabled:NO];
     [_mainController.connectionsHandler logoutPostFromToken:[_mainController.dataHandler getToken]];
     [self dismissViewControllerAnimated:YES completion:NULL];
     
     if(self.view.frame.size.height < 568) {
-        [_mainController.imgLogo setFrame:CGRectMake(8, 34, 304, 90)];
+        /*[_mainController.imgLogo setFrame:CGRectMake(8, 34, 304, 90)];
         [_mainController.txtEmail setFrame:CGRectMake(78, 162, 165, 30)];
         [_mainController.txtPassword setFrame:CGRectMake(95, 200, 131, 30)];
         [_mainController.btnLog setFrame:CGRectMake(0, 240, self.view.frame.size.width, 30)];
         [_mainController.lblChanging setFrame:CGRectMake(33, 268, 254, 77)];
         [_mainController.lblNotChanging setFrame:CGRectMake(33, 353, 254, 67)];
-        [_mainController.btnAbout setFrame:CGRectMake(0, 428, self.view.frame.size.width, 30)];
+        [_mainController.btnAbout setFrame:CGRectMake(0, 428, self.view.frame.size.width, 30)];*/
     }
     
 }

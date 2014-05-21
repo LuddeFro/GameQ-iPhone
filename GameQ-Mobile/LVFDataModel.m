@@ -89,6 +89,23 @@
     return passString;
     
 }
+- (NSNumber *) getBolRegisteredForNotifications
+{
+    NSError *error;
+    NSArray *objects = [_context executeFetchRequest:_request error:&error];
+    if (objects == Nil) {
+        NSLog(@"Storage files not found");
+    }
+    for (NSManagedObject *oneObject in objects) {
+        return [oneObject valueForKey:@"bolIsRegisteredForNotifications"];
+    }
+    return nil;
+    
+}
+- (void) setBolRegisteredForNotifications:(NSNumber *)isRegistered
+{
+    [self setSomething:isRegistered forField:@"bolIsRegisteredForNotifications"];
+}
 - (void) setDeviceID:(NSString *)devID
 {
     [self setSomething:devID forField:@"deviceID"];

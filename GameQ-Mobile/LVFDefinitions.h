@@ -11,7 +11,7 @@
 #define kGameQServerURL @"http://185.2.155.172/GameQ_Server_Code/"
 #define serverURL kGameQServerURL
 #define loginURL kGameQServerURL@"signing.php"
-//NSString *const registerURL = kGameQServerURL@"regging.php"
+#define registerURL kGameQServerURL@"regging.php"
 #define logoutURL kGameQServerURL@"logging.php"
 //NSString *const pushURL = kGameQServerURL@"push.php"
 //NSString *const softPushURL = kGameQServerURL@"softpush.php"

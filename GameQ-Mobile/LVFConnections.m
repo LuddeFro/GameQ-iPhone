@@ -34,7 +34,7 @@
 
 - (void)loginWithUser:(NSString*)username andPass:(NSString*)losenord
 {
-    losenord = [losenord MD5];
+    losenord = [losenord SHA256];
     NSString *postString = [NSString stringWithFormat:@"email=%@&losenord=%@",username, losenord];
     NSString *postUrl = loginURL;
     [_gqConnect postNow:postString to:postUrl];
@@ -68,16 +68,16 @@
 
 
 
-/** if registering in app ever happens
+
 - (void)registerWithEmail:(NSString*)email andPass:(NSString*)losenord andSecretQuestion:(NSString*)secretQuestion andSecret:(NSString*)secret
 {
-    losenord = [losenord MD5];
-    NSString *postString = [NSString stringWithFormat:@"email=%@&losenord=%@&secretq=%@&secret=%@",email, losenord, secretQuestion, secret];
+    losenord = [losenord SHA256];
+    NSString *postString = [NSString stringWithFormat:@"email=%@&losenord=%@&secretq=%@&secret=%@&gender=&country=&yob=&firstname=&lastname=",email, losenord, secretQuestion, secret];
     NSString *postUrl = registerURL;
-    [gqConnect postNow:postString to:postUrl];
+    [_gqConnect postNow:postString to:postUrl];
     NSLog(@"signup posted");
 }
-*/
+
 /* following is computer method
 //softPush a status update from a game to
 

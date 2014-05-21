@@ -21,10 +21,12 @@
 - (void) setBolIsLoggedIn:(NSNumber *)isLoggedIn;
 - (void) setDeviceID:(NSString *)devID;
 - (void) setPass:(NSString *)pass;
+- (void) setBolRegisteredForNotifications:(NSNumber *)isRegistered;
 - (NSString *) getToken;
 - (NSString *) getEmail;
 - (NSNumber *) getBolIsLoggedIn;
 - (NSString *) getDeviceID;
 - (NSString *) getPass;
+- (NSNumber *) getBolRegisteredForNotifications;
 
 @end

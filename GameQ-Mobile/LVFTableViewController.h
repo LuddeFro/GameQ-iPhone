@@ -12,6 +12,7 @@
 #import "LVFTableViewController.h"
 
 #import "LVFTableView.h"
+#import "LVFCell.h"
 
 @class LVFConnections;
 @class LVFViewController;
@@ -24,6 +25,8 @@
 @property (strong, nonatomic) LVFTableView *tableView;
 @property (strong, nonatomic) UINavigationBar *navBar;
 @property (strong, nonatomic) NSMutableArray *deviceArray;
+
+@property (strong, nonatomic) NSTimer *refreshTimer;
 
 - (id)initWithMainController:(LVFViewController*)controller;
 - (void) requestUpdate;

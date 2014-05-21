@@ -25,12 +25,17 @@
 
 @property (strong, nonatomic) UITextField *txtEmail;
 @property (strong, nonatomic) UITextField *txtPassword;
-@property (strong, nonatomic) UIButton *btnLog;
-@property (strong, nonatomic) UILabel *lblChanging;
-@property (strong, nonatomic) UILabel *lblNotChanging;
+@property (strong, nonatomic) UITextField *txtSecret;
+@property (strong, nonatomic) UITextField *txtSecretQ;
+@property BOOL bolIsRegging;
+@property BOOL bolIsLogging;
+
+
+@property (strong, nonatomic) UIButton *btnTop;
+
 @property (strong, nonatomic) UIImageView *imgLogo;
 @property (strong, nonatomic) UIImageView *imgBackground;
-@property (strong, nonatomic) UIButton *btnAbout;
+@property (strong, nonatomic) UIButton *btnBot;
 @property (strong, nonatomic) UIButton *btnResignKeyboard;
 
 @property bool bolLoggedIn;
@@ -40,8 +45,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnKeyboardDown;
 @property (strong, nonatomic) LVFViewControllerTwo *secondViewController;
 - (IBAction)resignKeyboard:(id)sender;
-- (IBAction) log:(id)sender;
-- (IBAction) visitPage:(id)sender;
+- (void) log;
 - (void) setDisconnected;
 - (void) setConnected;
 -(void) popSecondViewController;

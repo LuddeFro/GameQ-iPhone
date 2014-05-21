@@ -40,6 +40,9 @@
 		8311E47C184B7BDF0011212C /* updateMe.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E462184B7BDF0011212C /* updateMe.php */; };
 		8311E47D184B7BDF0011212C /* upMacToken.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E463184B7BDF0011212C /* upMacToken.php */; };
 		8311E47E184B7BDF0011212C /* upToken.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E464184B7BDF0011212C /* upToken.php */; };
+		833403DC18C5FA7E00A8B6E0 /* LVFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 833403DB18C5FA7E00A8B6E0 /* LVFCell.m */; };
+		833403DF18C63A3000A8B6E0 /* LVFSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833403DE18C63A3000A8B6E0 /* LVFSettingsController.m */; };
+		833403E218C63A6800A8B6E0 /* LVFAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833403E118C63A6800A8B6E0 /* LVFAboutController.m */; };
 		8365A708182BEFFE003F7301 /* LVFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8365A707182BEFFE003F7301 /* LVFTableView.m */; };
 		8365A70B182BF09E003F7301 /* LVFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8365A70A182BF09E003F7301 /* LVFTableViewController.m */; };
 		836DA58918BAF078007DBC1F /* GQLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 836DA58818BAF078007DBC1F /* GQLogo.png */; };
@@ -61,16 +64,16 @@
 		8374229E1815B0DF000FCC76 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837422941815B0DF000FCC76 /* Main_iPhone.storyboard */; };
 		8374229F1815B0DF000FCC76 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837422951815B0DF000FCC76 /* Main_iPad.storyboard */; };
 		837422A01815B0DF000FCC76 /* LVFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422971815B0DF000FCC76 /* LVFViewController.m */; };
-		837422A11815B0DF000FCC76 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422991815B0DF000FCC76 /* NSString+MD5.m */; };
+		837422A11815B0DF000FCC76 /* NSString+SHA256.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422991815B0DF000FCC76 /* NSString+SHA256.m */; };
 		837422A21815B0DF000FCC76 /* LVFConnections.m in Sources */ = {isa = PBXBuildFile; fileRef = 8374229B1815B0DF000FCC76 /* LVFConnections.m */; };
 		837422A31815B0DF000FCC76 /* LVFConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8374229D1815B0DF000FCC76 /* LVFConnect.m */; };
-		837422A61815B0EC000FCC76 /* GQHomeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 837422A41815B0EC000FCC76 /* GQHomeScreen.png */; };
 		837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AA18181E7A000FCC76 /* LVFDataModel.m */; };
 		837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AD18184443000FCC76 /* LVFDefinitions.m */; };
 		839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839698F818A67BA900F2C417 /* StoreKit.framework */; };
 		83E0AD4C182C14970061EB49 /* refreshDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4B182C14970061EB49 /* refreshDefault.png */; };
 		83E0AD4E182C14FB0061EB49 /* refreshHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */; };
 		83E473EB18B8CC3F00B128EE /* LVFViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */; };
+		9C3BC0D5192CBD8D00145174 /* GQHomeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,12 @@
 		8311E462184B7BDF0011212C /* updateMe.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = updateMe.php; sourceTree = "<group>"; };
 		8311E463184B7BDF0011212C /* upMacToken.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = upMacToken.php; sourceTree = "<group>"; };
 		8311E464184B7BDF0011212C /* upToken.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = upToken.php; sourceTree = "<group>"; };
+		833403DA18C5FA7E00A8B6E0 /* LVFCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFCell.h; sourceTree = "<group>"; };
+		833403DB18C5FA7E00A8B6E0 /* LVFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFCell.m; sourceTree = "<group>"; };
+		833403DD18C63A3000A8B6E0 /* LVFSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFSettingsController.h; sourceTree = "<group>"; };
+		833403DE18C63A3000A8B6E0 /* LVFSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFSettingsController.m; sourceTree = "<group>"; };
+		833403E018C63A6800A8B6E0 /* LVFAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFAboutController.h; sourceTree = "<group>"; };
+		833403E118C63A6800A8B6E0 /* LVFAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFAboutController.m; sourceTree = "<group>"; };
 		8365A706182BEFFE003F7301 /* LVFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFTableView.h; sourceTree = "<group>"; };
 		8365A707182BEFFE003F7301 /* LVFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFTableView.m; sourceTree = "<group>"; };
 		8365A709182BF09E003F7301 /* LVFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFTableViewController.h; sourceTree = "<group>"; };
@@ -145,13 +154,12 @@
 		837422951815B0DF000FCC76 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		837422961815B0DF000FCC76 /* LVFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFViewController.h; sourceTree = "<group>"; };
 		837422971815B0DF000FCC76 /* LVFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFViewController.m; sourceTree = "<group>"; };
-		837422981815B0DF000FCC76 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
-		837422991815B0DF000FCC76 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		837422981815B0DF000FCC76 /* NSString+SHA256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA256.h"; sourceTree = "<group>"; };
+		837422991815B0DF000FCC76 /* NSString+SHA256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA256.m"; sourceTree = "<group>"; };
 		8374229A1815B0DF000FCC76 /* LVFConnections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFConnections.h; sourceTree = "<group>"; };
 		8374229B1815B0DF000FCC76 /* LVFConnections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFConnections.m; sourceTree = "<group>"; };
 		8374229C1815B0DF000FCC76 /* LVFConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFConnect.h; sourceTree = "<group>"; };
 		8374229D1815B0DF000FCC76 /* LVFConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFConnect.m; sourceTree = "<group>"; };
-		837422A41815B0EC000FCC76 /* GQHomeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQHomeScreen.png; sourceTree = "<group>"; };
 		837422A918181E7A000FCC76 /* LVFDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDataModel.h; sourceTree = "<group>"; };
 		837422AA18181E7A000FCC76 /* LVFDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFDataModel.m; sourceTree = "<group>"; };
 		837422AC18184443000FCC76 /* LVFDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDefinitions.h; sourceTree = "<group>"; };
@@ -161,6 +169,7 @@
 		83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshHighlighted.png; sourceTree = "<group>"; };
 		83E473E918B8CC3F00B128EE /* LVFViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFViewControllerTwo.h; sourceTree = "<group>"; };
 		83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFViewControllerTwo.m; sourceTree = "<group>"; };
+		9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQHomeScreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,12 +325,18 @@
 				837422971815B0DF000FCC76 /* LVFViewController.m */,
 				83E473E918B8CC3F00B128EE /* LVFViewControllerTwo.h */,
 				83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */,
+				833403DD18C63A3000A8B6E0 /* LVFSettingsController.h */,
+				833403DE18C63A3000A8B6E0 /* LVFSettingsController.m */,
+				833403E018C63A6800A8B6E0 /* LVFAboutController.h */,
+				833403E118C63A6800A8B6E0 /* LVFAboutController.m */,
 				8365A709182BF09E003F7301 /* LVFTableViewController.h */,
 				8365A70A182BF09E003F7301 /* LVFTableViewController.m */,
+				833403DA18C5FA7E00A8B6E0 /* LVFCell.h */,
+				833403DB18C5FA7E00A8B6E0 /* LVFCell.m */,
 				8365A706182BEFFE003F7301 /* LVFTableView.h */,
 				8365A707182BEFFE003F7301 /* LVFTableView.m */,
-				837422981815B0DF000FCC76 /* NSString+MD5.h */,
-				837422991815B0DF000FCC76 /* NSString+MD5.m */,
+				837422981815B0DF000FCC76 /* NSString+SHA256.h */,
+				837422991815B0DF000FCC76 /* NSString+SHA256.m */,
 				8374229A1815B0DF000FCC76 /* LVFConnections.h */,
 				8374229B1815B0DF000FCC76 /* LVFConnections.m */,
 				8374229C1815B0DF000FCC76 /* LVFConnect.h */,
@@ -375,8 +390,8 @@
 			children = (
 				83E0AD4B182C14970061EB49 /* refreshDefault.png */,
 				83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */,
-				837422A41815B0EC000FCC76 /* GQHomeScreen.png */,
 				836DA58818BAF078007DBC1F /* GQLogo.png */,
+				9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */,
 				8311E3FF184B647D0011212C /* yellowLight.png */,
 				8311E400184B647D0011212C /* greyLight.png */,
 				8311E401184B647D0011212C /* greenLight.png */,
@@ -431,7 +446,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = LVF;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Ludvig Fröberg";
 				TargetAttributes = {
 					8374225B1815B0D4000FCC76 = {
@@ -491,10 +506,10 @@
 				8311E472184B7BDF0011212C /* chkSecret copy.php in Resources */,
 				8374226C1815B0D4000FCC76 /* InfoPlist.strings in Resources */,
 				8311E408184B647D0011212C /* redLight.png in Resources */,
+				9C3BC0D5192CBD8D00145174 /* GQHomeScreen.png in Resources */,
 				8311E46F184B7BDF0011212C /* Exception.php in Resources */,
 				8311E475184B7BDF0011212C /* logging.php in Resources */,
 				8311E406184B647D0011212C /* greenLight.png in Resources */,
-				837422A61815B0EC000FCC76 /* GQHomeScreen.png in Resources */,
 				8311E46A184B7BDF0011212C /* Interface.php in Resources */,
 				8311E46D184B7BDF0011212C /* Message.php in Resources */,
 				8374229F1815B0DF000FCC76 /* Main_iPad.storyboard in Resources */,
@@ -531,11 +546,14 @@
 				837422A21815B0DF000FCC76 /* LVFConnections.m in Sources */,
 				8374226E1815B0D4000FCC76 /* main.m in Sources */,
 				837422A01815B0DF000FCC76 /* LVFViewController.m in Sources */,
+				833403DF18C63A3000A8B6E0 /* LVFSettingsController.m in Sources */,
 				837422A31815B0DF000FCC76 /* LVFConnect.m in Sources */,
+				833403E218C63A6800A8B6E0 /* LVFAboutController.m in Sources */,
 				837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */,
 				83E473EB18B8CC3F00B128EE /* LVFViewControllerTwo.m in Sources */,
 				837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */,
-				837422A11815B0DF000FCC76 /* NSString+MD5.m in Sources */,
+				833403DC18C5FA7E00A8B6E0 /* LVFCell.m in Sources */,
+				837422A11815B0DF000FCC76 /* NSString+SHA256.m in Sources */,
 				8311E3E51847A1DF0011212C /* KeychainItemWrapper.m in Sources */,
 				837422721815B0D4000FCC76 /* LVFAppDelegate.m in Sources */,
 				837422751815B0D4000FCC76 /* GameQ_Mobile.xcdatamodeld in Sources */,
@@ -585,7 +603,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -625,7 +642,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -690,7 +706,6 @@
 		837422921815B0D4000FCC76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GameQ-Mobile.app/GameQ-Mobile";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -713,7 +728,6 @@
 		837422931815B0D4000FCC76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GameQ-Mobile.app/GameQ-Mobile";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

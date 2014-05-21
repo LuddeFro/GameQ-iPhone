@@ -75,7 +75,8 @@
 - (void)connection:(NSURLConnection *)connection
   didFailWithError:(NSError *)error
 {
-    [_mainController.btnLog setEnabled:YES];
+    [_mainController.btnTop setEnabled:YES];
+    [_mainController.btnBot setEnabled:YES];
     [_mainController.txtEmail setEnabled:YES];
     [_mainController.txtPassword setEnabled:YES];
     [_mainController.txtEmail setTextColor:[UIColor blackColor]];
@@ -90,7 +91,8 @@
 //connection was successful, handle response here
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    [_mainController.btnLog setEnabled:YES];
+    [_mainController.btnTop setEnabled:YES];
+    [_mainController.btnBot setEnabled:YES];
     [_mainController.txtEmail setEnabled:YES];
     [_mainController.txtPassword setEnabled:YES];
     [_mainController.txtEmail setTextColor:[UIColor blackColor]];
@@ -118,7 +120,7 @@
                 int len = [[returnString substringToIndex:2] intValue];
                 returnString = [returnString substringFromIndex:2];
                 NSLog(@"%@", returnString);
-                NSString *itemString = [returnString substringToIndex:(len+2)];
+                NSString *itemString = [returnString substringToIndex:(len+4)];
                 [deviceArray addObject:itemString];
                 NSLog(@"%@",itemString);
                 
@@ -131,7 +133,7 @@
                 }
                 else {
                     NSLog(@"more items");
-                    returnString = [returnString substringFromIndex:len+2];
+                    returnString = [returnString substringFromIndex:len+4];
                 }
             }
             NSLog(@"sending it to the view controller");

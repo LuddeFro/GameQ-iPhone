@@ -9,7 +9,7 @@
 #import "LVFViewController.h"
 
 
-@interface LVFViewController ()
+@interface LVFViewController () <UITextFieldDelegate>
 
 
 @end
@@ -23,43 +23,55 @@
         // Custom initialization
         
         
+        UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
+        UIColor *myTransWhite = [UIColor colorWithWhite:1 alpha:0.5];
+        UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
+        
+        _bolIsLogging = false;
+        _bolIsRegging = false;
         _imgLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQLogo.png"]];
         _imgBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
+        
         _txtEmail = [[UITextField alloc] init];
         _txtPassword = [[UITextField alloc] init];
-        _btnLog = [[UIButton alloc] init];
-        _lblChanging = [[UILabel alloc] init];
-        _lblNotChanging = [[UILabel alloc] init];
-        _btnAbout = [[UIButton alloc] init];
-        _btnResignKeyboard = [[UIButton alloc] initWithFrame:self.view.frame];
+        _txtSecret = [[UITextField alloc] init];
+        _txtSecretQ = [[UITextField alloc] init];
         
+        _btnTop = [[UIButton alloc] init];
+        _btnBot = [[UIButton alloc] init];
+        _btnResignKeyboard = [[UIButton alloc] initWithFrame:self.view.frame];
+        [_imgBackground setFrame:self.view.frame];
         
         
         if(self.view.frame.size.height < 568) {
             [_imgLogo setFrame:CGRectMake(7, 35, 306, 87)];
-            [_txtEmail setFrame:CGRectMake(78, 162, 165, 30)];
-            [_txtPassword setFrame:CGRectMake(95, 200, 131, 30)];
-            [_btnLog setFrame:CGRectMake(0, 240, self.view.frame.size.width, 30)];
-            [_lblChanging setFrame:CGRectMake(33, 268, 254, 77)];
-            [_lblNotChanging setFrame:CGRectMake(33, 353, 254, 67)];
-            [_btnAbout setFrame:CGRectMake(0, 428, self.view.frame.size.width, 30)];
+            
+            [_txtEmail setFrame:CGRectMake(20, 200, self.view.frame.size.width-40, 30)];
+            [_txtPassword setFrame:CGRectMake(20, 238, self.view.frame.size.width-40, 30)];
+            [_txtSecretQ setFrame:CGRectMake(20, 286, self.view.frame.size.width-40, 30)];
+            [_txtSecret setFrame:CGRectMake(20, 324, self.view.frame.size.width-40, 30)];
+            
+            [_btnTop setFrame:CGRectMake(20, 390, self.view.frame.size.width-40, 30)];
+            [_btnBot setFrame:CGRectMake(20, 428, self.view.frame.size.width-40, 30)];
+            
         } else if (self.view.frame.size.height == 568) {
             [_imgLogo setFrame:CGRectMake(7, 65, 306, 87)];
-            [_txtEmail setFrame:CGRectMake(78, 203, 165, 30)];
-            [_txtPassword setFrame:CGRectMake(95, 241, 131, 30)];
-            [_btnLog setFrame:CGRectMake(0, 279, self.view.frame.size.width, 30)];
-            [_lblChanging setFrame:CGRectMake(33, 327, 254, 77)];
-            [_lblNotChanging setFrame:CGRectMake(33, 417, 254, 67)];
-            [_btnAbout setFrame:CGRectMake(0, 518, self.view.frame.size.width, 30)];
+            [_txtEmail setFrame:CGRectMake(20, 241, self.view.frame.size.width-40, 30)];
+            [_txtPassword setFrame:CGRectMake(20, 279, self.view.frame.size.width-40, 30)];
+            [_txtSecretQ setFrame:CGRectMake(20, 327, self.view.frame.size.width-40, 30)];
+            [_txtSecret setFrame:CGRectMake(20, 365, self.view.frame.size.width-40, 30)];
+            
+            [_btnTop setFrame:CGRectMake(20, 480, self.view.frame.size.width-40, 30)];
+            [_btnBot setFrame:CGRectMake(20, 518, self.view.frame.size.width-40, 30)];
         }
         
-        [_btnLog addTarget:self action:@selector(log:) forControlEvents:UIControlEventTouchUpInside];
-        [_btnAbout addTarget:self action:@selector(visitPage:) forControlEvents:UIControlEventTouchUpInside];
+        [_btnTop addTarget:self action:@selector(topButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [_btnBot addTarget:self action:@selector(botButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [_btnResignKeyboard addTarget:self action:@selector(resignKeyboard:) forControlEvents:UIControlEventTouchUpInside];
         
         
-        [_txtPassword setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
-        [_txtEmail setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
+        [_txtPassword setBackgroundColor:myWhite];
+        [_txtEmail setBackgroundColor:myWhite];
         [_txtEmail setPlaceholder:@"E-mail"];
         [_txtPassword setPlaceholder:@"Password"];
         [_txtPassword setFont:[UIFont systemFontOfSize:14]];
@@ -73,36 +85,50 @@
         [_txtEmail setReturnKeyType:UIReturnKeyDone];
         [_txtEmail setDelegate:self];
         [_txtPassword setDelegate:self];
+        [_txtPassword setHidden:false];
+        [_txtEmail setHidden:false];
+        
+        [_txtSecret setBackgroundColor:myWhite];
+        [_txtSecret setPlaceholder:@"Secret"];
+        [_txtSecret setFont:[UIFont systemFontOfSize:14]];
+        [_txtSecret setBorderStyle:UITextBorderStyleRoundedRect];
+        [_txtSecret setSecureTextEntry:YES];
+        [_txtSecret setKeyboardType:UIKeyboardTypeAlphabet];
+        [_txtSecret setReturnKeyType:UIReturnKeyDone];
+        [_txtSecret setDelegate:self];
+        [_txtSecret setEnabled:YES];
+        
+        [_txtSecretQ setBackgroundColor:myWhite];
+        [_txtSecretQ setPlaceholder:@"Secret Question / Hint"];
+        [_txtSecretQ setFont:[UIFont systemFontOfSize:14]];
+        [_txtSecretQ setBorderStyle:UITextBorderStyleRoundedRect];
+        [_txtSecretQ setKeyboardType:UIKeyboardTypeAlphabet];
+        [_txtSecretQ setReturnKeyType:UIReturnKeyDone];
+        [_txtSecretQ setDelegate:self];
+        [_txtSecretQ setEnabled:YES];
         
         
-        [_btnLog setTitle:@"Log In" forState:UIControlStateNormal];
-        [_btnAbout setTitle:@"www.GameQ.com/about" forState:UIControlStateNormal];
-        [_btnLog setTitleColor:[UIColor colorWithRed:0 green:0.48 blue:1 alpha:1] forState:UIControlStateNormal];
-        [_btnAbout setTitleColor:[UIColor colorWithRed:0 green:0.48 blue:1 alpha:1] forState:UIControlStateNormal];
-        [_btnLog setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateHighlighted];
-        [_btnAbout setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateHighlighted];
-        [_btnAbout setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
-        [_btnLog setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
         
-        [_lblChanging setText:@"Log in to receive notifications from your other connected devices!"];
-        [_lblNotChanging setText:@"To learn more about connecting devices and what this service provides, please visit:"];
-        [_lblChanging setTextColor:[UIColor colorWithRed:0 green:0.48 blue:1 alpha:1]];
-        [_lblNotChanging setTextColor:[UIColor colorWithRed:0 green:0.48 blue:1 alpha:1]];
-        [_lblChanging setFont:[UIFont systemFontOfSize:17]];
-        [_lblNotChanging setFont:[UIFont systemFontOfSize:17]];
-        [_lblNotChanging setNumberOfLines:0];
-        [_lblChanging setNumberOfLines:0];
+        
+        [_btnTop setTitle:@"Sign In" forState:UIControlStateNormal];
+        [_btnBot setTitle:@"Join GameQ" forState:UIControlStateNormal];
+        [_btnTop setTitleColor:myRed forState:UIControlStateNormal];
+        [_btnBot setTitleColor:myRed forState:UIControlStateNormal];
+        [_btnTop setTitleColor:myWhite forState:UIControlStateHighlighted];
+        [_btnBot setTitleColor:myWhite forState:UIControlStateHighlighted];
+        [_btnBot setBackgroundColor:myTransWhite];
+        [_btnTop setBackgroundColor:myTransWhite];
         
         
         [self.view addSubview:_imgBackground];
         [self.view addSubview:_imgLogo];
-        [self.view addSubview:_lblChanging];
-        [self.view addSubview:_lblNotChanging];
         [self.view addSubview:_btnResignKeyboard];
         [self.view addSubview:_txtEmail];
         [self.view addSubview:_txtPassword];
-        [self.view addSubview:_btnLog];
-        [self.view addSubview:_btnAbout];
+        [self.view addSubview:_txtSecretQ];
+        [self.view addSubview:_txtSecret];
+        [self.view addSubview:_btnTop];
+        [self.view addSubview:_btnBot];
         
         
         
@@ -146,7 +172,10 @@
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    if(self.view.frame.size.height < 568) {
+    
+    [self setupNothing];
+/*    if(self.view.frame.size.height < 568) {
+        
         [_imgLogo setFrame:CGRectMake(8, 34, 304, 90)];
         [_txtEmail setFrame:CGRectMake(78, 162, 165, 30)];
         [_txtPassword setFrame:CGRectMake(95, 200, 131, 30)];
@@ -154,7 +183,7 @@
         [_lblChanging setFrame:CGRectMake(33, 268, 254, 77)];
         [_lblNotChanging setFrame:CGRectMake(33, 353, 254, 67)];
         [_btnAbout setFrame:CGRectMake(0, 428, self.view.frame.size.width, 30)];
-    }
+    }*/
     
     
 }
@@ -169,11 +198,106 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)log:(id)sender {
+- (IBAction)topButtonPressed:(id)sender
+{
+    if (_bolIsLogging) {
+        [self log];
+    } else if (_bolIsRegging) {
+        [self reg];
+    } else {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3];
+        [self setupLogging];
+        [UIView commitAnimations];
+    }
+}
+
+- (IBAction)botButtonPressed:(id)sender
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    
+    if (_bolIsRegging || _bolIsLogging) {
+        [self setupNothing];
+    } else {
+        [self setupRegging];
+    }
+    [UIView commitAnimations];
+}
+
+- (void)log {
     [self.view endEditing:YES];
-        [_dataHandler setEmail:_txtEmail.text];
-        [_connectionsHandler loginWithUser:_txtEmail.text andPass:_txtPassword.text];
-        [_btnLog setEnabled:NO];
+    [_dataHandler setEmail:_txtEmail.text];
+    [_connectionsHandler loginWithUser:_txtEmail.text andPass:_txtPassword.text];
+    [_btnTop setEnabled:NO];
+    [_btnBot setEnabled:NO];
+    
+    
+    
+}
+
+- (void)reg {
+    [self.view endEditing:YES];
+    [_connectionsHandler registerWithEmail:_txtEmail.text andPass:_txtPassword.text andSecretQuestion:_txtSecretQ.text andSecret:_txtSecret.text];
+    [_btnTop setEnabled:NO];
+    [_btnBot setEnabled:NO];
+}
+
+-(void) setupRegging
+{
+    _bolIsRegging = true;
+    
+    [_txtEmail setEnabled:true];
+    [_txtPassword setEnabled:true];
+    [_txtSecretQ setEnabled:true];
+    [_txtSecret setEnabled:true];
+    
+    [_txtEmail setAlpha:1];
+    [_txtPassword setAlpha:1];
+    [_txtSecret setAlpha:1];
+    [_txtSecretQ setAlpha:1];
+    
+    [_btnTop setTitle:@"Sign Up" forState:UIControlStateNormal];
+    [_btnBot setTitle:@"Cancel" forState:UIControlStateNormal];
+}
+
+-(void) setupLogging
+{
+    _bolIsLogging = true;
+    
+    [_txtEmail setEnabled:true];
+    [_txtPassword setEnabled:true];
+    [_txtSecretQ setEnabled:false];
+    [_txtSecret setEnabled:false];
+    
+    [_txtEmail setAlpha:1];
+    [_txtPassword setAlpha:1];
+    [_txtSecret setAlpha:0];
+    [_txtSecretQ setAlpha:0];
+    
+    [_btnTop setTitle:@"Sign In" forState:UIControlStateNormal];
+    [_btnBot setTitle:@"Cancel" forState:UIControlStateNormal];
+}
+
+-(void) setupNothing
+{
+    _bolIsLogging = false;
+    _bolIsRegging = false;
+    
+    
+    [_txtEmail setEnabled:true];
+    [_txtPassword setEnabled:true];
+    [_txtSecretQ setEnabled:false];
+    [_txtSecret setEnabled:false];
+    
+    [_txtEmail setAlpha:1];
+    [_txtPassword setAlpha:1];
+    [_txtSecret setAlpha:0];
+    [_txtSecretQ setAlpha:0];
+    
+    [_btnTop setTitle:@"Sign In" forState:UIControlStateNormal];
+    [_btnBot setTitle:@"Join GameQ" forState:UIControlStateNormal];
     
     
     
@@ -184,7 +308,7 @@
     
     [_txtEmail setEnabled:NO];
     [_txtPassword setEnabled:NO];
-    [_lblChanging setText:@"This device will now receive notifications from your other connected devices"];
+    
     [_txtEmail setTextColor:[UIColor grayColor]];
     _bolLoggedIn = YES;
     [_dataHandler setBolIsLoggedIn:[NSNumber numberWithBool:_bolLoggedIn]];
@@ -212,8 +336,7 @@
 - (void) setDisconnected
 {
     [_txtPassword setText:@""];
-    [[self btnLog] setTitle:@"Log In" forState:UIControlStateNormal];
-    [_lblChanging setText:@"Log in to receive notifications from your other connected devices"];
+    [[self btnTop] setTitle:@"Sign In" forState:UIControlStateNormal];
     
     _bolLoggedIn = NO;
     [_dataHandler setBolIsLoggedIn:[NSNumber numberWithBool:_bolLoggedIn]];
@@ -221,10 +344,45 @@
     [_dataHandler setPass:@""];
 }
 
+
+/* no longer used
 - (IBAction)visitPage:(id)sender {
     [self.view endEditing:YES];
     NSURL *urlAbout = [[NSURL alloc] initWithString:URL_ABOUT];
     [[UIApplication sharedApplication] openURL:urlAbout];
+    
+}*/
+
+- (void)textFieldDidBeginEditing:(UITextField *)ga1
+{
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    
+    /* should move views */
+    if(self.view.frame.size.height < 568) {
+        self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
+    } else if (self.view.frame.size.height == 568) {
+        self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 52);
+    }
+    
+    [UIView commitAnimations];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)ga1
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    
+    /* should move views */
+    if(self.view.frame.size.height < 568) {
+        self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 100);
+    } else if (self.view.frame.size.height == 568) {
+        self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 52);
+    }
+    
+    
+    [UIView commitAnimations];
     
 }
 

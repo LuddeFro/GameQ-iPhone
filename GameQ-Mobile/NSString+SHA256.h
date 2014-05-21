@@ -1,5 +1,5 @@
 //
-//  NSString+MD5.h
+//  NSString+SHA256.h
 //  ECLottery
 //
 //  Created by Ludvig Fröberg on 4/21/13.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (MD5)
+@interface NSString (SHA256)
 
--(NSString *) MD5;
+-(NSString *) SHA256;
 
 @end

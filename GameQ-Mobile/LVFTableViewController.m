@@ -56,12 +56,30 @@
     [self.view addSubview:_navBar];
     
     
+    
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [self requestUpdate];
 }
+
+- (void) startTimer {
+    _refreshTimer = [NSTimer timerWithTimeInterval:10 target:self selector:@selector(requestUpdate) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:_refreshTimer forMode:NSDefaultRunLoopMode];
+    
+    
+}
+- (void) stopTimer {
+    [_refreshTimer invalidate];
+    //[countdownSlowTimer invalidate];
+}
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning
@@ -72,6 +90,7 @@
 
 - (void)requestUpdate
 {
+    NSLog(@"refreshing");
     [_connectionsHandler upAppPost];
 }
 
@@ -104,41 +123,35 @@
     return [_deviceArray count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (LVFCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"celling up");
     static NSString *CellIdentifier = @"Cell";
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    UIImageView *imgCellImage;
-    UILabel *lblDeviceLabel;
-    UILabel *lblStatusLabel;
+    [_tableView registerClass:[LVFCell class] forCellReuseIdentifier:CellIdentifier];
+    LVFCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
     if (cell == Nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        imgCellImage = [[UIImageView alloc] initWithFrame:CGRectMake(32, 11, 21, 21)];
-        lblDeviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 03, 180, 21)];
-        lblStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 19
-                                                                            , 180, 21)];
-        [cell.contentView addSubview:imgCellImage];
-        [cell.contentView addSubview:lblStatusLabel];
-        [cell.contentView addSubview:lblDeviceLabel];
+        
+        cell = [[LVFCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
     }
+    
     int row = (int)[indexPath row];
     NSString *item = [_deviceArray objectAtIndex:row];
     
     
     
-    [lblStatusLabel setFont:[UIFont systemFontOfSize:12.0f]];
+    [cell.lblStatusLabel setFont:[UIFont systemFontOfSize:12.0f]];
     
     
     NSString *gameString = nil;
     BOOL bolCheckStatus = true;
     NSLog(@"deciciding game");
-    switch ([[item substringToIndex:1] intValue]) {
+    switch ([[item substringToIndex:2] intValue]) {
         case kNOGAME:
             gameString = Nil;
-        [imgCellImage setImage:[UIImage imageNamed:@"redLight.png"]];
-        lblStatusLabel.text = @"Not gaming";
+        [cell.imgCellImage setImage:[UIImage imageNamed:@"redLight.png"]];
+        cell.lblStatusLabel.text = @"Not gaming";
             break;
         case kHEROES_OF_NEWERTH:
             gameString = @"Heroes of Newerth";
@@ -157,27 +170,27 @@
     NSLog(@"deciciding status");
     if (bolCheckStatus)
     {
-        switch ([[item substringWithRange:NSMakeRange(1, 1)] intValue]) {
+        switch ([[item substringWithRange:NSMakeRange(2, 2)] intValue]) {
             case kONLINE:
-                lblStatusLabel.text = [NSString stringWithFormat:@"Online on %@", gameString];
-                [imgCellImage setImage:[UIImage imageNamed:@"yellowLight.png"]];
+                cell.lblStatusLabel.text = [NSString stringWithFormat:@"Online on %@", gameString];
+                [cell.imgCellImage setImage:[UIImage imageNamed:@"yellowLight.png"]];
                 break;
             
             case kINGAME:
-                lblStatusLabel.text = [NSString stringWithFormat:@"Currently playing %@", gameString];
-                [imgCellImage setImage:[UIImage imageNamed:@"greenLight.png"]];
+                cell.lblStatusLabel.text = [NSString stringWithFormat:@"Currently playing %@", gameString];
+                [cell.imgCellImage setImage:[UIImage imageNamed:@"greenLight.png"]];
                 break;
                 
             case kOFF:
-                [imgCellImage setImage:[UIImage imageNamed:@"greyLight.png"]];
-                lblStatusLabel.text = @"This device is offline";
+                [cell.imgCellImage setImage:[UIImage imageNamed:@"greyLight.png"]];
+                cell.lblStatusLabel.text = @"This device is offline";
                 bolCheckStatus = false;
                 break;
             
             default:
-                lblStatusLabel.text = @"Not gaming";
+                cell.lblStatusLabel.text = @"Not gaming";
                 gameString = Nil;
-                [imgCellImage setImage:[UIImage imageNamed:@"redLight.png"]];
+                [cell.imgCellImage setImage:[UIImage imageNamed:@"redLight.png"]];
                 break;
         }
     }
@@ -186,15 +199,15 @@
     
     
     
-    lblDeviceLabel.text = [item substringFromIndex:2];
+    cell.lblDeviceLabel.text = [item substringFromIndex:4];
     
     
     
     
     
     
-    NSLog(@"statuslabel: %@",lblStatusLabel.text);
-    NSLog(@"devicelabel: %@",lblDeviceLabel.text);
+    NSLog(@"statuslabel: %@",cell.lblStatusLabel.text);
+    NSLog(@"devicelabel: %@",cell.lblDeviceLabel.text);
     NSLog(@"item: %@",item);
     
     

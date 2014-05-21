@@ -26,6 +26,9 @@
     
     [self.window setRootViewController:_mainController];
     [self.window makeKeyAndVisible];
+    
+    [_mainController.dataHandler setBolRegisteredForNotifications:[NSNumber numberWithBool:YES]];
+    
     return YES;
 }
 
@@ -49,6 +52,16 @@
         [connectHandler postNow:[NSString stringWithFormat:@"token=%@&device=%@&email=%@", newToken, [dataHandler getDeviceID], [dataHandler getEmail]] to:updateTokenURL];
 	}
 }
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSLog(@"recieved push");
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"GameQ"
+                                                        message:[NSString stringWithFormat:@"Your Queue has ended! Please return to your computer."]  delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
 
 
 
@@ -56,6 +69,9 @@
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
 	NSLog(@"Failed to get token, error: %@", error);
+    [_mainController.dataHandler setBolRegisteredForNotifications:[NSNumber numberWithBool:NO]];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"GameQ: Error" message:@"Your phone has failed to register for push notifications. Please check your internet connection and try to activate notifications again under settings" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

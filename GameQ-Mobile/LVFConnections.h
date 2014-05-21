@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSString+MD5.h"
+#import "NSString+SHA256.h"
 #import "LVFConnect.h"
 #import "LVFAppDelegate.h"
 #import "LVFDefinitions.h"
@@ -23,6 +23,7 @@
 - (void)loginWithUser:(NSString*)username andPass:(NSString*)losenord;
 - (id) initFromController:(LVFViewController *)controller;
 - (void)upAppPost;
+- (void)registerWithEmail:(NSString*)email andPass:(NSString*)losenord andSecretQuestion:(NSString*)secretQuestion andSecret:(NSString*)secret;
 //- (void) upTokenWithToken:(NSString *)token andDeviceName:(NSString *)name andEmail:(NSString *)email;
 
 @end
