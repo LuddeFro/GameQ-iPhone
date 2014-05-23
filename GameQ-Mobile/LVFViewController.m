@@ -265,15 +265,85 @@
 - (void)log {
     [self.view endEditing:YES];
     [_dataHandler setEmail:_txtEmail.text];
-    [_connectionsHandler loginWithUser:_txtEmail.text andPass:_txtPassword.text];
-    [_btnTop setEnabled:NO];
-    [_btnBot setEnabled:NO];
+    
+    //checks if any text exists in the fields
+    if (![_txtEmail.text isEqual:@""] && ![_txtPassword.text isEqual:@""]) {
+        if (_txtEmail.text.length > 2 && _txtPassword.text.length > 5) {
+            if ([_txtEmail.text rangeOfString:@"@"].location != NSNotFound) {
+                
+                
+                
+                if ([_txtEmail.text rangeOfString:@"\""].location != NSNotFound || [_txtPassword.text rangeOfString:@"\""].location != NSNotFound ||
+                    [_txtEmail.text rangeOfString:@"\\"].location != NSNotFound || [_txtPassword.text rangeOfString:@"\\"].location != NSNotFound) {
+                    //what we wanna do
+                    [_connectionsHandler loginWithUser:_txtEmail.text andPass:_txtPassword.text];
+                    [_btnTop setEnabled:NO];
+                    [_btnBot setEnabled:NO];
+                    
+                } else {
+                    [[[UIAlertView alloc] initWithTitle:@"Invalid Details" message:@"The specified email or password uses illegal characters!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                }
+            } else {
+                [[[UIAlertView alloc] initWithTitle:@"Invalid Details" message:@"The specified email is invalid" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Invalid Details" message:@"Your password must contain a minimum of 6 characters" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Invalid Details" message:@"Please enter a valid email address and password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
 }
 
 - (void)reg {
+    
+    
+    
+    //checks if any text exists in the fields
+    if (![_txtEmail.text isEqual:@""] && ![_txtPassword.text isEqual:@""]) {
+        if (_txtEmail.text.length > 2 && _txtPassword.text.length > 5 && _txtSecret .text.length > 5) {
+            if ([_txtEmail.text rangeOfString:@"@"].location != NSNotFound) {
+                
+                
+                
+                if ([_txtEmail.text rangeOfString:@"\""].location != NSNotFound || [_txtPassword.text rangeOfString:@"\""].location != NSNotFound ||
+                    [_txtEmail.text rangeOfString:@"\\"].location != NSNotFound || [_txtPassword.text rangeOfString:@"\\"].location != NSNotFound || [_txtSecret.text rangeOfString:@"\""].location != NSNotFound || [_txtSecretQ.text rangeOfString:@"\""].location != NSNotFound ||
+                    [_txtSecretQ.text rangeOfString:@"\\"].location != NSNotFound || [_txtSecret.text rangeOfString:@"\\"].location != NSNotFound) {
+                    //what we wanna do
+                    [_connectionsHandler loginWithUser:_txtEmail.text andPass:_txtPassword.text];
+                    [_btnTop setEnabled:NO];
+                    [_btnBot setEnabled:NO];
+                    
+                } else {
+                    [[[UIAlertView alloc] initWithTitle:@"Invalid Details" message:@"The details provided contain illegal characters!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                }
+            } else {
+                [[[UIAlertView alloc] initWithTitle:@"Invalid Details" message:@"The specified email is invalid" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Invalid Details" message:@"Your password and Secret must contain a minimum of 6 characters" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Invalid Details" message:@"Please enter valid details" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     [self.view endEditing:YES];
     [_connectionsHandler registerWithEmail:_txtEmail.text andPass:_txtPassword.text andSecretQuestion:_txtSecretQ.text andSecret:_txtSecret.text];
     [_btnTop setEnabled:NO];
