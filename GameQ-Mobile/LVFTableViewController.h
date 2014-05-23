@@ -10,6 +10,7 @@
 #import "LVFConnections.h"
 #import "LVFViewController.h"
 #import "LVFTableViewController.h"
+#import "LVFSettingsController.h"
 
 #import "LVFTableView.h"
 #import "LVFCell.h"
@@ -17,10 +18,12 @@
 @class LVFConnections;
 @class LVFViewController;
 @class LVFTableView;
+@class LVFSettingsController;
 
 @interface LVFTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) LVFConnections *connectionsHandler;
+@property (strong, nonatomic) LVFSettingsController *settingsController;
 @property (strong, nonatomic) LVFViewController *mainController;
 @property (strong, nonatomic) LVFTableView *tableView;
 @property (strong, nonatomic) UINavigationBar *navBar;
@@ -31,5 +34,5 @@
 - (id)initWithMainController:(LVFViewController*)controller;
 - (void) requestUpdate;
 - (void) receiveUpdate:(NSMutableArray*)array;
-
+- (void) popController;
 @end

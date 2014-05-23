@@ -47,17 +47,22 @@
     [self.view setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
     CGRect frame2 = CGRectMake(0, 22, 320, 44);
     _navBar = [[UINavigationBar alloc] initWithFrame:frame2];
-    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"Online Devices"];
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(popController)];
+    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"My Devices"];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refreshDefault.png"] style:UIBarButtonItemStylePlain target:self action:@selector(pushSettingsController:)];
     [item setRightBarButtonItem:button];
-    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refreshDefault.png"] style:UIBarButtonItemStylePlain target:self action:@selector(requestUpdate)];
-    [item setLeftBarButtonItem:refreshButton];
+    
     [_navBar pushNavigationItem:item animated:YES];
     [self.view addSubview:_navBar];
     
     
     
     
+}
+
+-(IBAction)pushSettingsController:(id)sender
+{
+    _settingsController = [[LVFSettingsController alloc] initWithMainController:_mainController];
+    [self presentViewController:_settingsController animated:YES completion:NULL];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -104,6 +109,7 @@
 
 -(void) popController
 {
+    NSLog(@"popTable");
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

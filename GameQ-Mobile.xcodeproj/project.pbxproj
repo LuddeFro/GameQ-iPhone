@@ -72,7 +72,6 @@
 		839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839698F818A67BA900F2C417 /* StoreKit.framework */; };
 		83E0AD4C182C14970061EB49 /* refreshDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4B182C14970061EB49 /* refreshDefault.png */; };
 		83E0AD4E182C14FB0061EB49 /* refreshHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */; };
-		83E473EB18B8CC3F00B128EE /* LVFViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */; };
 		9C3BC0D5192CBD8D00145174 /* GQHomeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */; };
 /* End PBXBuildFile section */
 
@@ -167,8 +166,6 @@
 		839698F818A67BA900F2C417 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		83E0AD4B182C14970061EB49 /* refreshDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshDefault.png; sourceTree = "<group>"; };
 		83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshHighlighted.png; sourceTree = "<group>"; };
-		83E473E918B8CC3F00B128EE /* LVFViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFViewControllerTwo.h; sourceTree = "<group>"; };
-		83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFViewControllerTwo.m; sourceTree = "<group>"; };
 		9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQHomeScreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -323,8 +320,6 @@
 				837422951815B0DF000FCC76 /* Main_iPad.storyboard */,
 				837422961815B0DF000FCC76 /* LVFViewController.h */,
 				837422971815B0DF000FCC76 /* LVFViewController.m */,
-				83E473E918B8CC3F00B128EE /* LVFViewControllerTwo.h */,
-				83E473EA18B8CC3F00B128EE /* LVFViewControllerTwo.m */,
 				833403DD18C63A3000A8B6E0 /* LVFSettingsController.h */,
 				833403DE18C63A3000A8B6E0 /* LVFSettingsController.m */,
 				833403E018C63A6800A8B6E0 /* LVFAboutController.h */,
@@ -550,7 +545,6 @@
 				837422A31815B0DF000FCC76 /* LVFConnect.m in Sources */,
 				833403E218C63A6800A8B6E0 /* LVFAboutController.m in Sources */,
 				837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */,
-				83E473EB18B8CC3F00B128EE /* LVFViewControllerTwo.m in Sources */,
 				837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */,
 				833403DC18C5FA7E00A8B6E0 /* LVFCell.m in Sources */,
 				837422A11815B0DF000FCC76 /* NSString+SHA256.m in Sources */,

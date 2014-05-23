@@ -12,24 +12,26 @@
 #import "LVFAppDelegate.h"
 #import "LVFConnect.h"
 #import "LVFDefinitions.h"
-#import "LVFViewControllerTwo.h"
+#import "LVFTableViewController.h"
 
 
 
 @class LVFDataModel;
 @class LVFTableViewController;
 @class LVFConnections;
-@class LVFViewControllerTwo;
 
 @interface LVFViewController : UIViewController <UITextFieldDelegate>
+
+@property (strong, nonatomic) LVFTableViewController *tableViewController;
+
+
 
 @property (strong, nonatomic) UITextField *txtEmail;
 @property (strong, nonatomic) UITextField *txtPassword;
 @property (strong, nonatomic) UITextField *txtSecret;
 @property (strong, nonatomic) UITextField *txtSecretQ;
 @property BOOL bolIsRegging;
-@property BOOL bolIsLogging;
-
+@property BOOL bolIsUp;
 
 @property (strong, nonatomic) UIButton *btnTop;
 
@@ -43,11 +45,13 @@
 @property (strong, nonatomic) UINavigationController *navView;
 @property (strong, nonatomic) LVFConnections* connectionsHandler;
 @property (weak, nonatomic) IBOutlet UIButton *btnKeyboardDown;
-@property (strong, nonatomic) LVFViewControllerTwo *secondViewController;
+
 - (IBAction)resignKeyboard:(id)sender;
 - (void) log;
 - (void) setDisconnected;
 - (void) setConnected;
--(void) popSecondViewController;
+- (void) popSecondViewController;
+- (void) setupNothing;
+- (void) popControllers;
 
 @end

@@ -32,7 +32,7 @@
     [self.view addSubview:_imgBackgroundImageView];
     
     
-    _btnBack = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width-70, 25, 50, 30)];
+    _btnBack = [[UIButton alloc] initWithFrame:CGRectMake(20, 25, 50, 30)];
     [_btnBack setTitle:@"Back" forState:UIControlStateNormal];
     [_btnBack setTitleColor:[UIColor colorWithRed:0 green:0.48 blue:1 alpha:1] forState:UIControlStateNormal];
     [_btnBack setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateHighlighted];
@@ -60,12 +60,12 @@
     [self.view addSubview:_lblStatic];
     
     _btnAbout = [[UIButton alloc] init];
-    [_btnAbout setFrame:CGRectMake(0, self.view.frame.size.height-50, self.view.frame.size.width, 30)];
-    [_btnAbout setTitle:@"www.GameQ.com/about" forState:UIControlStateNormal];
+    [_btnAbout setFrame:CGRectMake(20, self.view.frame.size.height-50, self.view.frame.size.width-40, 30)];
+    [_btnAbout setTitle:@"www.GameQ.io" forState:UIControlStateNormal];
     [_btnAbout setTitleColor:[UIColor colorWithRed:0 green:0.48 blue:1 alpha:1] forState:UIControlStateNormal];
     [_btnAbout setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateHighlighted];
     [_btnAbout setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
-    
+    [_btnAbout addTarget:self action:@selector(visitPage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btnAbout];
 }
 

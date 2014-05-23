@@ -14,11 +14,12 @@
 
 @implementation LVFSettingsController
 
-- (id)init
+- (id)initWithMainController:(LVFViewController*)controller
 {
     self = [super init];
     if (self) {
         // Custom initialization
+        _mainController = controller;
         _dataHandler = [[LVFDataModel alloc] init];
     }
     return self;
@@ -29,14 +30,59 @@
     [super viewDidLoad];
 	
     
+    UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
+    UIColor *myTransWhite = [UIColor colorWithWhite:1 alpha:0.5];
+    UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
+    
+    
+    
+    
+    
+    
+    
+    
+    _btnTop = [[UIButton alloc] init];
+    _btnBot = [[UIButton alloc] init];
+    
+    
+    if(self.view.frame.size.height < 568) {
+        
+        [_btnTop setFrame:CGRectMake(20, 390, self.view.frame.size.width-40, 30)];
+        [_btnBot setFrame:CGRectMake(20, 428, self.view.frame.size.width-40, 30)];
+        
+    } else if (self.view.frame.size.height == 568) {
+        [_btnTop setFrame:CGRectMake(20, 480, self.view.frame.size.width-40, 30)];
+        [_btnBot setFrame:CGRectMake(20, 518, self.view.frame.size.width-40, 30)];
+    }
+    
+    [_btnTop addTarget:self action:@selector(topButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [_btnBot addTarget:self action:@selector(botButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [_btnTop setTitle:@"About" forState:UIControlStateNormal];
+    [_btnBot setTitle:@"Log Out" forState:UIControlStateNormal];
+    [_btnTop setTitleColor:myRed forState:UIControlStateNormal];
+    [_btnBot setTitleColor:myRed forState:UIControlStateNormal];
+    [_btnTop setTitleColor:myWhite forState:UIControlStateHighlighted];
+    [_btnBot setTitleColor:myWhite forState:UIControlStateHighlighted];
+    [_btnBot setBackgroundColor:myTransWhite];
+    [_btnTop setBackgroundColor:myTransWhite];
+    
+    
+    
+    
+    
+    
+    
     
     _imgBackgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
+    [_imgBackgroundImageView setFrame:self.view.frame];
     [self.view addSubview:_imgBackgroundImageView];
     
     
-    _btnBack = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width-70, 25, 50, 30)];
+    _btnBack = [[UIButton alloc] initWithFrame:CGRectMake(20, 25, 50, 30)];
     [_btnBack setTitle:@"Back" forState:UIControlStateNormal];
-    [_btnBack setTitleColor:[UIColor colorWithRed:0 green:0.48 blue:1 alpha:1] forState:UIControlStateNormal];
+    [_btnBack setTitleColor:myRed forState:UIControlStateNormal];
     [_btnBack setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateHighlighted];
     [_btnBack setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
     [_btnBack addTarget:self action:@selector(popController) forControlEvents:UIControlEventTouchUpInside];
@@ -55,7 +101,7 @@
     [self.view addSubview:_btnDummy2];
     
     
-    _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(0, 144, self.view.frame.size.width, 30)];
+    _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 184, self.view.frame.size.width-40, 30)];
     if ([[_dataHandler getBolRegisteredForNotifications] boolValue]) {
         [_btnToggleNotifications setTitle:@"Disable Notifications" forState:UIControlStateNormal];
     } else {
@@ -68,7 +114,7 @@
     [self.view addSubview:_btnToggleNotifications];
     
     _lblDynamic = [[UILabel alloc] init];
-    [_lblDynamic setFrame:CGRectMake(20, 169, self.view.frame.size.width-40, 30)];
+    [_lblDynamic setFrame:CGRectMake(20, 209, self.view.frame.size.width-40, 30)];
     [_lblDynamic setNumberOfLines:1];
     if ([[_dataHandler getBolRegisteredForNotifications] boolValue]) {
         [_lblDynamic setText:@"Notifications are enabled"];
@@ -79,13 +125,9 @@
     [_lblDynamic setTextColor:[UIColor colorWithWhite:1 alpha:1]];
     [self.view addSubview:_lblDynamic];
     
-    _lblStatic = [[UILabel alloc] init];
-    [_lblStatic setFrame:CGRectMake(20, 199, self.view.frame.size.width-40, self.view.frame.size.height-244)];
-    [_lblStatic setNumberOfLines:0];
-    [_lblStatic setText:@"More notification options can be accessed in the notifications-center section of your \"Settings\" application!"];
-    [_lblStatic setTextColor:[UIColor colorWithWhite:1 alpha:1]];
-    [self.view addSubview:_lblStatic];
     
+    [self.view addSubview:_btnTop];
+    [self.view addSubview:_btnBot];
     
     
     
@@ -119,11 +161,26 @@
     }
 }
 
-
-
 -(void) popController
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+-(void) topButtonPressed {
+    _aboutController = [[LVFAboutController alloc] init];
+    [self presentViewController:_aboutController animated:YES completion:NULL];
+}
+
+-(void) botButtonPressed {
+    [_mainController.btnTop setEnabled:NO];
+    [_mainController.btnBot setEnabled:NO];
+    [_mainController.connectionsHandler logoutPostFromToken:[_mainController.dataHandler getToken]];
+    [_mainController setupNothing];
+    //[self popController];
+    //[self dismissViewControllerAnimated:YES completion:NULL];
+    [_mainController popControllers];
+    
 }
 
 

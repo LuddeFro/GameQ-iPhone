@@ -110,7 +110,7 @@
             returnString = [returnString substringFromIndex:8];
             int items = [[returnString substringToIndex:2] intValue];
             if (items == 0) {
-                [_mainController.secondViewController.tableViewController receiveUpdate:NULL];
+                [_mainController.tableViewController receiveUpdate:NULL];
                 return;
             }
             
@@ -137,7 +137,7 @@
                 }
             }
             NSLog(@"sending it to the view controller");
-            [_mainController.secondViewController.tableViewController receiveUpdate:deviceArray];
+            [_mainController.tableViewController receiveUpdate:deviceArray];
             return;
         }
     }    
@@ -233,7 +233,7 @@
     }
     
     //if you just logged out
-    if ([returnString isEqualToString:@"logged out"])
+    if ([returnString isEqualToString:@"loggedOut"])
     {
         
         if (!disconnected)
@@ -269,25 +269,26 @@
     }
      */
      
-    /*
-     If registering is enabled from client
+    
     if ([returnString isEqualToString:@"signing up"])
     {
-        if (btnInvis.enabled == true)
-            [self signupFinTransitDelayed];
-        else
-            [self signupFinTransit];
-        [self goTutorial:btnTutorial];
-        btnSave.enabled = true;
+        [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"Welcome to GameQ, a temporary password has been sent to your email address for your first sign in. You are required to use it only once to activate your account!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [_mainController setupNothing];
+        [_mainController.txtPassword setText:@""];
+        [_mainController.btnTop setEnabled:YES];
+        [_mainController.btnBot setEnabled:YES];
+        [_mainController.txtSecret setText:@""];
+        [_mainController.txtSecretQ setText:@""];
         return;
     }
     if ([returnString isEqualToString:@"duplicate"])
     {
-        [[[UIAlertView alloc] initWithTitle:@"Free Lottery" message:@"An account with that e-mail address already exists" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        btnSave.enabled = true;
+        [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"An account with that e-mail address already exists" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [_mainController.btnTop setEnabled:YES];
+        [_mainController.btnBot setEnabled:YES];
         return;
     }
-     */
+    
     if ([returnString isEqualToString:@"badsession"])
     {
         //attempt to reconnect? or record disconnection and logout

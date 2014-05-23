@@ -27,8 +27,9 @@
         UIColor *myTransWhite = [UIColor colorWithWhite:1 alpha:0.5];
         UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
         
-        _bolIsLogging = false;
+        
         _bolIsRegging = false;
+        _bolIsUp = false;
         _imgLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQLogo.png"]];
         _imgBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
         
@@ -96,7 +97,8 @@
         [_txtSecret setKeyboardType:UIKeyboardTypeAlphabet];
         [_txtSecret setReturnKeyType:UIReturnKeyDone];
         [_txtSecret setDelegate:self];
-        [_txtSecret setEnabled:YES];
+        [_txtSecret setEnabled:NO];
+        [_txtSecret setAlpha:0];
         
         [_txtSecretQ setBackgroundColor:myWhite];
         [_txtSecretQ setPlaceholder:@"Secret Question / Hint"];
@@ -105,7 +107,8 @@
         [_txtSecretQ setKeyboardType:UIKeyboardTypeAlphabet];
         [_txtSecretQ setReturnKeyType:UIReturnKeyDone];
         [_txtSecretQ setDelegate:self];
-        [_txtSecretQ setEnabled:YES];
+        [_txtSecretQ setEnabled:NO];
+        [_txtSecretQ setAlpha:0];
         
         
         
@@ -141,6 +144,29 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self resignKeyboard:nil];
+    if (_bolIsRegging && _bolIsUp){
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.5];
+        
+        /* should move views */
+        if(self.view.frame.size.height < 568) {
+            self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 100);
+        } else if (self.view.frame.size.height == 568) {
+            self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 52);
+        }
+        
+        
+        [UIView commitAnimations];
+    }
+    
+    if (_bolIsRegging) {
+        [self reg];
+    } else {
+        [self log];
+    }
+    
+    
+    
     return YES;
 }
 
@@ -196,19 +222,29 @@
 
 - (IBAction)resignKeyboard:(id)sender {
     [self.view endEditing:YES];
+    if (_bolIsRegging && _bolIsUp){
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.5];
+        
+        /* should move views */
+        if(self.view.frame.size.height < 568) {
+            self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 100);
+        } else if (self.view.frame.size.height == 568) {
+            self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 52);
+        }
+        
+        
+        [UIView commitAnimations];
+    }
+    _bolIsUp = false;
 }
 
 - (IBAction)topButtonPressed:(id)sender
 {
-    if (_bolIsLogging) {
+    if (!_bolIsRegging) {
         [self log];
     } else if (_bolIsRegging) {
         [self reg];
-    } else {
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.3];
-        [self setupLogging];
-        [UIView commitAnimations];
     }
 }
 
@@ -218,7 +254,7 @@
     [UIView setAnimationDuration:0.3];
     
     
-    if (_bolIsRegging || _bolIsLogging) {
+    if (_bolIsRegging) {
         [self setupNothing];
     } else {
         [self setupRegging];
@@ -264,7 +300,7 @@
 
 -(void) setupLogging
 {
-    _bolIsLogging = true;
+    _bolIsRegging = false;
     
     [_txtEmail setEnabled:true];
     [_txtPassword setEnabled:true];
@@ -282,7 +318,6 @@
 
 -(void) setupNothing
 {
-    _bolIsLogging = false;
     _bolIsRegging = false;
     
     
@@ -323,9 +358,12 @@
 
 - (IBAction)pushSecondViewController
 {
+    _tableViewController = [[LVFTableViewController alloc] initWithMainController: self];
     
+    [self presentViewController:_tableViewController animated:YES completion:NULL];
+    /*
     _secondViewController = [[LVFViewControllerTwo alloc] initWithMainController:self];
-    [self presentViewController:_secondViewController animated:YES completion:NULL];
+    [self presentViewController:_secondViewController animated:YES completion:NULL];*/
 }
 
 -(void) popSecondViewController
@@ -342,49 +380,36 @@
     [_dataHandler setBolIsLoggedIn:[NSNumber numberWithBool:_bolLoggedIn]];
     [_dataHandler setEmail:_txtEmail.text];
     [_dataHandler setPass:@""];
+    NSLog(@"popping");
 }
-
-
-/* no longer used
-- (IBAction)visitPage:(id)sender {
-    [self.view endEditing:YES];
-    NSURL *urlAbout = [[NSURL alloc] initWithString:URL_ABOUT];
-    [[UIApplication sharedApplication] openURL:urlAbout];
-    
-}*/
 
 - (void)textFieldDidBeginEditing:(UITextField *)ga1
 {
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.5];
-    
-    /* should move views */
-    if(self.view.frame.size.height < 568) {
-        self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
-    } else if (self.view.frame.size.height == 568) {
-        self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 52);
+    if (_bolIsRegging && !_bolIsUp) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.5];
+        
+        /* should move views */
+        if(self.view.frame.size.height < 568) {
+            self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
+        } else if (self.view.frame.size.height == 568) {
+            self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 52);
+        }
+        
+        [UIView commitAnimations];
     }
-    
-    [UIView commitAnimations];
+    _bolIsUp = true;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)ga1
+- (void) popControllers
 {
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.5];
-    
-    /* should move views */
-    if(self.view.frame.size.height < 568) {
-        self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 100);
-    } else if (self.view.frame.size.height == 568) {
-        self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 52);
-    }
-    
-    
-    [UIView commitAnimations];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:NULL];
     
 }
+
+
+
 
 
 
