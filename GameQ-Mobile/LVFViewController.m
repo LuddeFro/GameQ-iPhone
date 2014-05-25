@@ -26,12 +26,13 @@
         UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
         UIColor *myTransWhite = [UIColor colorWithWhite:1 alpha:0.5];
         UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
+        UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
         
         
         _bolIsRegging = false;
         _bolIsUp = false;
-        _imgLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQLogo.png"]];
-        _imgBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
+        _imgLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"128white.png"]];
+        //_imgBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
         
         _txtEmail = [[UITextField alloc] init];
         _txtPassword = [[UITextField alloc] init];
@@ -41,11 +42,19 @@
         _btnTop = [[UIButton alloc] init];
         _btnBot = [[UIButton alloc] init];
         _btnResignKeyboard = [[UIButton alloc] initWithFrame:self.view.frame];
-        [_imgBackground setFrame:self.view.frame];
+        //[_imgBackground setFrame:self.view.frame];
+        
+        
+        //trying without bkgrnd pic
+        
+        //and with bkgrnd color
+        [self.view setBackgroundColor:myDarkGray];
+        
+        
         
         
         if(self.view.frame.size.height < 568) {
-            [_imgLogo setFrame:CGRectMake(7, 35, 306, 87)];
+            [_imgLogo setFrame:CGRectMake((self.view.frame.size.width-128)/2, 35, 128, 128)];
             
             [_txtEmail setFrame:CGRectMake(20, 200, self.view.frame.size.width-40, 30)];
             [_txtPassword setFrame:CGRectMake(20, 238, self.view.frame.size.width-40, 30)];
@@ -56,7 +65,8 @@
             [_btnBot setFrame:CGRectMake(20, 428, self.view.frame.size.width-40, 30)];
             
         } else if (self.view.frame.size.height == 568) {
-            [_imgLogo setFrame:CGRectMake(7, 65, 306, 87)];
+            [_imgLogo setImage:[UIImage imageNamed:@"256white.png"]];
+            [_imgLogo setFrame:CGRectMake((self.view.frame.size.width-128)/2, 65, 128, 128)];
             [_txtEmail setFrame:CGRectMake(20, 241, self.view.frame.size.width-40, 30)];
             [_txtPassword setFrame:CGRectMake(20, 279, self.view.frame.size.width-40, 30)];
             [_txtSecretQ setFrame:CGRectMake(20, 327, self.view.frame.size.width-40, 30)];
@@ -115,15 +125,15 @@
         
         [_btnTop setTitle:@"Sign In" forState:UIControlStateNormal];
         [_btnBot setTitle:@"Join GameQ" forState:UIControlStateNormal];
-        [_btnTop setTitleColor:myRed forState:UIControlStateNormal];
-        [_btnBot setTitleColor:myRed forState:UIControlStateNormal];
-        [_btnTop setTitleColor:myWhite forState:UIControlStateHighlighted];
-        [_btnBot setTitleColor:myWhite forState:UIControlStateHighlighted];
-        [_btnBot setBackgroundColor:myTransWhite];
-        [_btnTop setBackgroundColor:myTransWhite];
+        [_btnTop setTitleColor:myWhite forState:UIControlStateNormal];
+        [_btnBot setTitleColor:myWhite forState:UIControlStateNormal];
+        [_btnTop setTitleColor:myTransWhite forState:UIControlStateHighlighted];
+        [_btnBot setTitleColor:myTransWhite forState:UIControlStateHighlighted];
+        [_btnBot setBackgroundColor:myRed];
+        [_btnTop setBackgroundColor:myRed];
         
         
-        [self.view addSubview:_imgBackground];
+        //[self.view addSubview:_imgBackground];
         [self.view addSubview:_imgLogo];
         [self.view addSubview:_btnResignKeyboard];
         [self.view addSubview:_txtEmail];
@@ -140,6 +150,11 @@
     }
     
     return self;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -273,8 +288,8 @@
                 
                 
                 
-                if ([_txtEmail.text rangeOfString:@"\""].location != NSNotFound || [_txtPassword.text rangeOfString:@"\""].location != NSNotFound ||
-                    [_txtEmail.text rangeOfString:@"\\"].location != NSNotFound || [_txtPassword.text rangeOfString:@"\\"].location != NSNotFound) {
+                if ([_txtEmail.text rangeOfString:@"\""].location == NSNotFound && [_txtPassword.text rangeOfString:@"\""].location == NSNotFound &&
+                    [_txtEmail.text rangeOfString:@"\\"].location == NSNotFound && [_txtPassword.text rangeOfString:@"\\"].location == NSNotFound) {
                     //what we wanna do
                     [_connectionsHandler loginWithUser:_txtEmail.text andPass:_txtPassword.text];
                     [_btnTop setEnabled:NO];
@@ -316,11 +331,12 @@
                 
                 
                 
-                if ([_txtEmail.text rangeOfString:@"\""].location != NSNotFound || [_txtPassword.text rangeOfString:@"\""].location != NSNotFound ||
-                    [_txtEmail.text rangeOfString:@"\\"].location != NSNotFound || [_txtPassword.text rangeOfString:@"\\"].location != NSNotFound || [_txtSecret.text rangeOfString:@"\""].location != NSNotFound || [_txtSecretQ.text rangeOfString:@"\""].location != NSNotFound ||
-                    [_txtSecretQ.text rangeOfString:@"\\"].location != NSNotFound || [_txtSecret.text rangeOfString:@"\\"].location != NSNotFound) {
+                if ([_txtEmail.text rangeOfString:@"\""].location == NSNotFound && [_txtPassword.text rangeOfString:@"\""].location == NSNotFound &&
+                    [_txtEmail.text rangeOfString:@"\\"].location == NSNotFound && [_txtPassword.text rangeOfString:@"\\"].location == NSNotFound && [_txtSecret.text rangeOfString:@"\""].location == NSNotFound && [_txtSecretQ.text rangeOfString:@"\""].location == NSNotFound &&
+                    [_txtSecretQ.text rangeOfString:@"\\"].location == NSNotFound && [_txtSecret.text rangeOfString:@"\\"].location == NSNotFound) {
                     //what we wanna do
-                    [_connectionsHandler loginWithUser:_txtEmail.text andPass:_txtPassword.text];
+                    [self.view endEditing:YES];
+                    [_connectionsHandler registerWithEmail:_txtEmail.text andPass:_txtPassword.text andSecretQuestion:_txtSecretQ.text andSecret:_txtSecret.text];
                     [_btnTop setEnabled:NO];
                     [_btnBot setEnabled:NO];
                     
@@ -344,10 +360,7 @@
     
     
     
-    [self.view endEditing:YES];
-    [_connectionsHandler registerWithEmail:_txtEmail.text andPass:_txtPassword.text andSecretQuestion:_txtSecretQ.text andSecret:_txtSecret.text];
-    [_btnTop setEnabled:NO];
-    [_btnBot setEnabled:NO];
+    
 }
 
 -(void) setupRegging

@@ -9,37 +9,7 @@
 /* Begin PBXBuildFile section */
 		8311E3E51847A1DF0011212C /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8311E3E41847A1DF0011212C /* KeychainItemWrapper.m */; };
 		8311E3E71847A27A0011212C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8311E3E61847A27A0011212C /* Security.framework */; };
-		8311E404184B647D0011212C /* yellowLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8311E3FF184B647D0011212C /* yellowLight.png */; };
-		8311E405184B647D0011212C /* greyLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8311E400184B647D0011212C /* greyLight.png */; };
-		8311E406184B647D0011212C /* greenLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8311E401184B647D0011212C /* greenLight.png */; };
 		8311E407184B647D0011212C /* blueLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8311E402184B647D0011212C /* blueLight.png */; };
-		8311E408184B647D0011212C /* redLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8311E403184B647D0011212C /* redLight.png */; };
-		8311E465184B7BDF0011212C /* Abstract.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E446184B7BDF0011212C /* Abstract.php */; };
-		8311E466184B7BDF0011212C /* Autoload.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E447184B7BDF0011212C /* Autoload.php */; };
-		8311E467184B7BDF0011212C /* Exception.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E448184B7BDF0011212C /* Exception.php */; };
-		8311E468184B7BDF0011212C /* Feedback.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E449184B7BDF0011212C /* Feedback.php */; };
-		8311E469184B7BDF0011212C /* Embedded.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E44B184B7BDF0011212C /* Embedded.php */; };
-		8311E46A184B7BDF0011212C /* Interface.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E44C184B7BDF0011212C /* Interface.php */; };
-		8311E46B184B7BDF0011212C /* Custom.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E44E184B7BDF0011212C /* Custom.php */; };
-		8311E46C184B7BDF0011212C /* Exception.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E44F184B7BDF0011212C /* Exception.php */; };
-		8311E46D184B7BDF0011212C /* Message.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E450184B7BDF0011212C /* Message.php */; };
-		8311E46E184B7BDF0011212C /* Exception.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E452184B7BDF0011212C /* Exception.php */; };
-		8311E46F184B7BDF0011212C /* Exception.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E454184B7BDF0011212C /* Exception.php */; };
-		8311E470184B7BDF0011212C /* Server.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E455184B7BDF0011212C /* Server.php */; };
-		8311E471184B7BDF0011212C /* Push.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E456184B7BDF0011212C /* Push.php */; };
-		8311E472184B7BDF0011212C /* chkSecret copy.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E457184B7BDF0011212C /* chkSecret copy.php */; };
-		8311E473184B7BDF0011212C /* connect.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E458184B7BDF0011212C /* connect.php */; };
-		8311E474184B7BDF0011212C /* getSecret.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E459184B7BDF0011212C /* getSecret.php */; };
-		8311E475184B7BDF0011212C /* logging.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E45B184B7BDF0011212C /* logging.php */; };
-		8311E476184B7BDF0011212C /* methods.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E45C184B7BDF0011212C /* methods.php */; };
-		8311E477184B7BDF0011212C /* push.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E45D184B7BDF0011212C /* push.php */; };
-		8311E478184B7BDF0011212C /* regging.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E45E184B7BDF0011212C /* regging.php */; };
-		8311E479184B7BDF0011212C /* signing.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E45F184B7BDF0011212C /* signing.php */; };
-		8311E47A184B7BDF0011212C /* softPush.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E460184B7BDF0011212C /* softPush.php */; };
-		8311E47B184B7BDF0011212C /* updateDraw.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E461184B7BDF0011212C /* updateDraw.php */; };
-		8311E47C184B7BDF0011212C /* updateMe.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E462184B7BDF0011212C /* updateMe.php */; };
-		8311E47D184B7BDF0011212C /* upMacToken.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E463184B7BDF0011212C /* upMacToken.php */; };
-		8311E47E184B7BDF0011212C /* upToken.php in Resources */ = {isa = PBXBuildFile; fileRef = 8311E464184B7BDF0011212C /* upToken.php */; };
 		833403DC18C5FA7E00A8B6E0 /* LVFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 833403DB18C5FA7E00A8B6E0 /* LVFCell.m */; };
 		833403DF18C63A3000A8B6E0 /* LVFSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833403DE18C63A3000A8B6E0 /* LVFSettingsController.m */; };
 		833403E218C63A6800A8B6E0 /* LVFAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833403E118C63A6800A8B6E0 /* LVFAboutController.m */; };
@@ -70,9 +40,27 @@
 		837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AA18181E7A000FCC76 /* LVFDataModel.m */; };
 		837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AD18184443000FCC76 /* LVFDefinitions.m */; };
 		839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839698F818A67BA900F2C417 /* StoreKit.framework */; };
-		83E0AD4C182C14970061EB49 /* refreshDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4B182C14970061EB49 /* refreshDefault.png */; };
-		83E0AD4E182C14FB0061EB49 /* refreshHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */; };
 		9C3BC0D5192CBD8D00145174 /* GQHomeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */; };
+		9C6852C21931F51E00652B0C /* 128white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852C01931F51E00652B0C /* 128white.png */; };
+		9C6852C61931F7B700652B0C /* 512white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852C51931F7B700652B0C /* 512white.png */; };
+		9C6852C81931F8D000652B0C /* 512black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852C71931F8D000652B0C /* 512black.png */; };
+		9C6852CA1931F8D700652B0C /* 128black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852C91931F8D700652B0C /* 128black.png */; };
+		9C6852CC1931F9AE00652B0C /* 256white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852CB1931F9AE00652B0C /* 256white.png */; };
+		9C6852CE1931FEF000652B0C /* 256black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852CD1931FEF000652B0C /* 256black.png */; };
+		9C6852D719320A2F00652B0C /* greenLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852CF19320A2F00652B0C /* greenLight.png */; };
+		9C6852D819320A2F00652B0C /* greenLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852D019320A2F00652B0C /* greenLight@2x.png */; };
+		9C6852D919320A2F00652B0C /* greyLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852D119320A2F00652B0C /* greyLight.png */; };
+		9C6852DA19320A2F00652B0C /* greyLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852D219320A2F00652B0C /* greyLight@2x.png */; };
+		9C6852DB19320A2F00652B0C /* redLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852D319320A2F00652B0C /* redLight.png */; };
+		9C6852DC19320A2F00652B0C /* redLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852D419320A2F00652B0C /* redLight@2x.png */; };
+		9C6852DD19320A2F00652B0C /* yellowLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852D519320A2F00652B0C /* yellowLight.png */; };
+		9C6852DE19320A2F00652B0C /* yellowLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852D619320A2F00652B0C /* yellowLight@2x.png */; };
+		9C6852E319320BEF00652B0C /* kuggDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852DF19320BEF00652B0C /* kuggDefault.png */; };
+		9C6852E419320BEF00652B0C /* kuggDefault@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852E019320BEF00652B0C /* kuggDefault@2x.png */; };
+		9C6852E519320BEF00652B0C /* kuggHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852E119320BEF00652B0C /* kuggHighlighted.png */; };
+		9C6852E619320BEF00652B0C /* kuggHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852E219320BEF00652B0C /* kuggHighlighted@2x.png */; };
+		9C8B4D19193215B7004AA98C /* whiteQ.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8B4D17193215B7004AA98C /* whiteQ.png */; };
+		9C8B4D1A193215B7004AA98C /* whiteQ@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8B4D18193215B7004AA98C /* whiteQ@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,37 +77,7 @@
 		8311E3E31847A1DF0011212C /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		8311E3E41847A1DF0011212C /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		8311E3E61847A27A0011212C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		8311E3FF184B647D0011212C /* yellowLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowLight.png; sourceTree = "<group>"; };
-		8311E400184B647D0011212C /* greyLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyLight.png; sourceTree = "<group>"; };
-		8311E401184B647D0011212C /* greenLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenLight.png; sourceTree = "<group>"; };
 		8311E402184B647D0011212C /* blueLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLight.png; sourceTree = "<group>"; };
-		8311E403184B647D0011212C /* redLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redLight.png; sourceTree = "<group>"; };
-		8311E446184B7BDF0011212C /* Abstract.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Abstract.php; sourceTree = "<group>"; };
-		8311E447184B7BDF0011212C /* Autoload.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Autoload.php; sourceTree = "<group>"; };
-		8311E448184B7BDF0011212C /* Exception.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Exception.php; sourceTree = "<group>"; };
-		8311E449184B7BDF0011212C /* Feedback.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Feedback.php; sourceTree = "<group>"; };
-		8311E44B184B7BDF0011212C /* Embedded.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Embedded.php; sourceTree = "<group>"; };
-		8311E44C184B7BDF0011212C /* Interface.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Interface.php; sourceTree = "<group>"; };
-		8311E44E184B7BDF0011212C /* Custom.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Custom.php; sourceTree = "<group>"; };
-		8311E44F184B7BDF0011212C /* Exception.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Exception.php; sourceTree = "<group>"; };
-		8311E450184B7BDF0011212C /* Message.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Message.php; sourceTree = "<group>"; };
-		8311E452184B7BDF0011212C /* Exception.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Exception.php; sourceTree = "<group>"; };
-		8311E454184B7BDF0011212C /* Exception.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Exception.php; sourceTree = "<group>"; };
-		8311E455184B7BDF0011212C /* Server.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Server.php; sourceTree = "<group>"; };
-		8311E456184B7BDF0011212C /* Push.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Push.php; sourceTree = "<group>"; };
-		8311E457184B7BDF0011212C /* chkSecret copy.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = "chkSecret copy.php"; sourceTree = "<group>"; };
-		8311E458184B7BDF0011212C /* connect.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = connect.php; sourceTree = "<group>"; };
-		8311E459184B7BDF0011212C /* getSecret.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = getSecret.php; sourceTree = "<group>"; };
-		8311E45B184B7BDF0011212C /* logging.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = logging.php; sourceTree = "<group>"; };
-		8311E45C184B7BDF0011212C /* methods.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = methods.php; sourceTree = "<group>"; };
-		8311E45D184B7BDF0011212C /* push.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = push.php; sourceTree = "<group>"; };
-		8311E45E184B7BDF0011212C /* regging.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = regging.php; sourceTree = "<group>"; };
-		8311E45F184B7BDF0011212C /* signing.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = signing.php; sourceTree = "<group>"; };
-		8311E460184B7BDF0011212C /* softPush.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = softPush.php; sourceTree = "<group>"; };
-		8311E461184B7BDF0011212C /* updateDraw.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = updateDraw.php; sourceTree = "<group>"; };
-		8311E462184B7BDF0011212C /* updateMe.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = updateMe.php; sourceTree = "<group>"; };
-		8311E463184B7BDF0011212C /* upMacToken.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = upMacToken.php; sourceTree = "<group>"; };
-		8311E464184B7BDF0011212C /* upToken.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = upToken.php; sourceTree = "<group>"; };
 		833403DA18C5FA7E00A8B6E0 /* LVFCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFCell.h; sourceTree = "<group>"; };
 		833403DB18C5FA7E00A8B6E0 /* LVFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFCell.m; sourceTree = "<group>"; };
 		833403DD18C63A3000A8B6E0 /* LVFSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFSettingsController.h; sourceTree = "<group>"; };
@@ -164,9 +122,27 @@
 		837422AC18184443000FCC76 /* LVFDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDefinitions.h; sourceTree = "<group>"; };
 		837422AD18184443000FCC76 /* LVFDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFDefinitions.m; sourceTree = "<group>"; };
 		839698F818A67BA900F2C417 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		83E0AD4B182C14970061EB49 /* refreshDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshDefault.png; sourceTree = "<group>"; };
-		83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshHighlighted.png; sourceTree = "<group>"; };
 		9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQHomeScreen.png; sourceTree = "<group>"; };
+		9C6852C01931F51E00652B0C /* 128white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 128white.png; sourceTree = "<group>"; };
+		9C6852C51931F7B700652B0C /* 512white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 512white.png; sourceTree = "<group>"; };
+		9C6852C71931F8D000652B0C /* 512black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 512black.png; sourceTree = "<group>"; };
+		9C6852C91931F8D700652B0C /* 128black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 128black.png; sourceTree = "<group>"; };
+		9C6852CB1931F9AE00652B0C /* 256white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 256white.png; sourceTree = "<group>"; };
+		9C6852CD1931FEF000652B0C /* 256black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 256black.png; sourceTree = "<group>"; };
+		9C6852CF19320A2F00652B0C /* greenLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenLight.png; sourceTree = "<group>"; };
+		9C6852D019320A2F00652B0C /* greenLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenLight@2x.png"; sourceTree = "<group>"; };
+		9C6852D119320A2F00652B0C /* greyLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyLight.png; sourceTree = "<group>"; };
+		9C6852D219320A2F00652B0C /* greyLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyLight@2x.png"; sourceTree = "<group>"; };
+		9C6852D319320A2F00652B0C /* redLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redLight.png; sourceTree = "<group>"; };
+		9C6852D419320A2F00652B0C /* redLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redLight@2x.png"; sourceTree = "<group>"; };
+		9C6852D519320A2F00652B0C /* yellowLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowLight.png; sourceTree = "<group>"; };
+		9C6852D619320A2F00652B0C /* yellowLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellowLight@2x.png"; sourceTree = "<group>"; };
+		9C6852DF19320BEF00652B0C /* kuggDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kuggDefault.png; sourceTree = "<group>"; };
+		9C6852E019320BEF00652B0C /* kuggDefault@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kuggDefault@2x.png"; sourceTree = "<group>"; };
+		9C6852E119320BEF00652B0C /* kuggHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kuggHighlighted.png; sourceTree = "<group>"; };
+		9C6852E219320BEF00652B0C /* kuggHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kuggHighlighted@2x.png"; sourceTree = "<group>"; };
+		9C8B4D17193215B7004AA98C /* whiteQ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteQ.png; sourceTree = "<group>"; };
+		9C8B4D18193215B7004AA98C /* whiteQ@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteQ@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,87 +173,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8311E444184B7BDF0011212C /* GameQ_Server_Code */ = {
-			isa = PBXGroup;
-			children = (
-				8311E445184B7BDF0011212C /* ApnsPHP */,
-				8311E457184B7BDF0011212C /* chkSecret copy.php */,
-				8311E458184B7BDF0011212C /* connect.php */,
-				8311E459184B7BDF0011212C /* getSecret.php */,
-				8311E45A184B7BDF0011212C /* log */,
-				8311E45B184B7BDF0011212C /* logging.php */,
-				8311E45C184B7BDF0011212C /* methods.php */,
-				8311E45D184B7BDF0011212C /* push.php */,
-				8311E45E184B7BDF0011212C /* regging.php */,
-				8311E45F184B7BDF0011212C /* signing.php */,
-				8311E460184B7BDF0011212C /* softPush.php */,
-				8311E461184B7BDF0011212C /* updateDraw.php */,
-				8311E462184B7BDF0011212C /* updateMe.php */,
-				8311E463184B7BDF0011212C /* upMacToken.php */,
-				8311E464184B7BDF0011212C /* upToken.php */,
-			);
-			path = GameQ_Server_Code;
-			sourceTree = "<group>";
-		};
-		8311E445184B7BDF0011212C /* ApnsPHP */ = {
-			isa = PBXGroup;
-			children = (
-				8311E446184B7BDF0011212C /* Abstract.php */,
-				8311E447184B7BDF0011212C /* Autoload.php */,
-				8311E448184B7BDF0011212C /* Exception.php */,
-				8311E449184B7BDF0011212C /* Feedback.php */,
-				8311E44A184B7BDF0011212C /* Log */,
-				8311E44D184B7BDF0011212C /* Message */,
-				8311E450184B7BDF0011212C /* Message.php */,
-				8311E451184B7BDF0011212C /* Push */,
-				8311E456184B7BDF0011212C /* Push.php */,
-			);
-			path = ApnsPHP;
-			sourceTree = "<group>";
-		};
-		8311E44A184B7BDF0011212C /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				8311E44B184B7BDF0011212C /* Embedded.php */,
-				8311E44C184B7BDF0011212C /* Interface.php */,
-			);
-			path = Log;
-			sourceTree = "<group>";
-		};
-		8311E44D184B7BDF0011212C /* Message */ = {
-			isa = PBXGroup;
-			children = (
-				8311E44E184B7BDF0011212C /* Custom.php */,
-				8311E44F184B7BDF0011212C /* Exception.php */,
-			);
-			path = Message;
-			sourceTree = "<group>";
-		};
-		8311E451184B7BDF0011212C /* Push */ = {
-			isa = PBXGroup;
-			children = (
-				8311E452184B7BDF0011212C /* Exception.php */,
-				8311E453184B7BDF0011212C /* Server */,
-				8311E455184B7BDF0011212C /* Server.php */,
-			);
-			path = Push;
-			sourceTree = "<group>";
-		};
-		8311E453184B7BDF0011212C /* Server */ = {
-			isa = PBXGroup;
-			children = (
-				8311E454184B7BDF0011212C /* Exception.php */,
-			);
-			path = Server;
-			sourceTree = "<group>";
-		};
-		8311E45A184B7BDF0011212C /* log */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = log;
-			sourceTree = "<group>";
-		};
 		837422531815B0D4000FCC76 = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +247,6 @@
 		837422681815B0D4000FCC76 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8311E444184B7BDF0011212C /* GameQ_Server_Code */,
 				837422A81815B0EF000FCC76 /* Images */,
 				837422691815B0D4000FCC76 /* GameQ-Mobile-Info.plist */,
 				8374226A1815B0D4000FCC76 /* InfoPlist.strings */,
@@ -383,15 +277,29 @@
 		837422A81815B0EF000FCC76 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				83E0AD4B182C14970061EB49 /* refreshDefault.png */,
-				83E0AD4D182C14FB0061EB49 /* refreshHighlighted.png */,
 				836DA58818BAF078007DBC1F /* GQLogo.png */,
+				9C6852DF19320BEF00652B0C /* kuggDefault.png */,
+				9C6852E019320BEF00652B0C /* kuggDefault@2x.png */,
+				9C6852E119320BEF00652B0C /* kuggHighlighted.png */,
+				9C6852E219320BEF00652B0C /* kuggHighlighted@2x.png */,
+				9C6852C71931F8D000652B0C /* 512black.png */,
+				9C6852C51931F7B700652B0C /* 512white.png */,
+				9C8B4D17193215B7004AA98C /* whiteQ.png */,
+				9C8B4D18193215B7004AA98C /* whiteQ@2x.png */,
+				9C6852CB1931F9AE00652B0C /* 256white.png */,
+				9C6852CD1931FEF000652B0C /* 256black.png */,
+				9C6852C01931F51E00652B0C /* 128white.png */,
+				9C6852C91931F8D700652B0C /* 128black.png */,
+				9C6852CF19320A2F00652B0C /* greenLight.png */,
+				9C6852D019320A2F00652B0C /* greenLight@2x.png */,
+				9C6852D119320A2F00652B0C /* greyLight.png */,
+				9C6852D219320A2F00652B0C /* greyLight@2x.png */,
+				9C6852D319320A2F00652B0C /* redLight.png */,
+				9C6852D419320A2F00652B0C /* redLight@2x.png */,
+				9C6852D519320A2F00652B0C /* yellowLight.png */,
+				9C6852D619320A2F00652B0C /* yellowLight@2x.png */,
 				9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */,
-				8311E3FF184B647D0011212C /* yellowLight.png */,
-				8311E400184B647D0011212C /* greyLight.png */,
-				8311E401184B647D0011212C /* greenLight.png */,
 				8311E402184B647D0011212C /* blueLight.png */,
-				8311E403184B647D0011212C /* redLight.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -480,45 +388,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8311E471184B7BDF0011212C /* Push.php in Resources */,
-				8311E468184B7BDF0011212C /* Feedback.php in Resources */,
-				8311E466184B7BDF0011212C /* Autoload.php in Resources */,
-				8311E473184B7BDF0011212C /* connect.php in Resources */,
-				8311E470184B7BDF0011212C /* Server.php in Resources */,
-				8311E47B184B7BDF0011212C /* updateDraw.php in Resources */,
-				8311E46E184B7BDF0011212C /* Exception.php in Resources */,
-				8311E47A184B7BDF0011212C /* softPush.php in Resources */,
-				8311E47C184B7BDF0011212C /* updateMe.php in Resources */,
-				8311E474184B7BDF0011212C /* getSecret.php in Resources */,
-				8311E465184B7BDF0011212C /* Abstract.php in Resources */,
-				8311E478184B7BDF0011212C /* regging.php in Resources */,
 				836DA58918BAF078007DBC1F /* GQLogo.png in Resources */,
-				8311E467184B7BDF0011212C /* Exception.php in Resources */,
+				9C6852E319320BEF00652B0C /* kuggDefault.png in Resources */,
+				9C6852CE1931FEF000652B0C /* 256black.png in Resources */,
 				8311E407184B647D0011212C /* blueLight.png in Resources */,
-				8311E479184B7BDF0011212C /* signing.php in Resources */,
-				83E0AD4E182C14FB0061EB49 /* refreshHighlighted.png in Resources */,
-				8311E47D184B7BDF0011212C /* upMacToken.php in Resources */,
-				8311E472184B7BDF0011212C /* chkSecret copy.php in Resources */,
+				9C6852E619320BEF00652B0C /* kuggHighlighted@2x.png in Resources */,
+				9C6852E419320BEF00652B0C /* kuggDefault@2x.png in Resources */,
+				9C6852D919320A2F00652B0C /* greyLight.png in Resources */,
 				8374226C1815B0D4000FCC76 /* InfoPlist.strings in Resources */,
-				8311E408184B647D0011212C /* redLight.png in Resources */,
+				9C6852C81931F8D000652B0C /* 512black.png in Resources */,
+				9C6852DE19320A2F00652B0C /* yellowLight@2x.png in Resources */,
 				9C3BC0D5192CBD8D00145174 /* GQHomeScreen.png in Resources */,
-				8311E46F184B7BDF0011212C /* Exception.php in Resources */,
-				8311E475184B7BDF0011212C /* logging.php in Resources */,
-				8311E406184B647D0011212C /* greenLight.png in Resources */,
-				8311E46A184B7BDF0011212C /* Interface.php in Resources */,
-				8311E46D184B7BDF0011212C /* Message.php in Resources */,
 				8374229F1815B0DF000FCC76 /* Main_iPad.storyboard in Resources */,
-				8311E47E184B7BDF0011212C /* upToken.php in Resources */,
-				8311E405184B647D0011212C /* greyLight.png in Resources */,
+				9C6852C61931F7B700652B0C /* 512white.png in Resources */,
+				9C8B4D1A193215B7004AA98C /* whiteQ@2x.png in Resources */,
+				9C8B4D19193215B7004AA98C /* whiteQ.png in Resources */,
 				837422771815B0D4000FCC76 /* Images.xcassets in Resources */,
-				8311E469184B7BDF0011212C /* Embedded.php in Resources */,
-				8311E404184B647D0011212C /* yellowLight.png in Resources */,
-				83E0AD4C182C14970061EB49 /* refreshDefault.png in Resources */,
+				9C6852D719320A2F00652B0C /* greenLight.png in Resources */,
+				9C6852C21931F51E00652B0C /* 128white.png in Resources */,
+				9C6852CC1931F9AE00652B0C /* 256white.png in Resources */,
+				9C6852DB19320A2F00652B0C /* redLight.png in Resources */,
+				9C6852D819320A2F00652B0C /* greenLight@2x.png in Resources */,
 				8374229E1815B0DF000FCC76 /* Main_iPhone.storyboard in Resources */,
-				8311E46C184B7BDF0011212C /* Exception.php in Resources */,
-				8311E476184B7BDF0011212C /* methods.php in Resources */,
-				8311E477184B7BDF0011212C /* push.php in Resources */,
-				8311E46B184B7BDF0011212C /* Custom.php in Resources */,
+				9C6852CA1931F8D700652B0C /* 128black.png in Resources */,
+				9C6852DA19320A2F00652B0C /* greyLight@2x.png in Resources */,
+				9C6852E519320BEF00652B0C /* kuggHighlighted.png in Resources */,
+				9C6852DD19320A2F00652B0C /* yellowLight.png in Resources */,
+				9C6852DC19320A2F00652B0C /* redLight@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

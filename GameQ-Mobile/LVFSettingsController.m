@@ -33,7 +33,8 @@
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     UIColor *myTransWhite = [UIColor colorWithWhite:1 alpha:0.5];
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
-    
+    UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+    UIColor *cloudWhite = [UIColor colorWithRed:0.9255 green:0.9411 blue:0.9450 alpha:1];
     
     
     
@@ -61,12 +62,12 @@
     
     [_btnTop setTitle:@"About" forState:UIControlStateNormal];
     [_btnBot setTitle:@"Log Out" forState:UIControlStateNormal];
-    [_btnTop setTitleColor:myRed forState:UIControlStateNormal];
-    [_btnBot setTitleColor:myRed forState:UIControlStateNormal];
-    [_btnTop setTitleColor:myWhite forState:UIControlStateHighlighted];
-    [_btnBot setTitleColor:myWhite forState:UIControlStateHighlighted];
-    [_btnBot setBackgroundColor:myTransWhite];
-    [_btnTop setBackgroundColor:myTransWhite];
+    [_btnTop setTitleColor:myWhite forState:UIControlStateNormal];
+    [_btnBot setTitleColor:myWhite forState:UIControlStateNormal];
+    [_btnTop setTitleColor:myTransWhite forState:UIControlStateHighlighted];
+    [_btnBot setTitleColor:myTransWhite forState:UIControlStateHighlighted];
+    [_btnBot setBackgroundColor:myRed];
+    [_btnTop setBackgroundColor:myRed];
     
     
     
@@ -75,31 +76,32 @@
     
     
     
-    _imgBackgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
-    [_imgBackgroundImageView setFrame:self.view.frame];
-    [self.view addSubview:_imgBackgroundImageView];
-    
+    //_imgBackgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
+    //[_imgBackgroundImageView setFrame:self.view.frame];
+    //[self.view addSubview:_imgBackgroundImageView];
+    [self.view setBackgroundColor:cloudWhite];
     
     _btnBack = [[UIButton alloc] initWithFrame:CGRectMake(20, 25, 50, 30)];
     [_btnBack setTitle:@"Back" forState:UIControlStateNormal];
-    [_btnBack setTitleColor:myRed forState:UIControlStateNormal];
-    [_btnBack setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateHighlighted];
-    [_btnBack setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
+    [_btnBack setTitleColor:myWhite forState:UIControlStateNormal];
+    [_btnBack setTitleColor:myTransWhite forState:UIControlStateHighlighted];
+    [_btnBack setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
     [_btnBack addTarget:self action:@selector(popController) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_btnBack];
     
-    _btnDummy = [[UIButton alloc] initWithFrame:CGRectMake(0, _btnBack.frame.origin.y, _btnBack.frame.origin.x-2, _btnBack.frame.size.height)];
+    
+    _btnDummy = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _btnBack.frame.size.height + _btnBack.frame.origin.y + 5)];
     [_btnDummy setTitle:@"" forState:UIControlStateNormal];
-    [_btnDummy setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
+    [_btnDummy setBackgroundColor:myDarkGray];
     [_btnDummy setEnabled:NO];
     [self.view addSubview:_btnDummy];
-    
+    [self.view addSubview:_btnBack];
+    /*
     _btnDummy2 = [[UIButton alloc] initWithFrame:CGRectMake(_btnBack.frame.origin.x+_btnBack.frame.size.width+2, _btnBack.frame.origin.y, self.view.frame.size.width - (_btnBack.frame.origin.x+_btnBack.frame.size.width+2), _btnBack.frame.size.height)];
     [_btnDummy2 setTitle:@"" forState:UIControlStateNormal];
     [_btnDummy2 setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
     [_btnDummy2 setEnabled:NO];
     [self.view addSubview:_btnDummy2];
-    
+    */
     
     _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 184, self.view.frame.size.width-40, 30)];
     if ([[_dataHandler getBolRegisteredForNotifications] boolValue]) {
@@ -107,9 +109,9 @@
     } else {
         [_btnToggleNotifications setTitle:@"Enable Notifications" forState:UIControlStateNormal];
     }
-    [_btnToggleNotifications setTitleColor:[UIColor colorWithRed:0 green:0.48 blue:1 alpha:1] forState:UIControlStateNormal];
-    [_btnToggleNotifications setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateHighlighted];
-    [_btnToggleNotifications setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
+    [_btnToggleNotifications setTitleColor:myWhite forState:UIControlStateNormal];
+    [_btnToggleNotifications setTitleColor:myTransWhite forState:UIControlStateHighlighted];
+    [_btnToggleNotifications setBackgroundColor:myDarkGray];
     [_btnToggleNotifications addTarget:self action:@selector(toggleNotifications) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btnToggleNotifications];
     
@@ -140,7 +142,10 @@
 }
 
 
-
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 
 
 

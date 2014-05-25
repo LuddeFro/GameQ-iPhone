@@ -15,10 +15,10 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        _imgCellImage = [[UIImageView alloc] initWithFrame:CGRectMake(32, 11, 21, 21)];
-        _lblDeviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 03, 180, 21)];
-        _lblStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(74, 19
-                                                                   , 180, 21)];
+        _imgCellImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width - 43, 11, 21, 21)];
+        _lblDeviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 03, self.frame.size.width-50, 21)];
+        _lblStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 19
+                                                                   , self.frame.size.width-50, 21)];
         [self.contentView addSubview:_imgCellImage];
         [self.contentView addSubview:_lblStatusLabel];
         [self.contentView addSubview:_lblDeviceLabel];

@@ -28,6 +28,12 @@
 @property (strong, nonatomic) LVFTableView *tableView;
 @property (strong, nonatomic) UINavigationBar *navBar;
 @property (strong, nonatomic) NSMutableArray *deviceArray;
+@property (strong, nonatomic) NSMutableArray *array0;
+@property (strong, nonatomic) NSMutableArray *array1;
+@property (strong, nonatomic) NSMutableArray *array2;
+@property (strong, nonatomic) NSMutableArray *array4;
+
+
 
 @property (strong, nonatomic) NSTimer *refreshTimer;
 

@@ -29,6 +29,8 @@
     
     [_mainController.dataHandler setBolRegisteredForNotifications:[NSNumber numberWithBool:YES]];
     
+    self.window.tintColor = [UIColor whiteColor];
+    
     return YES;
 }
 

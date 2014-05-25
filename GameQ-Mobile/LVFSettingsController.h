@@ -17,12 +17,12 @@
 
 @interface LVFSettingsController : UIViewController
 
-@property UIImageView *imgBackgroundImageView;
+//@property UIImageView *imgBackgroundImageView;
 @property UIButton *btnToggleNotifications;
 @property (strong, nonatomic) LVFViewController *mainController;
 @property UIButton *btnBack;
 @property UIButton *btnDummy;
-@property UIButton *btnDummy2;
+//@property UIButton *btnDummy2;
 @property LVFDataModel *dataHandler;
 @property UILabel *lblDynamic;
 @property (strong, nonatomic) LVFAboutController *aboutController;

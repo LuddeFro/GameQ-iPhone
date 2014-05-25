@@ -36,7 +36,7 @@
 @property (strong, nonatomic) UIButton *btnTop;
 
 @property (strong, nonatomic) UIImageView *imgLogo;
-@property (strong, nonatomic) UIImageView *imgBackground;
+//@property (strong, nonatomic) UIImageView *imgBackground;
 @property (strong, nonatomic) UIButton *btnBot;
 @property (strong, nonatomic) UIButton *btnResignKeyboard;
 
