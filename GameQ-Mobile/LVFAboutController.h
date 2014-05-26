@@ -11,7 +11,7 @@
 
 @interface LVFAboutController : UIViewController
 
-@property UIImageView *imgBackgroundImageView;
+//@property UIImageView *imgBackgroundImageView;
 @property UIButton *btnBack;
 @property UIButton *btnDummy;
 @property UIButton *btnDummy2;

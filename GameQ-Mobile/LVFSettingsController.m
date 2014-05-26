@@ -33,6 +33,7 @@
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     UIColor *myTransWhite = [UIColor colorWithWhite:1 alpha:0.5];
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
+    UIColor *myTransRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:0.5];
     UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
     UIColor *cloudWhite = [UIColor colorWithRed:0.9255 green:0.9411 blue:0.9450 alpha:1];
     
@@ -79,9 +80,9 @@
     //_imgBackgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
     //[_imgBackgroundImageView setFrame:self.view.frame];
     //[self.view addSubview:_imgBackgroundImageView];
-    [self.view setBackgroundColor:cloudWhite];
+    [self.view setBackgroundColor:myDarkGray];
     
-    _btnBack = [[UIButton alloc] initWithFrame:CGRectMake(20, 25, 50, 30)];
+    _btnBack = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 50, 30)];
     [_btnBack setTitle:@"Back" forState:UIControlStateNormal];
     [_btnBack setTitleColor:myWhite forState:UIControlStateNormal];
     [_btnBack setTitleColor:myTransWhite forState:UIControlStateHighlighted];
@@ -89,9 +90,9 @@
     [_btnBack addTarget:self action:@selector(popController) forControlEvents:UIControlEventTouchUpInside];
     
     
-    _btnDummy = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _btnBack.frame.size.height + _btnBack.frame.origin.y + 5)];
+    _btnDummy = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     [_btnDummy setTitle:@"" forState:UIControlStateNormal];
-    [_btnDummy setBackgroundColor:myDarkGray];
+    [_btnDummy setBackgroundColor:myRed];
     [_btnDummy setEnabled:NO];
     [self.view addSubview:_btnDummy];
     [self.view addSubview:_btnBack];
@@ -109,9 +110,9 @@
     } else {
         [_btnToggleNotifications setTitle:@"Enable Notifications" forState:UIControlStateNormal];
     }
-    [_btnToggleNotifications setTitleColor:myWhite forState:UIControlStateNormal];
-    [_btnToggleNotifications setTitleColor:myTransWhite forState:UIControlStateHighlighted];
-    [_btnToggleNotifications setBackgroundColor:myDarkGray];
+    [_btnToggleNotifications setTitleColor:myRed forState:UIControlStateNormal];
+    [_btnToggleNotifications setTitleColor:myTransRed forState:UIControlStateHighlighted];
+    [_btnToggleNotifications setBackgroundColor:myWhite];
     [_btnToggleNotifications addTarget:self action:@selector(toggleNotifications) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btnToggleNotifications];
     
@@ -124,12 +125,21 @@
         [_lblDynamic setText:@"Notifications are disabled"];
     }
     [_lblDynamic setTextAlignment:NSTextAlignmentCenter];
-    [_lblDynamic setTextColor:[UIColor colorWithWhite:1 alpha:1]];
+    [_lblDynamic setTextColor:myRed];
     [self.view addSubview:_lblDynamic];
     
     
     [self.view addSubview:_btnTop];
     [self.view addSubview:_btnBot];
+    
+    _lblTitle = [[UILabel alloc] init];
+    [_lblTitle setFrame:CGRectMake(0, 30, self.view.frame.size.width, 30)];
+    [_lblTitle setNumberOfLines:1];
+    [_lblTitle setText:@"Settings"];
+    [_lblTitle setTextAlignment:NSTextAlignmentCenter];
+    [_lblTitle setTextColor:myWhite];
+    [_lblTitle setFont:[UIFont systemFontOfSize:20]];
+    [self.view addSubview:_lblTitle];
     
     
     

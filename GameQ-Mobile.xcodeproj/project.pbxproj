@@ -15,7 +15,6 @@
 		833403E218C63A6800A8B6E0 /* LVFAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833403E118C63A6800A8B6E0 /* LVFAboutController.m */; };
 		8365A708182BEFFE003F7301 /* LVFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8365A707182BEFFE003F7301 /* LVFTableView.m */; };
 		8365A70B182BF09E003F7301 /* LVFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8365A70A182BF09E003F7301 /* LVFTableViewController.m */; };
-		836DA58918BAF078007DBC1F /* GQLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 836DA58818BAF078007DBC1F /* GQLogo.png */; };
 		837422601815B0D4000FCC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8374225F1815B0D4000FCC76 /* Foundation.framework */; };
 		837422621815B0D4000FCC76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837422611815B0D4000FCC76 /* CoreGraphics.framework */; };
 		837422641815B0D4000FCC76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837422631815B0D4000FCC76 /* UIKit.framework */; };
@@ -42,11 +41,7 @@
 		839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839698F818A67BA900F2C417 /* StoreKit.framework */; };
 		9C3BC0D5192CBD8D00145174 /* GQHomeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */; };
 		9C6852C21931F51E00652B0C /* 128white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852C01931F51E00652B0C /* 128white.png */; };
-		9C6852C61931F7B700652B0C /* 512white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852C51931F7B700652B0C /* 512white.png */; };
-		9C6852C81931F8D000652B0C /* 512black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852C71931F8D000652B0C /* 512black.png */; };
-		9C6852CA1931F8D700652B0C /* 128black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852C91931F8D700652B0C /* 128black.png */; };
 		9C6852CC1931F9AE00652B0C /* 256white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852CB1931F9AE00652B0C /* 256white.png */; };
-		9C6852CE1931FEF000652B0C /* 256black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852CD1931FEF000652B0C /* 256black.png */; };
 		9C6852D719320A2F00652B0C /* greenLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852CF19320A2F00652B0C /* greenLight.png */; };
 		9C6852D819320A2F00652B0C /* greenLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852D019320A2F00652B0C /* greenLight@2x.png */; };
 		9C6852D919320A2F00652B0C /* greyLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852D119320A2F00652B0C /* greyLight.png */; };
@@ -88,7 +83,6 @@
 		8365A707182BEFFE003F7301 /* LVFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFTableView.m; sourceTree = "<group>"; };
 		8365A709182BF09E003F7301 /* LVFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFTableViewController.h; sourceTree = "<group>"; };
 		8365A70A182BF09E003F7301 /* LVFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFTableViewController.m; sourceTree = "<group>"; };
-		836DA58818BAF078007DBC1F /* GQLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQLogo.png; sourceTree = "<group>"; };
 		8374225C1815B0D4000FCC76 /* GameQ-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameQ-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8374225F1815B0D4000FCC76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		837422611815B0D4000FCC76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,11 +118,7 @@
 		839698F818A67BA900F2C417 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQHomeScreen.png; sourceTree = "<group>"; };
 		9C6852C01931F51E00652B0C /* 128white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 128white.png; sourceTree = "<group>"; };
-		9C6852C51931F7B700652B0C /* 512white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 512white.png; sourceTree = "<group>"; };
-		9C6852C71931F8D000652B0C /* 512black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 512black.png; sourceTree = "<group>"; };
-		9C6852C91931F8D700652B0C /* 128black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 128black.png; sourceTree = "<group>"; };
 		9C6852CB1931F9AE00652B0C /* 256white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 256white.png; sourceTree = "<group>"; };
-		9C6852CD1931FEF000652B0C /* 256black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 256black.png; sourceTree = "<group>"; };
 		9C6852CF19320A2F00652B0C /* greenLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenLight.png; sourceTree = "<group>"; };
 		9C6852D019320A2F00652B0C /* greenLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenLight@2x.png"; sourceTree = "<group>"; };
 		9C6852D119320A2F00652B0C /* greyLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyLight.png; sourceTree = "<group>"; };
@@ -277,19 +267,14 @@
 		837422A81815B0EF000FCC76 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				836DA58818BAF078007DBC1F /* GQLogo.png */,
 				9C6852DF19320BEF00652B0C /* kuggDefault.png */,
 				9C6852E019320BEF00652B0C /* kuggDefault@2x.png */,
 				9C6852E119320BEF00652B0C /* kuggHighlighted.png */,
 				9C6852E219320BEF00652B0C /* kuggHighlighted@2x.png */,
-				9C6852C71931F8D000652B0C /* 512black.png */,
-				9C6852C51931F7B700652B0C /* 512white.png */,
 				9C8B4D17193215B7004AA98C /* whiteQ.png */,
 				9C8B4D18193215B7004AA98C /* whiteQ@2x.png */,
 				9C6852CB1931F9AE00652B0C /* 256white.png */,
-				9C6852CD1931FEF000652B0C /* 256black.png */,
 				9C6852C01931F51E00652B0C /* 128white.png */,
-				9C6852C91931F8D700652B0C /* 128black.png */,
 				9C6852CF19320A2F00652B0C /* greenLight.png */,
 				9C6852D019320A2F00652B0C /* greenLight@2x.png */,
 				9C6852D119320A2F00652B0C /* greyLight.png */,
@@ -388,19 +373,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				836DA58918BAF078007DBC1F /* GQLogo.png in Resources */,
 				9C6852E319320BEF00652B0C /* kuggDefault.png in Resources */,
-				9C6852CE1931FEF000652B0C /* 256black.png in Resources */,
 				8311E407184B647D0011212C /* blueLight.png in Resources */,
 				9C6852E619320BEF00652B0C /* kuggHighlighted@2x.png in Resources */,
 				9C6852E419320BEF00652B0C /* kuggDefault@2x.png in Resources */,
 				9C6852D919320A2F00652B0C /* greyLight.png in Resources */,
 				8374226C1815B0D4000FCC76 /* InfoPlist.strings in Resources */,
-				9C6852C81931F8D000652B0C /* 512black.png in Resources */,
 				9C6852DE19320A2F00652B0C /* yellowLight@2x.png in Resources */,
 				9C3BC0D5192CBD8D00145174 /* GQHomeScreen.png in Resources */,
 				8374229F1815B0DF000FCC76 /* Main_iPad.storyboard in Resources */,
-				9C6852C61931F7B700652B0C /* 512white.png in Resources */,
 				9C8B4D1A193215B7004AA98C /* whiteQ@2x.png in Resources */,
 				9C8B4D19193215B7004AA98C /* whiteQ.png in Resources */,
 				837422771815B0D4000FCC76 /* Images.xcassets in Resources */,
@@ -410,7 +391,6 @@
 				9C6852DB19320A2F00652B0C /* redLight.png in Resources */,
 				9C6852D819320A2F00652B0C /* greenLight@2x.png in Resources */,
 				8374229E1815B0DF000FCC76 /* Main_iPhone.storyboard in Resources */,
-				9C6852CA1931F8D700652B0C /* 128black.png in Resources */,
 				9C6852DA19320A2F00652B0C /* greyLight@2x.png in Resources */,
 				9C6852E519320BEF00652B0C /* kuggHighlighted.png in Resources */,
 				9C6852DD19320A2F00652B0C /* yellowLight.png in Resources */,

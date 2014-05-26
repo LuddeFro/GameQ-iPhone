@@ -25,6 +25,7 @@
 //@property UIButton *btnDummy2;
 @property LVFDataModel *dataHandler;
 @property UILabel *lblDynamic;
+@property UILabel *lblTitle;
 @property (strong, nonatomic) LVFAboutController *aboutController;
 
 
