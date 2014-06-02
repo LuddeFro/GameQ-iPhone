@@ -83,8 +83,8 @@
         
         [_txtPassword setBackgroundColor:myWhite];
         [_txtEmail setBackgroundColor:myWhite];
-        [_txtEmail setPlaceholder:@"E-mail"];
-        [_txtPassword setPlaceholder:@"Password"];
+        [_txtEmail setPlaceholder:@" E-mail"];
+        [_txtPassword setPlaceholder:@" Password"];
         [_txtPassword setFont:[UIFont systemFontOfSize:14]];
         [_txtEmail setFont:[UIFont systemFontOfSize:14]];
         [_txtPassword setBorderStyle:UITextBorderStyleRoundedRect];
@@ -100,7 +100,7 @@
         [_txtEmail setHidden:false];
         
         [_txtSecret setBackgroundColor:myWhite];
-        [_txtSecret setPlaceholder:@"Secret"];
+        [_txtSecret setPlaceholder:@" Secret"];
         [_txtSecret setFont:[UIFont systemFontOfSize:14]];
         [_txtSecret setBorderStyle:UITextBorderStyleRoundedRect];
         [_txtSecret setSecureTextEntry:YES];
@@ -111,7 +111,7 @@
         [_txtSecret setAlpha:0];
         
         [_txtSecretQ setBackgroundColor:myWhite];
-        [_txtSecretQ setPlaceholder:@"Secret Question / Hint"];
+        [_txtSecretQ setPlaceholder:@" Secret Question / Hint"];
         [_txtSecretQ setFont:[UIFont systemFontOfSize:14]];
         [_txtSecretQ setBorderStyle:UITextBorderStyleRoundedRect];
         [_txtSecretQ setKeyboardType:UIKeyboardTypeAlphabet];
@@ -120,7 +120,7 @@
         [_txtSecretQ setEnabled:NO];
         [_txtSecretQ setAlpha:0];
         
-        
+        [[UITextField appearance] setKeyboardAppearance:UIKeyboardAppearanceDark];
         
         
         [_btnTop setTitle:@"Sign In" forState:UIControlStateNormal];
@@ -159,17 +159,22 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self resignKeyboard:nil];
-    if (_bolIsRegging && _bolIsUp){
+    if ((_bolIsRegging && !_bolIsUp) || (!_bolIsUp && self.view.frame.size.height < 568) ){
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.5];
         
         /* should move views */
         if(self.view.frame.size.height < 568) {
-            self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 100);
+            if (_bolIsRegging) {
+                self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 100);
+            } else {
+                self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 20);
+            }
         } else if (self.view.frame.size.height == 568) {
             self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 52);
         }
-        
+        [_btnTop setAlpha:1];
+        [_btnBot setAlpha:1];
         
         [UIView commitAnimations];
     }
@@ -207,6 +212,7 @@
     if (_bolLoggedIn) {
         [_connectionsHandler loginWithUser:[_dataHandler getEmail] andPass:[_dataHandler getPass]];
     }
+    [_connectionsHandler chkVersion];
     
     
 }
@@ -237,17 +243,22 @@
 
 - (IBAction)resignKeyboard:(id)sender {
     [self.view endEditing:YES];
-    if (_bolIsRegging && _bolIsUp){
+    if ((_bolIsRegging && _bolIsUp) || (_bolIsUp && self.view.frame.size.height < 568) ){
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.5];
         
         /* should move views */
         if(self.view.frame.size.height < 568) {
-            self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 100);
+            if (_bolIsRegging) {
+                self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 100);
+            } else {
+                self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 20);
+            }
         } else if (self.view.frame.size.height == 568) {
             self.view.center = CGPointMake(self.view.center.x, self.view.center.y + 52);
         }
-        
+        [_btnBot setAlpha:1];
+        [_btnTop setAlpha:1];
         
         [UIView commitAnimations];
     }
@@ -468,20 +479,26 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)ga1
 {
-    if (_bolIsRegging && !_bolIsUp) {
+    if ((_bolIsRegging && !_bolIsUp) || (!_bolIsUp && self.view.frame.size.height < 568) ) {
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.5];
         
         /* should move views */
         if(self.view.frame.size.height < 568) {
-            self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
+            if (_bolIsRegging) {
+                self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
+            } else {
+                self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 20);
+            }
         } else if (self.view.frame.size.height == 568) {
             self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 52);
         }
-        
+        [_btnTop setAlpha:0];
+        [_btnBot setAlpha:0];
         [UIView commitAnimations];
     }
     _bolIsUp = true;
+    
 }
 
 - (void) popControllers

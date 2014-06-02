@@ -10,6 +10,7 @@
 #import "LVFConnections.h"
 #import "LVFAppDelegate.h"
 #import "LVFViewController.h"
+#import "LVFDefinitions.h"
 
 @class LVFConnections;
 @class LVFViewController;

@@ -32,6 +32,14 @@
     
 }
 
+- (void) chkVersion
+{
+    NSString *postString = [NSString stringWithFormat:@"device=mac"];
+    NSString *postUrl = versionURL;
+    [_gqConnect postNow:postString to:postUrl];
+    NSLog(@"get secret posted");
+}
+
 - (void)loginWithUser:(NSString*)username andPass:(NSString*)losenord
 {
     losenord = [losenord SHA256];

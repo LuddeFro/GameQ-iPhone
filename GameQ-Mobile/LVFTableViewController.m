@@ -150,7 +150,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    [label setBackgroundColor:[UIColor clearColor]];
+    UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+    [label setBackgroundColor:myDarkGray];
     [label setFont:[UIFont boldSystemFontOfSize:12.0f]];
     [label setShadowColor:[UIColor colorWithWhite:1 alpha:0]];
     [label setTextAlignment:NSTextAlignmentCenter];

@@ -140,7 +140,19 @@
             [_mainController.tableViewController receiveUpdate:deviceArray];
             return;
         }
-    }    
+    }
+    //check if newer version exists
+    if (returnString.length >= 7) {
+        if ([[returnString substringWithRange:NSMakeRange(0, 7)] isEqualToString:@"version"])
+        {
+            if (![[returnString substringFromIndex:7] isEqualToString:kVersion])
+            {
+                [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"A newer version of GameQ is available. Get it in the appstore or at GameQ.io" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }
+            return;
+            
+        }
+    }
     
     /* following statements used if support is added in-app for forgotten passwords
      also see getSecret and chkSecret methods in LVFConnections.m

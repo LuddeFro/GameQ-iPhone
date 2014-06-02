@@ -25,5 +25,5 @@
 - (void)upAppPost;
 - (void)registerWithEmail:(NSString*)email andPass:(NSString*)losenord andSecretQuestion:(NSString*)secretQuestion andSecret:(NSString*)secret;
 //- (void) upTokenWithToken:(NSString *)token andDeviceName:(NSString *)name andEmail:(NSString *)email;
-
+- (void) chkVersion;
 @end

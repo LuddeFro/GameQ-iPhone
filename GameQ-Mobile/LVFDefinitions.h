@@ -21,7 +21,9 @@
 #define updateTokenURL kGameQServerURL@"upToken.php"
 #define kAPPID @"GameQ"
 
+#define versionURL kGameQServerURL@"versionControl.php"
 #define URL_ABOUT @"http://www.gameQ.io#read-more"
+#define kVersion @"1.0"
 
 @interface LVFDefinitions : NSObject
 

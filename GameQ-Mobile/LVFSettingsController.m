@@ -110,9 +110,9 @@
     } else {
         [_btnToggleNotifications setTitle:@"Enable Notifications" forState:UIControlStateNormal];
     }
-    [_btnToggleNotifications setTitleColor:myRed forState:UIControlStateNormal];
-    [_btnToggleNotifications setTitleColor:myTransRed forState:UIControlStateHighlighted];
-    [_btnToggleNotifications setBackgroundColor:myWhite];
+    [_btnToggleNotifications setTitleColor:myWhite forState:UIControlStateNormal];
+    [_btnToggleNotifications setTitleColor:myTransWhite forState:UIControlStateHighlighted];
+    [_btnToggleNotifications setBackgroundColor:myRed];
     [_btnToggleNotifications addTarget:self action:@selector(toggleNotifications) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btnToggleNotifications];
     
@@ -125,7 +125,7 @@
         [_lblDynamic setText:@"Notifications are disabled"];
     }
     [_lblDynamic setTextAlignment:NSTextAlignmentCenter];
-    [_lblDynamic setTextColor:myRed];
+    [_lblDynamic setTextColor:myWhite];
     [self.view addSubview:_lblDynamic];
     
     

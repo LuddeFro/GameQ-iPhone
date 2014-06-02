@@ -22,7 +22,7 @@
         [self.contentView addSubview:_imgCellImage];
         [self.contentView addSubview:_lblStatusLabel];
         [self.contentView addSubview:_lblDeviceLabel];
-        
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return self;
 }
