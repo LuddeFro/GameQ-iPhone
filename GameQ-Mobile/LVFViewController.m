@@ -25,8 +25,9 @@
         
         UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
         UIColor *myTransWhite = [UIColor colorWithWhite:1 alpha:0.5];
-        UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:0.9];
+        UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:0.9001];
         UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+        
         
         
         _bolIsRegging = false;
