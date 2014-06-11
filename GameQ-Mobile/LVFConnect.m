@@ -234,6 +234,35 @@
     }
     
     // if sign in failed
+    if ([returnString isEqualToString:@"signing upmailerr"])
+    {
+        //ios alert
+        [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"Welcome to GameQ, you can sign in immediately!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        return;
+    }
+    
+    // if sign in failed
+    if ([returnString isEqualToString:@"signing upmailerrno"])
+    {
+        //ios alert
+        [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"A critical error has occured, please contact support" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [_mainController setupNothing];
+        [_mainController.txtPassword setText:@""];
+        [_mainController.btnTop setEnabled:YES];
+        [_mainController.btnBot setEnabled:YES];
+        [_mainController.txtSecret setText:@""];
+        [_mainController.txtSecretQ setText:@""];
+        return;
+    }
+    
+    // if sign in failed
+    if ([returnString isEqualToString:@"mailerr"])
+    {
+        //ios alert
+        [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"Something went wrong, the GameQ servers may be down" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+    // if sign in failed
     if ([returnString isEqualToString:@"sign in failed"])
     {
         //ios alert

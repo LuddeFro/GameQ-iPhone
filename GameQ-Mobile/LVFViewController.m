@@ -121,7 +121,7 @@
         [_txtSecretQ setAlpha:0];
         
         [[UITextField appearance] setKeyboardAppearance:UIKeyboardAppearanceDark];
-        
+        [[UITextField appearance] setTintColor:[UIColor blackColor]];
         
         [_btnTop setTitle:@"Sign In" forState:UIControlStateNormal];
         [_btnBot setTitle:@"Join GameQ" forState:UIControlStateNormal];
@@ -159,7 +159,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self resignKeyboard:nil];
-    if ((_bolIsRegging && !_bolIsUp) || (!_bolIsUp && self.view.frame.size.height < 568) ){
+    if ((_bolIsRegging && _bolIsUp) || (_bolIsUp && self.view.frame.size.height < 568) ){
+        
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.5];
         
