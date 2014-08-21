@@ -54,7 +54,7 @@
     [_tableView setDelegate:self];
     [self.view addSubview:_tableView];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    [self.view setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
+    [self.view setBackgroundColor:myWhite];
     CGRect frame2 = CGRectMake(0, 22, 320, 44);
     _navBar = [[UINavigationBar alloc] initWithFrame:frame2];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -95,6 +95,8 @@
     
     
 }
+
+
 
 -(void)dummy
 {
@@ -150,11 +152,12 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+    UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     [label setBackgroundColor:myDarkGray];
     [label setFont:[UIFont boldSystemFontOfSize:12.0f]];
     [label setShadowColor:[UIColor colorWithWhite:1 alpha:0]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setTextColor:[UIColor whiteColor]];
+    [label setTextColor:myWhite];
     [label sizeToFit];
     if (section == 0) {
         if (_array2.count == 0) {
@@ -196,6 +199,11 @@
 {
     NSLog(@"refreshing");
     [_connectionsHandler upAppPost];
+}
+
+- (void) reload
+{
+    [self receiveUpdate:self.mainController.secondViewController.deviceArray];
 }
 
 - (void) receiveUpdate:(NSMutableArray*)array
@@ -365,7 +373,7 @@
             }
         
         
-        cell.lblDeviceLabel.text = [item substringFromIndex:4];
+        cell.lblDeviceLabel.text = [item substringWithRange:NSMakeRange(4, item.length-18)];
 
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -84,7 +84,6 @@
         <!--View Controller-->
         <scene sceneID="oVc-KF-CDN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4r7-54-oaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bf5-78-JQg" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mUX-R1-ght"/>
@@ -137,6 +136,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jd5-c4-Um2"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4r7-54-oaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="538" y="194"/>
         </scene>

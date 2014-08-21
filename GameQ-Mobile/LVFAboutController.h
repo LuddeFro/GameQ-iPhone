@@ -18,4 +18,5 @@
 @property UIButton *btnAbout;
 @property UILabel *lblStatic;
 
+@property UILabel *lblTitle;
 @end

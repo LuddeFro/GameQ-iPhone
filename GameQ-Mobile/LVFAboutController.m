@@ -68,8 +68,8 @@
     _lblStatic = [[UILabel alloc] init];
     [_lblStatic setFrame:CGRectMake(20, 55, self.view.frame.size.width-40, self.view.frame.size.height-105)];
     [_lblStatic setNumberOfLines:0];
-    [_lblStatic setText:@"GameQ is an application designed to help you save time while gaming. No longer do you have to fret leaving the screen for a second in fear of missing the queue pop. Whenever a queue ends on one of your connected computers, all your mobile devices will be notified, and so will you!\r\n\r\nFor more info or if you wish to download the app to your other devices, Game Q is available on the AppStore, GooglePlay and on our website at:"];
-    [_lblStatic setTextColor:[UIColor colorWithWhite:1 alpha:1]];
+    [_lblStatic setText:@"Game•Q is an application designed to help you save time while gaming. No longer do you have to fret leaving the screen for a second in fear of missing the queue pop. Whenever a queue ends on one of your connected computers, all your mobile devices will be notified, and so will you!\r\n\r\nFor more info or if you wish to download the app to your other devices, Game•Q is available on the AppStore, GooglePlay and on our website at:"];
+    [_lblStatic setTextColor:myWhite];
     [self.view addSubview:_lblStatic];
     
     _btnAbout = [[UIButton alloc] init];
@@ -80,6 +80,15 @@
     [_btnAbout setBackgroundColor:myRed];
     [_btnAbout addTarget:self action:@selector(visitPage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btnAbout];
+    
+    _lblTitle = [[UILabel alloc] init];
+    [_lblTitle setFrame:CGRectMake(0, 30, self.view.frame.size.width, 30)];
+    [_lblTitle setNumberOfLines:1];
+    [_lblTitle setText:@"About"];
+    [_lblTitle setTextAlignment:NSTextAlignmentCenter];
+    [_lblTitle setTextColor:myWhite];
+    [_lblTitle setFont:[UIFont boldSystemFontOfSize:20]];
+    [self.view addSubview:_lblTitle];
 }
 
 - (void)didReceiveMemoryWarning

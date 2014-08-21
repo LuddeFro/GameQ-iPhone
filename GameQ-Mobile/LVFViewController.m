@@ -454,12 +454,13 @@
 
 - (IBAction)pushSecondViewController
 {
-    _tableViewController = [[LVFTableViewController alloc] initWithMainController: self];
-    
-    [self presentViewController:_tableViewController animated:YES completion:NULL];
     /*
-    _secondViewController = [[LVFViewControllerTwo alloc] initWithMainController:self];
-    [self presentViewController:_secondViewController animated:YES completion:NULL];*/
+    _tableViewController = [[LVFTableViewController alloc] initWithMainController: self];
+    [self presentViewController:_tableViewController animated:YES completion:NULL];
+     */
+    NSLog(@"pushing pageView");
+    _secondViewController = [[LVFMasterViewController alloc] initWithMainController:self];
+    [self presentViewController:_secondViewController animated:YES completion:NULL];
 }
 
 -(void) popSecondViewController

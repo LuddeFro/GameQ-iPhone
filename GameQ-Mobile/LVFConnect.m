@@ -110,7 +110,7 @@
             returnString = [returnString substringFromIndex:8];
             int items = [[returnString substringToIndex:2] intValue];
             if (items == 0) {
-                [_mainController.tableViewController receiveUpdate:NULL];
+                [_mainController.secondViewController receiveUpdate:NULL];
                 return;
             }
             
@@ -120,7 +120,7 @@
                 int len = [[returnString substringToIndex:2] intValue];
                 returnString = [returnString substringFromIndex:2];
                 NSLog(@"%@", returnString);
-                NSString *itemString = [returnString substringToIndex:(len+4)];
+                NSString *itemString = [returnString substringToIndex:(len+18)];
                 [deviceArray addObject:itemString];
                 NSLog(@"%@",itemString);
                 
@@ -133,11 +133,11 @@
                 }
                 else {
                     NSLog(@"more items");
-                    returnString = [returnString substringFromIndex:len+4];
+                    returnString = [returnString substringFromIndex:len+18];
                 }
             }
             NSLog(@"sending it to the view controller");
-            [_mainController.tableViewController receiveUpdate:deviceArray];
+            [_mainController.secondViewController receiveUpdate:deviceArray];
             return;
         }
     }

@@ -136,7 +136,7 @@
     [_lblTitle setText:@"Settings"];
     [_lblTitle setTextAlignment:NSTextAlignmentCenter];
     [_lblTitle setTextColor:myWhite];
-    [_lblTitle setFont:[UIFont systemFontOfSize:20]];
+    [_lblTitle setFont:[UIFont boldSystemFontOfSize:20]];
     [self.view addSubview:_lblTitle];
     
     

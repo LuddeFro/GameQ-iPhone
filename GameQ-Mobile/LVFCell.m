@@ -15,6 +15,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        
+        
         _imgCellImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width - 43, 11, 21, 21)];
         _lblDeviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 03, self.frame.size.width-50, 21)];
         _lblStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 19
@@ -23,6 +25,9 @@
         [self.contentView addSubview:_lblStatusLabel];
         [self.contentView addSubview:_lblDeviceLabel];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
+        
+        
     }
     return self;
 }

@@ -13,17 +13,20 @@
 #import "LVFConnect.h"
 #import "LVFDefinitions.h"
 #import "LVFTableViewController.h"
-
+#import "LVFViewControllerTwo.h"
+#import "LVFMasterViewController.h"
 
 
 @class LVFDataModel;
 @class LVFTableViewController;
+@class LVFViewControllerTwo;
 @class LVFConnections;
+@class LVFMasterViewController;
 
 @interface LVFViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) LVFTableViewController *tableViewController;
-
+//@property (strong, nonatomic) LVFTableViewController *tableViewController;
+@property (strong, nonatomic) LVFMasterViewController *secondViewController;
 
 
 @property (strong, nonatomic) UITextField *txtEmail;

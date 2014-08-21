@@ -41,4 +41,5 @@
 - (void) requestUpdate;
 - (void) receiveUpdate:(NSMutableArray*)array;
 - (void) popController;
+- (void) reload;
 @end
