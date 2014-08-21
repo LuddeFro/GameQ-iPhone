@@ -34,5 +34,5 @@
 @property (strong, nonatomic) UIButton *btnBot;
 
 - (id)initWithMainController:(LVFViewController*)controller;
-
+- (void)reload;
 @end

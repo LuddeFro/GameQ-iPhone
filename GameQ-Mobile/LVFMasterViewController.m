@@ -24,15 +24,10 @@
     return self;
 }
 
--(IBAction)pushSettingsController:(id)sender
-{
-    _settingsController = [[LVFSettingsController alloc] initWithMainController:_mainController];
-    [self presentViewController:_settingsController animated:YES completion:NULL];
-}
 
 - (void)viewDidLoad
 {
-    _startIndex = 0;
+    
     [super viewDidLoad];
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
@@ -64,26 +59,27 @@
     [self requestUpdate];
     [self startTimer];
     
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    [titleLabel setBackgroundColor:[UIColor clearColor]];
-    [titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
-    [titleLabel setShadowColor:[UIColor colorWithWhite:1 alpha:0]];
-    [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [titleLabel setTextColor:myWhite];
-    [titleLabel setText:@"GameQ"];
-    [titleLabel sizeToFit];
     UINavigationItem *item = [[UINavigationItem alloc] init];
-    item.titleView = titleLabel;
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"kuggDefault.png"] style:UIBarButtonItemStylePlain target:self action:@selector(pushSettingsController:)];
-    [item setRightBarButtonItem:button];
     
-    UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"whiteQ.png"]];
+    _listView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"listIcon.png"]];
+    _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"whiteQ.png"]];
+    _gearView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kuggDefault.png"]];
+    [_listView setAlpha:0.4];
+    [_gearView setAlpha:0.4];
+    _leftItemRect = CGRectMake(15, 29, 30, 30);
+    _rightItemRect = CGRectMake(275, 29, 30, 30);
+    _centerItemRect = CGRectMake(145, 29, 30, 30);
+    _outLeftItemRect = CGRectMake(-30, 29, 30, 30);
+    _outRightItemRect = CGRectMake(320, 29, 30, 30);
+    [_listView setFrame:_rightItemRect];
+    [_logoView setFrame:_centerItemRect];
+    [_gearView setFrame:_leftItemRect];
     
-    [logoView setFrame:CGRectMake(15, 29, 30, 30)];
     CGRect frame2 = CGRectMake(0, 00, 320, 66);
     _navBar = [[UINavigationBar alloc] initWithFrame:frame2];
-    [_navBar addSubview:logoView];
+    [_navBar addSubview:_logoView];
+    [_navBar addSubview:_listView];
+    [_navBar addSubview:_gearView];
     [self.view addSubview:_navBar];
     [_navBar setBarStyle:UIBarStyleDefault];
     [_navBar setBackgroundColor:myLightGray];
@@ -182,8 +178,10 @@
     }
     if ([[_pageController.viewControllers objectAtIndex:0] isKindOfClass:[LVFTableViewController class]]) {
         [(LVFTableViewController *)[_pageController.viewControllers objectAtIndex:0] reload];
-    } else {
+    } else if ([[_pageController.viewControllers objectAtIndex:0] isKindOfClass:[LVFViewControllerTwo class]]) {
         [(LVFViewControllerTwo *)[_pageController.viewControllers objectAtIndex:0] reload];
+    } else if ([[_pageController.viewControllers objectAtIndex:0] isKindOfClass:[LVFSettingsController class]]) {
+        [(LVFSettingsController *)[_pageController.viewControllers objectAtIndex:0] reload];
     }
     
     /*
@@ -235,25 +233,82 @@
 
 //----------------- PROTOCOL METHODS -------------------------
 
+- (void) animateAppearance
+{
+    if (_currentIndex == 0) {
+        [_logoView setFrame:_rightItemRect];
+        [_listView setFrame:_outRightItemRect];
+        [_gearView setFrame:_centerItemRect];
+    } else if (_currentIndex == 1) {
+        [_logoView setFrame:_centerItemRect];
+        [_listView setFrame:_rightItemRect];
+        [_gearView setFrame:_leftItemRect];
+    } else if (_currentIndex == 2) {
+        [_logoView setFrame:_leftItemRect];
+        [_listView setFrame:_centerItemRect];
+        [_gearView setFrame:_outLeftItemRect];
+    }
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    if (_logoView.frame.origin.x == _centerItemRect.origin.x) {
+        [_logoView setAlpha:1];
+        [_listView setAlpha:0.4];
+        [_gearView setAlpha:0.4];
+    } else if (_listView.frame.origin.x == _centerItemRect.origin.x) {
+        [_logoView setAlpha:0.4];
+        [_listView setAlpha:1];
+        [_gearView setAlpha:0.4];
+    } else if (_gearView.frame.origin.x == _centerItemRect.origin.x) {
+        [_logoView setAlpha:0.4];
+        [_listView setAlpha:0.4];
+        [_gearView setAlpha:1];
+    }
+    [UIView commitAnimations];
+    
+}
+- (void) animateDisappearance
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    [_logoView setAlpha:0];
+    [_listView setAlpha:0];
+    [_gearView setAlpha:0];
+    [UIView commitAnimations];
+    
+}
 
+-(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    
+}
+
+-(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
+    
+}
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
     if ([viewController isMemberOfClass:[LVFViewControllerTwo class]]) {
-        return nil;
-    } else {
+        LVFSettingsController *impleViewController = [[LVFSettingsController alloc] initWithMainController:_mainController];
+        return impleViewController;
+    } else if ([viewController isMemberOfClass:[LVFTableViewController class]]) {
         LVFViewControllerTwo *impleViewController = [[LVFViewControllerTwo alloc] initWithMainController:_mainController];
         return impleViewController;
+    } else {
+        return nil;
     }
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     
-    if ([viewController isMemberOfClass:[LVFTableViewController class]]) {
-        return nil;
-    } else {
+    if ([viewController isMemberOfClass:[LVFViewControllerTwo class]]) {
         LVFTableViewController *impleViewController = [[LVFTableViewController alloc] initWithMainController:_mainController];
         return impleViewController;
+    } else if ([viewController isMemberOfClass:[LVFSettingsController class]]) {
+        LVFViewControllerTwo *impleViewController = [[LVFViewControllerTwo alloc] initWithMainController:_mainController];
+        return impleViewController;
+    } else {
+        return nil;
     }
     
 }
@@ -264,12 +319,12 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
     // The number of items reflected in the page indicator.
-    return 2;
+    return 3;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     // The selected item reflected in the page indicator.
-    return 0;
+    return 1;
 }
 
 @end

@@ -37,10 +37,22 @@
     }
     return self;
 }
+-(void) viewDidAppear:(BOOL)animated
+{
+    _mainController.secondViewController.currentIndex = 2;
+    [_mainController.secondViewController animateAppearance];
+}
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [_mainController.secondViewController requestUpdate];
+    _mainController.secondViewController.currentIndex = 2;
+    [_mainController.secondViewController animateDisappearance];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
     UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
@@ -109,10 +121,7 @@
     [self presentViewController:_settingsController animated:YES completion:NULL];
 }
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    [self requestUpdate];
-}
+
 
 - (void) startTimer {
     _refreshTimer = [NSTimer timerWithTimeInterval:5 target:self selector:@selector(requestUpdate) userInfo:nil repeats:YES];

@@ -32,7 +32,16 @@
 @property (strong, nonatomic) LVFTableViewController *tableViewController;
 @property (strong, nonatomic) LVFViewControllerTwo *simpleViewController;
 
-@property int startIndex;
+@property int currentIndex;
+@property CGRect leftItemRect;
+@property CGRect rightItemRect;
+@property CGRect centerItemRect;
+@property CGRect outLeftItemRect;
+@property CGRect outRightItemRect;
+@property (strong, nonatomic) UIImageView *listView;
+@property (strong, nonatomic) UIImageView *logoView;
+@property (strong, nonatomic) UIImageView *gearView;
+
 
 @property (strong, nonatomic) NSTimer *refreshTimer;
 
@@ -41,4 +50,6 @@
 - (void) receiveUpdate:(NSMutableArray*)array;
 - (void) popController;
 - (NSString *) getDisplayItem;
+- (void) animateAppearance;
+- (void) animateDisappearance;
 @end

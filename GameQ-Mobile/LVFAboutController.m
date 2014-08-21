@@ -38,6 +38,7 @@
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
     UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
     
+    UIColor *myLightGray = [UIColor colorWithRed:0.2 green:0.2 blue:0.22 alpha:1];
     //_imgBackgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
     //[self.view addSubview:_imgBackgroundImageView];
     
@@ -54,7 +55,7 @@
     
     _btnDummy = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     [_btnDummy setTitle:@"" forState:UIControlStateNormal];
-    [_btnDummy setBackgroundColor:myRed];
+    [_btnDummy setBackgroundColor:myLightGray];
     [_btnDummy setEnabled:NO];
     [self.view addSubview:_btnDummy];
     [self.view addSubview:_btnBack];

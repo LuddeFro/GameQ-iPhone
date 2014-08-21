@@ -39,6 +39,21 @@
     return self;
 }
 
+-(void) viewDidAppear:(BOOL)animated
+{
+    
+    _mainController.secondViewController.currentIndex = 1;
+    [_mainController.secondViewController animateAppearance];
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [_mainController.secondViewController requestUpdate];
+    _mainController.secondViewController.currentIndex = 1;
+    [_mainController.secondViewController animateDisappearance];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -52,12 +67,12 @@
     
     [self.view setBackgroundColor:myDarkGray];
     
-    CGRect frameImgLogo = CGRectMake(40, 106, 240, 240);
+    CGRect frameImgLogo = CGRectMake(40, 136, 240, 240);
     
     CGRect framelblCountdown = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-70, 320, 25);
     CGRect framelblApprox = CGRectMake(0, framelblCountdown.origin.y-45, 320, 35);
-    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+70, 320, 35);
-    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+15, 320, 30);
+    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+40, 320, 35);
+    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y - 45, 320, 30);
     
     
     CGRect frameImgGameFrame = CGRectMake(20, 90, 280, 316);
@@ -118,6 +133,11 @@
 
 -(void)tickDown
 {
+    if ([_displayItem isEqualToString:@""]) {
+        [_lblCountdown setText:@""];
+        [_lblApproxTime setAlpha:0];
+        return;
+    }
     NSDate *dateValue = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
@@ -147,10 +167,6 @@
 
 
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    [_mainController.secondViewController requestUpdate];
-}
 
 
 
@@ -227,15 +243,15 @@
                 break;
             case kHEROES_OF_NEWERTH:
                 _lblGame.text = @"Heroes of Newerth";
-                [_imgGameLogo setImage:[UIImage imageNamed:@"hon-logo.png"]];
+                [_imgGameLogo setImage:[UIImage imageNamed:@"honlogo.png"]];
                 break;
             case kDOTA2:
                 _lblGame.text = @"Dota 2";
-                [_imgGameLogo setImage:[UIImage imageNamed:@"dota2-logo.png"]];
+                [_imgGameLogo setImage:[UIImage imageNamed:@"dotalogo.png"]];
                 break;
             case kCS_GO:
                 _lblGame.text = @"CS:GO";
-                [_imgGameLogo setImage:[UIImage imageNamed:@"8515.png"]];
+                [_imgGameLogo setImage:[UIImage imageNamed:@"cslogo.png"]];
                 break;
                 
             default:
