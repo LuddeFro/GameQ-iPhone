@@ -26,10 +26,8 @@
 
 @property (strong, nonatomic) LVFViewController *mainController;
 
-
+@property (strong, nonatomic) UIImageView *imgGameFrame;
 @property (strong, nonatomic) UIImageView *imgGameLogo;
-@property (strong, nonatomic) UIImageView *imgStatusLight;
-@property (strong, nonatomic) UIImageView *imgStatusLight2;
 @property (strong, nonatomic) UILabel *lblApproxTime;
 @property (strong, nonatomic) UILabel *lblStatus;
 @property (strong, nonatomic) UILabel *lblGame;

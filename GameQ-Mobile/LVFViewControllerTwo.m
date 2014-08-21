@@ -46,35 +46,35 @@
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
     UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    UIColor *myLightGray = [UIColor colorWithRed:0.2 green:0.2 blue:0.22 alpha:1];
 	// Do any additional setup after loading the view.
     
     
     [self.view setBackgroundColor:myDarkGray];
     
-    CGRect frameImgLogo = CGRectMake(60, 106, 200, 200);
+    CGRect frameImgLogo = CGRectMake(40, 106, 240, 240);
     
     CGRect framelblCountdown = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-70, 320, 25);
     CGRect framelblApprox = CGRectMake(0, framelblCountdown.origin.y-45, 320, 35);
-    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+50, 320, 35);
-    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+10, 320, 30);
+    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+70, 320, 35);
+    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+15, 320, 30);
     
-    CGRect frameImgStatusLight = CGRectMake(320/2-21.5, framelblStatus.origin.y+35, 43, 43);
+    
+    CGRect frameImgGameFrame = CGRectMake(20, 90, 280, 316);
     
     
     _imgGameLogo = [[UIImageView alloc] initWithFrame:frameImgLogo];
-    _imgStatusLight = [[UIImageView alloc] initWithFrame:frameImgStatusLight];
     _lblApproxTime = [[UILabel alloc] initWithFrame:framelblApprox];
     _lblCountdown = [[UILabel alloc] initWithFrame:framelblCountdown];
     _lblStatus = [[UILabel alloc] initWithFrame:framelblStatus];
     _lblGame = [[UILabel alloc] initWithFrame:framelblGame];
+    _imgGameFrame = [[UIImageView alloc] initWithFrame:frameImgGameFrame];
+    
     
     _imgGameLogo.layer.cornerRadius = 20.0;
     _imgGameLogo.layer.masksToBounds = YES;
     [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
     _imgGameLogo.contentMode = UIViewContentModeScaleAspectFit;
-    [_imgStatusLight setImage:[UIImage imageNamed:@"greyLight.png"]];
-    [_imgStatusLight2 setImage:[UIImage imageNamed:@"greyLight.png"]];
     
     [_lblApproxTime setText:@"Approximate time to accept queue:"];
     [_lblApproxTime setAlpha:0];
@@ -89,25 +89,27 @@
     
     [_lblCountdown setFont:[UIFont boldSystemFontOfSize:30]];
     [_lblApproxTime setFont:[UIFont systemFontOfSize:15]];
-    [_lblStatus setFont:[UIFont systemFontOfSize:28]];
-    [_lblGame setFont:[UIFont systemFontOfSize:25]];
+    [_lblStatus setFont:[UIFont boldSystemFontOfSize:40]];
+    [_lblGame setFont:[UIFont boldSystemFontOfSize:25]];
     
     [_lblApproxTime setTextColor:myWhite];
     [_lblCountdown setTextColor:myWhite];
     [_lblGame setTextColor:myWhite];
     [_lblStatus setTextColor:myWhite];
     
-    [self.view addSubview:_imgStatusLight];
-    [self.view addSubview:_imgStatusLight2];
+    [self.view addSubview:_imgGameFrame];
     [self.view addSubview:_lblStatus];
     [self.view addSubview:_lblCountdown];
     [self.view addSubview:_lblApproxTime];
     [self.view addSubview:_imgGameLogo];
     [self.view addSubview:_lblGame];
-    
-    
-    
-    
+    /*
+    _imgGameFrame.layer.cornerRadius = 25;
+    _imgGameFrame.layer.masksToBounds = YES;
+    _imgGameFrame.layer.borderColor = myWhite.CGColor;
+    _imgGameFrame.layer.borderWidth = 1;
+    [_imgGameFrame setBackgroundColor:myDarkGray];
+    */
     _countdownTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(tickDown) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_countdownTimer forMode:NSDefaultRunLoopMode];
     [self reload];
@@ -210,18 +212,16 @@
         NSLog(@"controller2 displayitem empty");
         [_lblStatus setText:@"No computers connected"];
         [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
-        [_imgStatusLight setAlpha:0];
+        
         _displayItem = @"";
         [_lblCountdown setText:@""];
         
     } else {
-        [_imgStatusLight setAlpha:1];
         
         
         switch ([[_displayItem substringToIndex:2] intValue]) {
             case kNOGAME:
                 
-                [_imgStatusLight setImage:[UIImage imageNamed:@"redLight.png"]];
                 _lblStatus.text = @"Not gaming";
                 _lblGame.text = @"";
                 break;
@@ -235,7 +235,7 @@
                 break;
             case kCS_GO:
                 _lblGame.text = @"CS:GO";
-                [_imgGameLogo setImage:[UIImage imageNamed:@"cs-logo.png"]];
+                [_imgGameLogo setImage:[UIImage imageNamed:@"8515.png"]];
                 break;
                 
             default:
@@ -245,29 +245,25 @@
         
         switch ([[_displayItem substringWithRange:NSMakeRange(2, 2)] intValue]) {
             case kONLINE:
-                _lblStatus.text = [NSString stringWithFormat:@"Online"];
-                [_imgStatusLight setImage:[UIImage imageNamed:@"yellowLight.png"]];
+                _lblStatus.text = [NSString stringWithFormat:@"ONLINE"];
                 NSLog(@"tjorren");
                 break;
                 
             case kINGAME:
-                _lblStatus.text = [NSString stringWithFormat:@"In game"];
-                [_imgStatusLight setImage:[UIImage imageNamed:@"greenLight.png"]];
+                _lblStatus.text = [NSString stringWithFormat:@"IN GAME"];
                 NSLog(@"tjorrtvå");
                 break;
                 
             case kOFF:
-                [_imgStatusLight setImage:[UIImage imageNamed:@"greyLight.png"]];
                 [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
-                _lblStatus.text = @"Disconnected";
+                _lblStatus.text = @"DISCONNECTED";
                 _lblGame.text = @"";
                 NSLog(@"tjorrtre");
                 break;
                 
             case kOFFLINE:
-                _lblStatus.text = @"Not gaming";
+                _lblStatus.text = @"NOT GAMING";
                 _lblGame.text = @"";
-                [_imgStatusLight setImage:[UIImage imageNamed:@"redLight.png"]];
                 [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
                 NSLog(@"tjorrfyra");
                 break;

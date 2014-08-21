@@ -33,6 +33,9 @@
 		837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AA18181E7A000FCC76 /* LVFDataModel.m */; };
 		837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AD18184443000FCC76 /* LVFDefinitions.m */; };
 		839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839698F818A67BA900F2C417 /* StoreKit.framework */; };
+		83BFCFC019A61B67002C0DD6 /* 8515.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFBF19A61B67002C0DD6 /* 8515.png */; };
+		83BFCFC219A62508002C0DD6 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFC119A62508002C0DD6 /* black.png */; };
+		83BFCFC419A625BE002C0DD6 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFC319A625BE002C0DD6 /* white.png */; };
 		83EFA90719A4B80900DD1A16 /* LVFViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EFA90619A4B80900DD1A16 /* LVFViewControllerTwo.m */; };
 		83EFA90B19A4C3DD00DD1A16 /* CSGO-flat.png in Resources */ = {isa = PBXBuildFile; fileRef = 83EFA90819A4C3DD00DD1A16 /* CSGO-flat.png */; };
 		83EFA90C19A4C3DD00DD1A16 /* Dota-flat.png in Resources */ = {isa = PBXBuildFile; fileRef = 83EFA90919A4C3DD00DD1A16 /* Dota-flat.png */; };
@@ -107,6 +110,9 @@
 		837422AC18184443000FCC76 /* LVFDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDefinitions.h; sourceTree = "<group>"; };
 		837422AD18184443000FCC76 /* LVFDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFDefinitions.m; sourceTree = "<group>"; };
 		839698F818A67BA900F2C417 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		83BFCFBF19A61B67002C0DD6 /* 8515.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8515.png; sourceTree = "<group>"; };
+		83BFCFC119A62508002C0DD6 /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
+		83BFCFC319A625BE002C0DD6 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		83EFA90519A4B80900DD1A16 /* LVFViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFViewControllerTwo.h; sourceTree = "<group>"; };
 		83EFA90619A4B80900DD1A16 /* LVFViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFViewControllerTwo.m; sourceTree = "<group>"; };
 		83EFA90819A4C3DD00DD1A16 /* CSGO-flat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSGO-flat.png"; sourceTree = "<group>"; };
@@ -260,6 +266,7 @@
 		837422A81815B0EF000FCC76 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				83BFCFBF19A61B67002C0DD6 /* 8515.png */,
 				83EFA91419A576B800DD1A16 /* cs-logo.png */,
 				83EFA91519A576B800DD1A16 /* hon-logo.png */,
 				83EFA91619A576B800DD1A16 /* dota2-logo.png */,
@@ -284,6 +291,8 @@
 				9C6852D619320A2F00652B0C /* yellowLight@2x.png */,
 				9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */,
 				8311E402184B647D0011212C /* blueLight.png */,
+				83BFCFC119A62508002C0DD6 /* black.png */,
+				83BFCFC319A625BE002C0DD6 /* white.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -356,6 +365,7 @@
 				9C6852E419320BEF00652B0C /* kuggDefault@2x.png in Resources */,
 				83EFA90C19A4C3DD00DD1A16 /* Dota-flat.png in Resources */,
 				83EFA90B19A4C3DD00DD1A16 /* CSGO-flat.png in Resources */,
+				83BFCFC419A625BE002C0DD6 /* white.png in Resources */,
 				9C6852D919320A2F00652B0C /* greyLight.png in Resources */,
 				8374226C1815B0D4000FCC76 /* InfoPlist.strings in Resources */,
 				9C6852DE19320A2F00652B0C /* yellowLight@2x.png in Resources */,
@@ -372,12 +382,14 @@
 				9C6852DB19320A2F00652B0C /* redLight.png in Resources */,
 				9C6852D819320A2F00652B0C /* greenLight@2x.png in Resources */,
 				8374229E1815B0DF000FCC76 /* Main_iPhone.storyboard in Resources */,
+				83BFCFC019A61B67002C0DD6 /* 8515.png in Resources */,
 				83EFA90D19A4C3DD00DD1A16 /* HoN-flat.png in Resources */,
 				9C6852DA19320A2F00652B0C /* greyLight@2x.png in Resources */,
 				9C6852E519320BEF00652B0C /* kuggHighlighted.png in Resources */,
 				9C6852DD19320A2F00652B0C /* yellowLight.png in Resources */,
 				83EFA91719A576B800DD1A16 /* cs-logo.png in Resources */,
 				9C6852DC19320A2F00652B0C /* redLight@2x.png in Resources */,
+				83BFCFC219A62508002C0DD6 /* black.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

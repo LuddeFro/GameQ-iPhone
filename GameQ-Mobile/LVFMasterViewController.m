@@ -37,6 +37,7 @@
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
     UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+    UIColor *myLightGray = [UIColor colorWithRed:0.2 green:0.2 blue:0.22 alpha:1];
     [self.view setBackgroundColor:myDarkGray];
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.backgroundColor = myDarkGray;
@@ -69,8 +70,8 @@
     [titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
     [titleLabel setShadowColor:[UIColor colorWithWhite:1 alpha:0]];
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [titleLabel setTextColor:[UIColor whiteColor]];
-    [titleLabel setText:@"Game•Q"];
+    [titleLabel setTextColor:myWhite];
+    [titleLabel setText:@"GameQ"];
     [titleLabel sizeToFit];
     UINavigationItem *item = [[UINavigationItem alloc] init];
     item.titleView = titleLabel;
@@ -78,17 +79,29 @@
     [item setRightBarButtonItem:button];
     
     UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"whiteQ.png"]];
+    
     [logoView setFrame:CGRectMake(15, 29, 30, 30)];
     CGRect frame2 = CGRectMake(0, 00, 320, 66);
     _navBar = [[UINavigationBar alloc] initWithFrame:frame2];
     [_navBar addSubview:logoView];
     [self.view addSubview:_navBar];
     [_navBar setBarStyle:UIBarStyleDefault];
-    [_navBar setBackgroundColor:myRed];
+    [_navBar setBackgroundColor:myLightGray];
     [_navBar setTintColor:myWhite];
-    [_navBar setBarTintColor:myRed];
+    [_navBar setBarTintColor:myLightGray];
     [_navBar setTranslucent:NO];
     [_navBar pushNavigationItem:item animated:YES];
+    
+    
+    UIView *navBorder = [[UIView alloc] initWithFrame:CGRectMake(0,_navBar.frame.size.height-1,_navBar.frame.size.width, 1)];
+    
+    // Change the frame size to suit yours //
+    
+    [navBorder setBackgroundColor:myWhite];
+    [navBorder setOpaque:YES];
+    [_navBar addSubview:navBorder];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
