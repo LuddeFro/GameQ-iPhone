@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LVFViewController.h"
 #import "LVFDefinitions.h"
+#import "iRate.h"
 
 
 @class  LVFViewController;

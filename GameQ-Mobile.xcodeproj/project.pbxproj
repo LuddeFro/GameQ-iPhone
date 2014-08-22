@@ -40,6 +40,8 @@
 		83BFCFCC19A63476002C0DD6 /* listIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFCA19A63476002C0DD6 /* listIcon.png */; };
 		83BFCFCF19A64B65002C0DD6 /* honlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFCD19A64B65002C0DD6 /* honlogo.png */; };
 		83BFCFD019A64B65002C0DD6 /* dotalogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFCE19A64B65002C0DD6 /* dotalogo.png */; };
+		83BFCFD319A6D191002C0DD6 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BFCFD219A6D191002C0DD6 /* iRate.m */; };
+		83BFCFD519A6D19D002C0DD6 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFD419A6D19D002C0DD6 /* iRate.bundle */; };
 		83EFA90719A4B80900DD1A16 /* LVFViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EFA90619A4B80900DD1A16 /* LVFViewControllerTwo.m */; };
 		83EFA91319A4D10D00DD1A16 /* LVFMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EFA91219A4D10D00DD1A16 /* LVFMasterViewController.m */; };
 		9C3BC0D5192CBD8D00145174 /* GQHomeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3BC0D4192CBD8D00145174 /* GQHomeScreen.png */; };
@@ -115,6 +117,9 @@
 		83BFCFCA19A63476002C0DD6 /* listIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listIcon.png; sourceTree = "<group>"; };
 		83BFCFCD19A64B65002C0DD6 /* honlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honlogo.png; sourceTree = "<group>"; };
 		83BFCFCE19A64B65002C0DD6 /* dotalogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotalogo.png; sourceTree = "<group>"; };
+		83BFCFD119A6D191002C0DD6 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		83BFCFD219A6D191002C0DD6 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		83BFCFD419A6D19D002C0DD6 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
 		83EFA90519A4B80900DD1A16 /* LVFViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFViewControllerTwo.h; sourceTree = "<group>"; };
 		83EFA90619A4B80900DD1A16 /* LVFViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFViewControllerTwo.m; sourceTree = "<group>"; };
 		83EFA91119A4D10D00DD1A16 /* LVFMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFMasterViewController.h; sourceTree = "<group>"; };
@@ -143,10 +148,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */,
 				8311E3E71847A27A0011212C /* Security.framework in Frameworks */,
 				837422621815B0D4000FCC76 /* CoreGraphics.framework in Frameworks */,
 				837422661815B0D4000FCC76 /* CoreData.framework in Frameworks */,
-				839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */,
 				837422641815B0D4000FCC76 /* UIKit.framework in Frameworks */,
 				837422601815B0D4000FCC76 /* Foundation.framework in Frameworks */,
 			);
@@ -222,6 +227,9 @@
 				837422AD18184443000FCC76 /* LVFDefinitions.m */,
 				8311E3E31847A1DF0011212C /* KeychainItemWrapper.h */,
 				8311E3E41847A1DF0011212C /* KeychainItemWrapper.m */,
+				83BFCFD119A6D191002C0DD6 /* iRate.h */,
+				83BFCFD219A6D191002C0DD6 /* iRate.m */,
+				83BFCFD419A6D19D002C0DD6 /* iRate.bundle */,
 				837422761815B0D4000FCC76 /* Images.xcassets */,
 				837422731815B0D4000FCC76 /* GameQ_Mobile.xcdatamodeld */,
 				837422681815B0D4000FCC76 /* Supporting Files */,
@@ -376,6 +384,7 @@
 				9C6852DB19320A2F00652B0C /* redLight.png in Resources */,
 				9C6852D819320A2F00652B0C /* greenLight@2x.png in Resources */,
 				8374229E1815B0DF000FCC76 /* Main_iPhone.storyboard in Resources */,
+				83BFCFD519A6D19D002C0DD6 /* iRate.bundle in Resources */,
 				83BFCFC019A61B67002C0DD6 /* cslogo.png in Resources */,
 				9C6852DA19320A2F00652B0C /* greyLight@2x.png in Resources */,
 				9C6852E519320BEF00652B0C /* kuggHighlighted.png in Resources */,
@@ -401,6 +410,7 @@
 				833403DF18C63A3000A8B6E0 /* LVFSettingsController.m in Sources */,
 				837422A31815B0DF000FCC76 /* LVFConnect.m in Sources */,
 				833403E218C63A6800A8B6E0 /* LVFAboutController.m in Sources */,
+				83BFCFD319A6D191002C0DD6 /* iRate.m in Sources */,
 				837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */,
 				837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */,
 				833403DC18C5FA7E00A8B6E0 /* LVFCell.m in Sources */,
