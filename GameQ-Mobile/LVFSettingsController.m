@@ -88,7 +88,7 @@
     //_imgBackgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
     //[_imgBackgroundImageView setFrame:self.view.frame];
     //[self.view addSubview:_imgBackgroundImageView];
-    [self.view setBackgroundColor:myDarkGray];
+    [self.view setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
     
     _btnBack = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 50, 30)];
     [_btnBack setTitle:@"Back" forState:UIControlStateNormal];

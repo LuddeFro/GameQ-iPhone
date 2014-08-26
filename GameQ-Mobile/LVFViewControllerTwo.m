@@ -65,13 +65,13 @@
 	// Do any additional setup after loading the view.
     
     
-    [self.view setBackgroundColor:myDarkGray];
+    [self.view setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
     
     CGRect frameImgLogo = CGRectMake(40, 136, 240, 240);
     
     CGRect framelblCountdown = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-70, 320, 25);
     CGRect framelblApprox = CGRectMake(0, framelblCountdown.origin.y-45, 320, 35);
-    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+40, 320, 35);
+    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+30, 320, 35);
     CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y - 45, 320, 30);
     
     
@@ -93,7 +93,7 @@
     
     [_lblApproxTime setText:@"Approximate time to accept queue:"];
     [_lblApproxTime setAlpha:0];
-    [_lblStatus setText:@"No computers connected"];
+    [_lblStatus setText:@"Connect a computer"];
     [_lblGame setText:@"Not gaming"];
     [_lblCountdown setText:@"00:00"];
     
@@ -104,13 +104,16 @@
     
     [_lblCountdown setFont:[UIFont boldSystemFontOfSize:30]];
     [_lblApproxTime setFont:[UIFont systemFontOfSize:15]];
-    [_lblStatus setFont:[UIFont boldSystemFontOfSize:40]];
-    [_lblGame setFont:[UIFont boldSystemFontOfSize:25]];
+    [_lblStatus setFont:[UIFont systemFontOfSize:30]];
+    [_lblGame setFont:[UIFont systemFontOfSize:25]];
     
     [_lblApproxTime setTextColor:myWhite];
     [_lblCountdown setTextColor:myWhite];
     [_lblGame setTextColor:myWhite];
     [_lblStatus setTextColor:myWhite];
+    
+    [_lblGame setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.4]];
+    [_lblStatus setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.4]];
     
     [self.view addSubview:_imgGameFrame];
     [self.view addSubview:_lblStatus];
@@ -226,9 +229,9 @@
     NSLog(@"%@", _displayItem);
     if ([_displayItem isEqualToString:@""]) {
         NSLog(@"controller2 displayitem empty");
-        [_lblStatus setText:@"No computers connected"];
+        [_lblStatus setText:@"Connect a computer"];
         [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
-        
+        _lblGame.text = @"";
         _displayItem = @"";
         [_lblCountdown setText:@""];
         
@@ -250,7 +253,7 @@
                 [_imgGameLogo setImage:[UIImage imageNamed:@"dotalogo.png"]];
                 break;
             case kCS_GO:
-                _lblGame.text = @"CS:GO";
+                _lblGame.text = @"Counter Strike: Global Offensive";
                 [_imgGameLogo setImage:[UIImage imageNamed:@"cslogo.png"]];
                 break;
                 
@@ -261,24 +264,24 @@
         
         switch ([[_displayItem substringWithRange:NSMakeRange(2, 2)] intValue]) {
             case kONLINE:
-                _lblStatus.text = [NSString stringWithFormat:@"ONLINE"];
+                _lblStatus.text = [NSString stringWithFormat:@"Online"];
                 NSLog(@"tjorren");
                 break;
                 
             case kINGAME:
-                _lblStatus.text = [NSString stringWithFormat:@"IN GAME"];
+                _lblStatus.text = [NSString stringWithFormat:@"In Game"];
                 NSLog(@"tjorrtvå");
                 break;
                 
             case kOFF:
                 [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
-                _lblStatus.text = @"DISCONNECTED";
+                _lblStatus.text = @"Disconnected";
                 _lblGame.text = @"";
                 NSLog(@"tjorrtre");
                 break;
                 
             case kOFFLINE:
-                _lblStatus.text = @"NOT GAMING";
+                _lblStatus.text = @"Not Gaming";
                 _lblGame.text = @"";
                 [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
                 NSLog(@"tjorrfyra");

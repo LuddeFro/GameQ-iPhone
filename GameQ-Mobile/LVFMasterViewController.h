@@ -13,10 +13,10 @@
 @class LVFTableViewController;
 @class LVFViewControllerTwo;
 
-
 @interface LVFMasterViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageController;
+@property (strong, nonatomic) UIPageControl *pcDots;
 
 @property (strong, nonatomic) LVFConnections *connectionsHandler;
 @property (strong, nonatomic) LVFViewController *mainController;
@@ -42,8 +42,15 @@
 @property (strong, nonatomic) UIImageView *logoView;
 @property (strong, nonatomic) UIImageView *gearView;
 
+@property (strong, nonatomic) UIImageView *imgOfflineView;
+@property (strong, nonatomic) UIImageView *imgOnlineView;
+@property (strong, nonatomic) UIImageView *imgIngameView;
+@property (strong, nonatomic) UIImageView *imgDisconnectedView;
+
 
 @property (strong, nonatomic) NSTimer *refreshTimer;
+
+@property int intIndex;
 
 - (id)initWithMainController:(LVFViewController*)controller;
 - (void) requestUpdate;

@@ -33,14 +33,31 @@
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
     UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
     UIColor *myLightGray = [UIColor colorWithRed:0.2 green:0.2 blue:0.22 alpha:1];
-    [self.view setBackgroundColor:myDarkGray];
-    UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.backgroundColor = myDarkGray;
+    //[self.view setBackgroundColor:myDarkGray];
     _pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageController.dataSource = self;
     _pageController.delegate = self;
-    [[_pageController view] setFrame:[[self view] bounds]];
-    //[[_pageController view] setFrame:[[self view] bounds]];
+    [[_pageController view] setFrame:CGRectMake(0, 0, [[self view] bounds].size.width, [[self view] bounds].size.height + 37)];
+    
+    
+    
+    _imgDisconnectedView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    _imgIngameView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    _imgOfflineView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    _imgOnlineView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    
+    [_imgDisconnectedView setImage:[UIImage imageNamed:@"greenLight.png"]];
+    [_imgIngameView setImage:[UIImage imageNamed:@"blueLight.png"]];
+    [_imgOfflineView setImage:[UIImage imageNamed:@"redLight.png"]];
+    [_imgOnlineView setImage:[UIImage imageNamed:@"yellowLight.png"]];
+    
+    
+    [self.view addSubview:_imgIngameView];
+    [self.view addSubview:_imgOnlineView];
+    [self.view addSubview:_imgOfflineView];
+    [self.view addSubview:_imgDisconnectedView];
+    
+    
     LVFViewControllerTwo *impleViewController = [[LVFViewControllerTwo alloc] initWithMainController:_mainController];
     //temp_simpleViewController = [[LVFViewControllerTwo alloc] initWithMainController:_mainController];
     //temp_tableViewController = [[LVFTableViewController alloc] initWithMainController:_mainController];
@@ -97,6 +114,16 @@
     [navBorder setOpaque:YES];
     [_navBar addSubview:navBorder];
     
+    _pcDots = [[UIPageControl alloc] initWithFrame:CGRectMake(141, [[UIScreen mainScreen] bounds].size.height-35, 39, 37)];
+    _pcDots.backgroundColor = [UIColor clearColor];
+    [_pcDots setCurrentPageIndicatorTintColor:myWhite];
+    [_pcDots setPageIndicatorTintColor:myLightGray];
+    [[self view] addSubview:_pcDots];
+    [_pcDots setNumberOfPages:3];
+    _intIndex = 1;
+    [_pcDots setCurrentPage:_intIndex];
+    
+    
     
 }
 
@@ -151,30 +178,62 @@
         [_array1 removeAllObjects];
         [_array2 removeAllObjects];
         [_array4 removeAllObjects];
+        int isOnline= 0;
+        int isOffline= 0;
+        int isIngame= 0;
+        int isDisconnected= 0;
         for (int i = 0; i < _deviceArray.count; i++) {
             NSLog(@"counting 1");
             switch ([[_deviceArray objectAtIndex:i] substringWithRange:NSMakeRange(2, 2)].integerValue) {
                 case 0: //Offline
                     [_array0 addObject:[_deviceArray objectAtIndex:i]];
                     NSLog(@"added to 0");
+                    isOffline++;
                     break;
                 case 1: //Online
                     [_array1 addObject:[_deviceArray objectAtIndex:i]];
                     NSLog(@"added to 1");
+                    isOnline++;
                     break;
                 case 2: //In-Game
                     [_array2 addObject:[_deviceArray objectAtIndex:i]];
                     NSLog(@"added to 2");
+                    isIngame++;
                     break;
                 case 4: //Off / disconnected
                     [_array4 addObject:[_deviceArray objectAtIndex:i]];
                     NSLog(@"added to 4");
+                    isDisconnected++;
                     break;
                 default:
                     break;
             }
         }
         
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.5];
+        if (isIngame > 0) {
+            [_imgIngameView setAlpha:1];
+            [_imgDisconnectedView setAlpha:0];
+            [_imgOfflineView setAlpha:0];
+            [_imgOnlineView setAlpha:0];
+        } else if (isOnline > 0) {
+            [_imgIngameView setAlpha:0];
+            [_imgDisconnectedView setAlpha:0];
+            [_imgOfflineView setAlpha:0];
+            [_imgOnlineView setAlpha:1];
+        } else if (isOffline > 0) {
+            [_imgIngameView setAlpha:0];
+            [_imgDisconnectedView setAlpha:0];
+            [_imgOfflineView setAlpha:1];
+            [_imgOnlineView setAlpha:0];
+        } else {
+            [_imgIngameView setAlpha:0];
+            [_imgDisconnectedView setAlpha:1];
+            [_imgOfflineView setAlpha:0];
+            [_imgOnlineView setAlpha:0];
+        }
+        [UIView commitAnimations];
     }
     if ([[_pageController.viewControllers objectAtIndex:0] isKindOfClass:[LVFTableViewController class]]) {
         [(LVFTableViewController *)[_pageController.viewControllers objectAtIndex:0] reload];
@@ -282,17 +341,31 @@
     
 }
 
--(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
-    
+-(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    UIViewController* currentViewController = [_pageController.viewControllers objectAtIndex:0];
+    if ([currentViewController isMemberOfClass:[LVFTableViewController class]]) {
+        _intIndex = 2;
+    } else if ([currentViewController isMemberOfClass:[LVFViewControllerTwo class]]) {
+        _intIndex = 1;
+    } else if ([currentViewController isMemberOfClass:[LVFSettingsController class]]) {
+        _intIndex = 0;
+    }
+    [_pcDots setCurrentPage:_intIndex];
 }
+
+
+
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
     if ([viewController isMemberOfClass:[LVFViewControllerTwo class]]) {
+        
         LVFSettingsController *impleViewController = [[LVFSettingsController alloc] initWithMainController:_mainController];
         return impleViewController;
     } else if ([viewController isMemberOfClass:[LVFTableViewController class]]) {
         LVFViewControllerTwo *impleViewController = [[LVFViewControllerTwo alloc] initWithMainController:_mainController];
+        
         return impleViewController;
     } else {
         return nil;
@@ -303,8 +376,10 @@
     
     if ([viewController isMemberOfClass:[LVFViewControllerTwo class]]) {
         LVFTableViewController *impleViewController = [[LVFTableViewController alloc] initWithMainController:_mainController];
+        
         return impleViewController;
     } else if ([viewController isMemberOfClass:[LVFSettingsController class]]) {
+        
         LVFViewControllerTwo *impleViewController = [[LVFViewControllerTwo alloc] initWithMainController:_mainController];
         return impleViewController;
     } else {

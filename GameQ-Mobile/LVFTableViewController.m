@@ -66,7 +66,7 @@
     [_tableView setDelegate:self];
     [self.view addSubview:_tableView];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    [self.view setBackgroundColor:myWhite];
+    [self.view setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
     CGRect frame2 = CGRectMake(0, 22, 320, 44);
     _navBar = [[UINavigationBar alloc] initWithFrame:frame2];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -91,8 +91,7 @@
     
     [_navBar pushNavigationItem:item animated:YES];
     [self.view addSubview:_navBar];
-    [self.view setBackgroundColor:myRed];
-    [_tableView setBackgroundColor:myDarkGray];
+    [_tableView setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
     [_navBar setBarStyle:UIBarStyleDefault];
     [_navBar setBackgroundColor:myRed];
     [_navBar setTintColor:myWhite];
@@ -161,8 +160,9 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+    UIColor *myTransDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:0.5];
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
-    [label setBackgroundColor:myDarkGray];
+    [label setBackgroundColor:myTransDarkGray];
     [label setFont:[UIFont boldSystemFontOfSize:12.0f]];
     [label setShadowColor:[UIColor colorWithWhite:1 alpha:0]];
     [label setTextAlignment:NSTextAlignmentCenter];
