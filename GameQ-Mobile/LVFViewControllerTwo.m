@@ -265,17 +265,20 @@
         switch ([[_displayItem substringWithRange:NSMakeRange(2, 2)] intValue]) {
             case kONLINE:
                 _lblStatus.text = [NSString stringWithFormat:@"Online"];
+                [_lblStatus setTextColor:[UIColor colorWithRed:0.98 green:0.98 blue:0 alpha:1]];
                 NSLog(@"tjorren");
                 break;
                 
             case kINGAME:
                 _lblStatus.text = [NSString stringWithFormat:@"In Game"];
+                [_lblStatus setTextColor:[UIColor colorWithRed:0 green:0.98 blue:0 alpha:1]];
                 NSLog(@"tjorrtvå");
                 break;
                 
             case kOFF:
                 [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
                 _lblStatus.text = @"Disconnected";
+                [_lblStatus setTextColor:[UIColor colorWithRed:0.98 green:0 blue:0 alpha:1]];
                 _lblGame.text = @"";
                 NSLog(@"tjorrtre");
                 break;
@@ -284,6 +287,7 @@
                 _lblStatus.text = @"Not Gaming";
                 _lblGame.text = @"";
                 [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
+                [_lblStatus setTextColor:[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1]];
                 NSLog(@"tjorrfyra");
                 break;
             default:

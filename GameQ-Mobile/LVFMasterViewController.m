@@ -41,21 +41,12 @@
     
     
     
-    _imgDisconnectedView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    _imgIngameView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    _imgOfflineView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    _imgOnlineView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    
-    [_imgDisconnectedView setImage:[UIImage imageNamed:@"greenLight.png"]];
-    [_imgIngameView setImage:[UIImage imageNamed:@"blueLight.png"]];
-    [_imgOfflineView setImage:[UIImage imageNamed:@"redLight.png"]];
-    [_imgOnlineView setImage:[UIImage imageNamed:@"yellowLight.png"]];
+    _imgBackgroundView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     
     
-    [self.view addSubview:_imgIngameView];
-    [self.view addSubview:_imgOnlineView];
-    [self.view addSubview:_imgOfflineView];
-    [self.view addSubview:_imgDisconnectedView];
+    [_imgBackgroundView setImage:[UIImage imageNamed:@"greyLight.png"]];
+    
+    [self.view addSubview:_imgBackgroundView];
     
     
     LVFViewControllerTwo *impleViewController = [[LVFViewControllerTwo alloc] initWithMainController:_mainController];
@@ -99,9 +90,9 @@
     [_navBar addSubview:_gearView];
     [self.view addSubview:_navBar];
     [_navBar setBarStyle:UIBarStyleDefault];
-    [_navBar setBackgroundColor:myLightGray];
+    [_navBar setBackgroundColor:myRed];
     [_navBar setTintColor:myWhite];
-    [_navBar setBarTintColor:myLightGray];
+    [_navBar setBarTintColor:myRed];
     [_navBar setTranslucent:NO];
     [_navBar pushNavigationItem:item animated:YES];
     
@@ -113,19 +104,98 @@
     [navBorder setBackgroundColor:myWhite];
     [navBorder setOpaque:YES];
     [_navBar addSubview:navBorder];
-    
+    /*
     _pcDots = [[UIPageControl alloc] initWithFrame:CGRectMake(141, [[UIScreen mainScreen] bounds].size.height-35, 39, 37)];
     _pcDots.backgroundColor = [UIColor clearColor];
     [_pcDots setCurrentPageIndicatorTintColor:myWhite];
     [_pcDots setPageIndicatorTintColor:myLightGray];
     [[self view] addSubview:_pcDots];
     [_pcDots setNumberOfPages:3];
+    [_pcDots setCurrentPage:_intIndex];*/
     _intIndex = 1;
-    [_pcDots setCurrentPage:_intIndex];
     
-    
+    _bolFoundScrollView = false;
+    for (UIView *view in _pageController.view.subviews)
+    {
+        if ([view isKindOfClass:[UIScrollView class]])
+        {
+            [((UIScrollView *)view) setDelegate:self];
+            _bolFoundScrollView = true;
+            
+        }
+    }
     
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat percentage = scrollView.contentOffset.x / scrollView.contentSize.width;
+    
+    NSLog(@"percentage: %f, %d", percentage, _currentIndex);
+    percentage -= 0.333333;
+    percentage *= 3;
+    
+    
+    float x1;
+    float x2;
+    float x3;
+    float a1;
+    float a2;
+    float a3;
+    
+    
+    if (_intIndex == 0) {
+        x1 = 15 + 130 - (130*percentage);
+        x2 = 145 + 130 - (130*percentage);
+        x3 = 275 + 130 - (130*percentage);
+    } else if (_intIndex == 1) {
+        x1 = 15 - (130*percentage);
+        x2 = 145 - (130*percentage);
+        x3 = 275 - (130*percentage);
+    } else if (_intIndex == 2) {
+        x1 = 15 - 130 - (130*percentage);
+        x2 = 145 - 130 - (130*percentage);
+        x3 = 275 - 130 - (130*percentage);
+    } else {
+        x1 = 0;
+        x2 = 0;
+        x3 = 0;
+    }
+    int y = 29;
+    int w = 30;
+    int h = 30;
+    [_gearView setFrame:CGRectMake(x1, y, w, h)];
+    [_logoView setFrame:CGRectMake(x2, y, w, h)];
+    [_listView setFrame:CGRectMake(x3, y, w, h)];
+    float absPercentage = percentage;
+    
+    if (percentage < 0.0f) {
+        absPercentage = 0 - percentage;
+    }
+    
+    
+    if (_intIndex == 0) {
+        [_gearView setAlpha:(1-absPercentage*0.6)];
+        [_logoView setAlpha:(0.4 + percentage*0.6)];
+        [_listView setAlpha:(-0.2 + percentage*0.6)];
+    } else if (_intIndex == 1) {
+        [_gearView setAlpha:(0.4 - percentage*0.6)];
+        [_logoView setAlpha:(1-absPercentage*0.6)];
+        [_listView setAlpha:(0.4 + percentage*0.6)];
+    } else if (_intIndex == 2) {
+        [_gearView setAlpha:(-0.2 - percentage*0.6)];
+        [_logoView setAlpha:(0.4 - percentage*0.6)];
+        [_listView setAlpha:(1-absPercentage*0.6)];
+    } else {
+        
+    }
+    
+}
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -209,31 +279,6 @@
                     break;
             }
         }
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.5];
-        if (isIngame > 0) {
-            [_imgIngameView setAlpha:1];
-            [_imgDisconnectedView setAlpha:0];
-            [_imgOfflineView setAlpha:0];
-            [_imgOnlineView setAlpha:0];
-        } else if (isOnline > 0) {
-            [_imgIngameView setAlpha:0];
-            [_imgDisconnectedView setAlpha:0];
-            [_imgOfflineView setAlpha:0];
-            [_imgOnlineView setAlpha:1];
-        } else if (isOffline > 0) {
-            [_imgIngameView setAlpha:0];
-            [_imgDisconnectedView setAlpha:0];
-            [_imgOfflineView setAlpha:1];
-            [_imgOnlineView setAlpha:0];
-        } else {
-            [_imgIngameView setAlpha:0];
-            [_imgDisconnectedView setAlpha:1];
-            [_imgOfflineView setAlpha:0];
-            [_imgOnlineView setAlpha:0];
-        }
-        [UIView commitAnimations];
     }
     if ([[_pageController.viewControllers objectAtIndex:0] isKindOfClass:[LVFTableViewController class]]) {
         [(LVFTableViewController *)[_pageController.viewControllers objectAtIndex:0] reload];
@@ -294,6 +339,9 @@
 
 - (void) animateAppearance
 {
+    if (_bolFoundScrollView) {
+        return;
+    }
     if (_currentIndex == 0) {
         [_logoView setFrame:_rightItemRect];
         [_listView setFrame:_outRightItemRect];
@@ -309,6 +357,7 @@
     }
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5];
+    
     if (_logoView.frame.origin.x == _centerItemRect.origin.x) {
         [_logoView setAlpha:1];
         [_listView setAlpha:0.4];
@@ -327,6 +376,9 @@
 }
 - (void) animateDisappearance
 {
+    if (_bolFoundScrollView) {
+        return;
+    }
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5];
     [_logoView setAlpha:0];
@@ -343,6 +395,7 @@
 
 -(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
+    
     UIViewController* currentViewController = [_pageController.viewControllers objectAtIndex:0];
     if ([currentViewController isMemberOfClass:[LVFTableViewController class]]) {
         _intIndex = 2;
@@ -351,7 +404,9 @@
     } else if ([currentViewController isMemberOfClass:[LVFSettingsController class]]) {
         _intIndex = 0;
     }
-    [_pcDots setCurrentPage:_intIndex];
+    
+    
+    //[_pcDots setCurrentPage:_intIndex];
 }
 
 
