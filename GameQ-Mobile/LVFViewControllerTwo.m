@@ -59,9 +59,9 @@
     [super viewDidLoad];
     _displayItem = @"";
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
-    UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
-    UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
-    UIColor *myLightGray = [UIColor colorWithRed:0.2 green:0.2 blue:0.22 alpha:1];
+//    UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
+//    UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+//    UIColor *myLightGray = [UIColor colorWithRed:0.2 green:0.2 blue:0.22 alpha:1];
 	// Do any additional setup after loading the view.
     
     
@@ -71,8 +71,8 @@
     
     CGRect framelblCountdown = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-70, 320, 25);
     CGRect framelblApprox = CGRectMake(0, framelblCountdown.origin.y-45, 320, 35);
-    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+30, 320, 35);
-    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y - 45, 320, 30);
+    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+10, 320, 45);
+    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y - 45, 320, 45);
     
     
     CGRect frameImgGameFrame = CGRectMake(20, 90, 280, 316);
@@ -88,7 +88,7 @@
     
     _imgGameLogo.layer.cornerRadius = 20.0;
     _imgGameLogo.layer.masksToBounds = YES;
-    [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
+    [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
     _imgGameLogo.contentMode = UIViewContentModeScaleAspectFit;
     
     [_lblApproxTime setText:@"Approximate time to accept queue:"];
@@ -102,18 +102,18 @@
     [_lblStatus setTextAlignment:NSTextAlignmentCenter];
     [_lblGame setTextAlignment:NSTextAlignmentCenter];
     
-    [_lblCountdown setFont:[UIFont boldSystemFontOfSize:30]];
-    [_lblApproxTime setFont:[UIFont systemFontOfSize:15]];
-    [_lblStatus setFont:[UIFont systemFontOfSize:30]];
-    [_lblGame setFont:[UIFont systemFontOfSize:25]];
+    [_lblCountdown setFont:[UIFont fontWithName:@"helvetica neue" size:30]];
+    [_lblApproxTime setFont:[UIFont fontWithName:@"helvetica neue" size:15]];
+    [_lblStatus setFont:[UIFont fontWithName:@"helvetica neue" size:20]];
+    [_lblGame setFont:[UIFont fontWithName:@"helvetica neue" size:20]];;
     
     [_lblApproxTime setTextColor:myWhite];
     [_lblCountdown setTextColor:myWhite];
     [_lblGame setTextColor:myWhite];
     [_lblStatus setTextColor:myWhite];
     
-    [_lblGame setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.4]];
-    [_lblStatus setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.4]];
+    [_lblGame setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.2]];
+    [_lblStatus setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.2]];
     
     [self.view addSubview:_imgGameFrame];
     [self.view addSubview:_lblStatus];
@@ -229,9 +229,9 @@
     NSLog(@"%@", _displayItem);
     if ([_displayItem isEqualToString:@""]) {
         NSLog(@"controller2 displayitem empty");
-        [_lblStatus setText:@"Connect a computer"];
-        [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
-        _lblGame.text = @"";
+        [_lblStatus setText:@"Start GameQ on a computer"];
+        [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
+        _lblGame.text = @"Not Connected";
         _displayItem = @"";
         [_lblCountdown setText:@""];
         
@@ -276,7 +276,7 @@
                 break;
                 
             case kOFF:
-                [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
+                [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
                 _lblStatus.text = @"Disconnected";
                 [_lblStatus setTextColor:[UIColor colorWithRed:0.98 green:0 blue:0 alpha:1]];
                 _lblGame.text = @"";
@@ -286,7 +286,7 @@
             case kOFFLINE:
                 _lblStatus.text = @"Not Gaming";
                 _lblGame.text = @"";
-                [_imgGameLogo setImage:[UIImage imageNamed:@"128white.png"]];
+                [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
                 [_lblStatus setTextColor:[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1]];
                 NSLog(@"tjorrfyra");
                 break;

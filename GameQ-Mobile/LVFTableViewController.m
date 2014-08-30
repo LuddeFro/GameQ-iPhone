@@ -55,7 +55,7 @@
     
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
-    UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+//  UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
     
 	// Do any additional setup after loading the view.
     _connectionsHandler = [[LVFConnections alloc] initFromController:_mainController];
@@ -159,7 +159,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+//  UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
     UIColor *myTransDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:0.5];
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     [label setBackgroundColor:myTransDarkGray];

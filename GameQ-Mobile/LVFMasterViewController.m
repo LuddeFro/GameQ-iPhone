@@ -31,8 +31,8 @@
     [super viewDidLoad];
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
-    UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
-    UIColor *myLightGray = [UIColor colorWithRed:0.2 green:0.2 blue:0.22 alpha:1];
+//    UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+//    UIColor *myLightGray = [UIColor colorWithRed:0.2 green:0.2 blue:0.22 alpha:1];
     //[self.view setBackgroundColor:myDarkGray];
     _pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageController.dataSource = self;
@@ -44,7 +44,7 @@
     _imgBackgroundView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     
     
-    [_imgBackgroundView setImage:[UIImage imageNamed:@"greyLight.png"]];
+    [_imgBackgroundView setImage:[UIImage imageNamed:@"blurred.png"]];
     
     [self.view addSubview:_imgBackgroundView];
     
@@ -70,7 +70,7 @@
     UINavigationItem *item = [[UINavigationItem alloc] init];
     
     _listView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"listIcon.png"]];
-    _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"whiteQ.png"]];
+    _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sq-nb.png"]];
     _gearView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kuggDefault.png"]];
     [_listView setAlpha:0.4];
     [_gearView setAlpha:0.4];
@@ -97,13 +97,15 @@
     [_navBar pushNavigationItem:item animated:YES];
     
     
-    UIView *navBorder = [[UIView alloc] initWithFrame:CGRectMake(0,_navBar.frame.size.height-1,_navBar.frame.size.width, 1)];
+   // UIView *navBorder = [[UIView alloc] initWithFrame:CGRectMake(0,_navBar.frame.size.height-1,_navBar.frame.size.width, 1)];
     
     // Change the frame size to suit yours //
     
-    [navBorder setBackgroundColor:myWhite];
-    [navBorder setOpaque:YES];
-    [_navBar addSubview:navBorder];
+    //[navBorder setBackgroundColor:myWhite];
+    //[navBorder setOpaque:YES];
+    //
+    //[_navBar addSubview:navBorder];
+    
     /*
     _pcDots = [[UIPageControl alloc] initWithFrame:CGRectMake(141, [[UIScreen mainScreen] bounds].size.height-35, 39, 37)];
     _pcDots.backgroundColor = [UIColor clearColor];
@@ -139,9 +141,6 @@
     float x1;
     float x2;
     float x3;
-    float a1;
-    float a2;
-    float a3;
     
     
     if (_intIndex == 0) {

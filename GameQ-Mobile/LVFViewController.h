@@ -28,7 +28,6 @@
 //@property (strong, nonatomic) LVFTableViewController *tableViewController;
 @property (strong, nonatomic) LVFMasterViewController *secondViewController;
 
-
 @property (strong, nonatomic) UITextField *txtEmail;
 @property (strong, nonatomic) UITextField *txtPassword;
 @property (strong, nonatomic) UITextField *txtSecret;
@@ -43,11 +42,15 @@
 @property (strong, nonatomic) UIButton *btnBot;
 @property (strong, nonatomic) UIButton *btnResignKeyboard;
 
+
+
 @property bool bolLoggedIn;
 @property (strong, nonatomic) LVFDataModel *dataHandler;
 @property (strong, nonatomic) UINavigationController *navView;
 @property (strong, nonatomic) LVFConnections* connectionsHandler;
 @property (weak, nonatomic) IBOutlet UIButton *btnKeyboardDown;
+
+@property (strong, nonatomic) UIImageView *imgBackgroundView;
 
 - (IBAction)resignKeyboard:(id)sender;
 - (void) log;

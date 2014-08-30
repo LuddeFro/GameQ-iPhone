@@ -26,14 +26,13 @@
         UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
         UIColor *myTransWhite = [UIColor colorWithWhite:1 alpha:0.5];
         UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:0.9001];
-        UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
+//        UIColor *myDarkGray = [UIColor colorWithRed:0.1333 green:0.1333 blue:0.1333 alpha:1];
         
         
         
         _bolIsRegging = false;
         _bolIsUp = false;
-        _imgLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"128white.png"]];
-        //_imgBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GQHomeScreen.png"]];
+        _imgLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sqt.png"]];
         
         _txtEmail = [[UITextField alloc] init];
         _txtPassword = [[UITextField alloc] init];
@@ -49,9 +48,12 @@
         //trying without bkgrnd pic
         
         //and with bkgrnd color
-        [self.view setBackgroundColor:myDarkGray];
+        _imgBackgroundView = [[UIImageView alloc] initWithFrame:self.view.bounds];
         
         
+        [_imgBackgroundView setImage:[UIImage imageNamed:@"blurred.png"]];
+        
+        [self.view addSubview:_imgBackgroundView];
         
         
         if(self.view.frame.size.height < 568) {
@@ -66,7 +68,7 @@
             [_btnBot setFrame:CGRectMake(20, 428, self.view.frame.size.width-40, 30)];
             
         } else if (self.view.frame.size.height == 568) {
-            [_imgLogo setImage:[UIImage imageNamed:@"256white.png"]];
+            [_imgLogo setImage:[UIImage imageNamed:@"sqt@2x.png"]];
             [_imgLogo setFrame:CGRectMake((self.view.frame.size.width-128)/2, 65, 128, 128)];
             [_txtEmail setFrame:CGRectMake(20, 241, self.view.frame.size.width-40, 30)];
             [_txtPassword setFrame:CGRectMake(20, 279, self.view.frame.size.width-40, 30)];
