@@ -28,6 +28,9 @@
 @property UILabel *lblTitle;
 @property (strong, nonatomic) LVFAboutController *aboutController;
 
+@property (strong, nonatomic) UIImageView *imgGameFrame;
+@property (strong, nonatomic) UIImageView *imgGameLogo;
+
 
 @property (strong, nonatomic) UIButton *btnTop;
 

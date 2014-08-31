@@ -18,5 +18,9 @@
 @property UIButton *btnAbout;
 @property UILabel *lblStatic;
 
+
+
+@property (strong, nonatomic) UIImageView *imgBackgroundView;
+
 @property UILabel *lblTitle;
 @end

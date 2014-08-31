@@ -59,10 +59,12 @@
         
         [_btnTop setFrame:CGRectMake(20, 370, self.view.frame.size.width-40, 30)];
         [_btnBot setFrame:CGRectMake(20, 408, self.view.frame.size.width-40, 30)];
+         _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, self.view.frame.size.width-40, 30)];
         
     } else if (self.view.frame.size.height == 568) {
         [_btnTop setFrame:CGRectMake(20, 460, self.view.frame.size.width-40, 30)];
         [_btnBot setFrame:CGRectMake(20, 498, self.view.frame.size.width-40, 30)];
+        _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, self.view.frame.size.width-40, 30)];
     }
     
     [_btnTop addTarget:self action:@selector(topButtonPressed) forControlEvents:UIControlEventTouchUpInside];
@@ -70,7 +72,7 @@
     
     
     [_btnTop setTitle:@"About" forState:UIControlStateNormal];
-    [_btnBot setTitle:@"Log Out" forState:UIControlStateNormal];
+    [_btnBot setTitle:@"Sign Out" forState:UIControlStateNormal];
     [_btnTop setTitleColor:myWhite forState:UIControlStateNormal];
     [_btnBot setTitleColor:myWhite forState:UIControlStateNormal];
     [_btnTop setTitleColor:myTransWhite forState:UIControlStateHighlighted];
@@ -79,6 +81,15 @@
     [_btnTop setBackgroundColor:myRed];
     
     
+    CGRect frameImgLogo = CGRectMake(40, 136, 240, 240);
+    _imgGameLogo = [[UIImageView alloc] initWithFrame:frameImgLogo];
+    _imgGameLogo.layer.cornerRadius = 20.0;
+    _imgGameLogo.layer.masksToBounds = YES;
+    [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
+    _imgGameLogo.contentMode = UIViewContentModeScaleAspectFit;
+    
+    [self.view addSubview:_imgGameFrame];
+    [self.view addSubview:_imgGameLogo];
     
     
     
@@ -112,7 +123,7 @@
     [self.view addSubview:_btnDummy2];
     */
     
-    _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 184, self.view.frame.size.width-40, 30)];
+    //_btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 184, self.view.frame.size.width-40, 30)];
     if ([[_dataHandler getBolRegisteredForNotifications] boolValue]) {
         [_btnToggleNotifications setTitle:@"Disable Notifications" forState:UIControlStateNormal];
     } else {
@@ -124,17 +135,17 @@
     [_btnToggleNotifications addTarget:self action:@selector(toggleNotifications) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btnToggleNotifications];
     
-    _lblDynamic = [[UILabel alloc] init];
-    [_lblDynamic setFrame:CGRectMake(20, 209, self.view.frame.size.width-40, 30)];
-    [_lblDynamic setNumberOfLines:1];
-    if ([[_dataHandler getBolRegisteredForNotifications] boolValue]) {
-        [_lblDynamic setText:@"Notifications are enabled"];
-    } else {
-        [_lblDynamic setText:@"Notifications are disabled"];
-    }
-    [_lblDynamic setTextAlignment:NSTextAlignmentCenter];
-    [_lblDynamic setTextColor:myWhite];
-    [self.view addSubview:_lblDynamic];
+//    _lblDynamic = [[UILabel alloc] init];
+//    [_lblDynamic setFrame:CGRectMake(20, 209, self.view.frame.size.width-40, 30)];
+//    [_lblDynamic setNumberOfLines:1];
+//    if ([[_dataHandler getBolRegisteredForNotifications] boolValue]) {
+//        [_lblDynamic setText:@"Notifications are enabled"];
+//    } else {
+//        [_lblDynamic setText:@"Notifications are disabled"];
+//    }
+//    [_lblDynamic setTextAlignment:NSTextAlignmentCenter];
+//    [_lblDynamic setTextColor:myWhite];
+//    [self.view addSubview:_lblDynamic];
     
     
     [self.view addSubview:_btnTop];
