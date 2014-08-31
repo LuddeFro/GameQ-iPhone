@@ -59,12 +59,12 @@
         
         [_btnTop setFrame:CGRectMake(20, 370, self.view.frame.size.width-40, 30)];
         [_btnBot setFrame:CGRectMake(20, 408, self.view.frame.size.width-40, 30)];
-         _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, self.view.frame.size.width-40, 30)];
+         _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 90, self.view.frame.size.width-40, 30)];
         
     } else if (self.view.frame.size.height == 568) {
         [_btnTop setFrame:CGRectMake(20, 460, self.view.frame.size.width-40, 30)];
         [_btnBot setFrame:CGRectMake(20, 498, self.view.frame.size.width-40, 30)];
-        _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, self.view.frame.size.width-40, 30)];
+        _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 90, self.view.frame.size.width-40, 30)];
     }
     
     [_btnTop addTarget:self action:@selector(topButtonPressed) forControlEvents:UIControlEventTouchUpInside];

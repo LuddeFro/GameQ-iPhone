@@ -72,7 +72,7 @@
     CGRect framelblCountdown = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-70, 320, 25);
     CGRect framelblApprox = CGRectMake(0, framelblCountdown.origin.y-45, 320, 35);
     CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+10, 320, 45);
-    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y - 45, 320, 45);
+    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y - 55, 320, 45);
     
     
     CGRect frameImgGameFrame = CGRectMake(20, 90, 280, 316);
@@ -241,8 +241,8 @@
         switch ([[_displayItem substringToIndex:2] intValue]) {
             case kNOGAME:
                 
-                _lblStatus.text = @"Not gaming";
-                _lblGame.text = @"";
+                _lblStatus.text = @"Not Gaming";
+                _lblGame.text = @"Connected to GameQ";
                 break;
             case kHEROES_OF_NEWERTH:
                 _lblGame.text = @"Heroes of Newerth";
@@ -285,9 +285,9 @@
                 
             case kOFFLINE:
                 _lblStatus.text = @"Not Gaming";
-                _lblGame.text = @"";
+                _lblGame.text = @"Connected to GameQ";
                 [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
-                [_lblStatus setTextColor:[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1]];
+                [_lblStatus setTextColor:[UIColor whiteColor]];
                 NSLog(@"tjorrfyra");
                 break;
             default:
