@@ -43,6 +43,8 @@
     [_mainController.secondViewController animateAppearance];
 }
 
+
+
 -(void) viewWillAppear:(BOOL)animated
 {
     [_mainController.secondViewController requestUpdate];
@@ -97,13 +99,11 @@
     [_navBar setTintColor:myWhite];
     [_navBar setBarTintColor:myRed];
     [_navBar setTranslucent:NO];
-    [self startTimer];
     
     _array0 = [[NSMutableArray alloc] init];
     _array1 = [[NSMutableArray alloc] init];
     _array2 = [[NSMutableArray alloc] init];
     _array4 = [[NSMutableArray alloc] init];
-    
     
 }
 
@@ -122,16 +122,7 @@
 
 
 
-- (void) startTimer {
-    _refreshTimer = [NSTimer timerWithTimeInterval:5 target:self selector:@selector(requestUpdate) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:_refreshTimer forMode:NSDefaultRunLoopMode];
-    
-    
-}
-- (void) stopTimer {
-    [_refreshTimer invalidate];
-    //[countdownSlowTimer invalidate];
-}
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -206,8 +197,8 @@
 
 - (void)requestUpdate
 {
-    NSLog(@"refreshing");
-    [_connectionsHandler upAppPost];
+    NSLog(@"would refresh in old times");
+    //[_connectionsHandler upAppPost];
 }
 
 - (void) reload

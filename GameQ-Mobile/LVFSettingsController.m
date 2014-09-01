@@ -161,7 +161,6 @@
     [self.view addSubview:_lblTitle];
     
     
-    
 }
 
 -(void) reload{

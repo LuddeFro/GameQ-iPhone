@@ -54,6 +54,11 @@
     
 }
 
+-(void) viewDidDisappear:(BOOL)animated
+{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -94,8 +99,10 @@
     [_lblApproxTime setText:@"Approximate time to accept queue:"];
     [_lblApproxTime setAlpha:0];
     [_lblStatus setText:@"Connect a computer"];
-    [_lblGame setText:@"Not gaming"];
+    [_lblGame setText:@""];
+    [_lblGame setAlpha:0];
     [_lblCountdown setText:@"00:00"];
+    [_lblCountdown setAlpha:0];
     
     [_lblCountdown setTextAlignment:NSTextAlignmentCenter];
     [_lblApproxTime setTextAlignment:NSTextAlignmentCenter];
@@ -128,8 +135,6 @@
     _imgGameFrame.layer.borderWidth = 1;
     [_imgGameFrame setBackgroundColor:myDarkGray];
     */
-    _countdownTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(tickDown) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:_countdownTimer forMode:NSDefaultRunLoopMode];
     [self reload];
     
 }
@@ -260,40 +265,45 @@
             default:
                 break;
         }
-        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.5];
         
         switch ([[_displayItem substringWithRange:NSMakeRange(2, 2)] intValue]) {
             case kONLINE:
                 _lblStatus.text = [NSString stringWithFormat:@"Online"];
                 [_lblStatus setTextColor:[UIColor colorWithRed:0.98 green:0.98 blue:0 alpha:1]];
                 NSLog(@"tjorren");
+                [_lblGame setAlpha:1];
                 break;
                 
             case kINGAME:
                 _lblStatus.text = [NSString stringWithFormat:@"In Game"];
                 [_lblStatus setTextColor:[UIColor colorWithRed:0 green:0.98 blue:0 alpha:1]];
                 NSLog(@"tjorrtvå");
+                [_lblGame setAlpha:1];
                 break;
                 
             case kOFF:
                 [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
-                _lblStatus.text = @"Disconnected";
-                [_lblStatus setTextColor:[UIColor colorWithRed:0.98 green:0 blue:0 alpha:1]];
+                _lblStatus.text = @"Connect a Computer";
+                [_lblStatus setTextColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]];
                 _lblGame.text = @"";
                 NSLog(@"tjorrtre");
+                [_lblGame setAlpha:0];
                 break;
-                
             case kOFFLINE:
                 _lblStatus.text = @"Not Gaming";
-                _lblGame.text = @"Connected to GameQ";
+                _lblGame.text = @"";
+                [_lblGame setAlpha:0];
                 [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
-                [_lblStatus setTextColor:[UIColor whiteColor]];
+                [_lblStatus setTextColor:[UIColor colorWithRed:0.98 green:0 blue:0 alpha:1]];
                 NSLog(@"tjorrfyra");
                 break;
             default:
                 NSLog(@"status not found: %d", [[_displayItem substringWithRange:NSMakeRange(2, 2)] intValue]);
                 break;
         }
+        [UIView commitAnimations];
     }
 }
 

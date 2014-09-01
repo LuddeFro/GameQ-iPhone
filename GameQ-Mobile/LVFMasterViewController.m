@@ -24,10 +24,22 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self startTimer];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [self stopTimer];
+}
 
 - (void)viewDidLoad
 {
-    
+    _bolButtonPressed = false;
+    _bolButtonPressedHelper = false;
+    _bolAlreadyCounting = false;
+    _bolSkipIt = false;
     [super viewDidLoad];
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
     UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
@@ -65,13 +77,12 @@
     //--------------
     _connectionsHandler = [[LVFConnections alloc] initFromController:_mainController];
     [self requestUpdate];
-    [self startTimer];
     
     UINavigationItem *item = [[UINavigationItem alloc] init];
     
-    _listView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"listIcon.png"]];
-    _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sq-nb.png"]];
-    _gearView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kuggDefault.png"]];
+    _listView = [[UIButton alloc] init];
+    _logoView = [[UIButton alloc] init];
+    _gearView = [[UIButton alloc] init];
     [_listView setAlpha:0.4];
     [_gearView setAlpha:0.4];
     _leftItemRect = CGRectMake(15, 29, 30, 30);
@@ -95,6 +106,14 @@
     [_navBar setBarTintColor:myRed];
     [_navBar setTranslucent:NO];
     [_navBar pushNavigationItem:item animated:YES];
+    
+    [_listView setBackgroundImage:[UIImage imageNamed:@"listIcon.png"] forState:UIControlStateNormal];
+    [_gearView setBackgroundImage:[UIImage imageNamed:@"kuggDefault.png"] forState:UIControlStateNormal];
+    [_logoView setBackgroundImage:[UIImage imageNamed:@"sq-nb.png"] forState:UIControlStateNormal];
+    
+    [_listView addTarget:self action:@selector(pressedList) forControlEvents:UIControlEventTouchUpInside];
+    [_gearView addTarget:self action:@selector(pressedGear) forControlEvents:UIControlEventTouchUpInside];
+    [_logoView addTarget:self action:@selector(pressedLogo) forControlEvents:UIControlEventTouchUpInside];
     
     
    // UIView *navBorder = [[UIView alloc] initWithFrame:CGRectMake(0,_navBar.frame.size.height-1,_navBar.frame.size.width, 1)];
@@ -129,11 +148,65 @@
     
 }
 
+-(void) pressedList {
+    if (_intIndex == 2) {
+        return;
+    }
+    _bolButtonPressed = true;
+    _intIndex = 2;
+    
+    LVFTableViewController *impleViewController = [[LVFTableViewController alloc] initWithMainController:_mainController];
+    NSArray *viewControllers = nil;
+    
+    viewControllers = [NSArray arrayWithObjects:impleViewController, nil];
+    [_pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+    
+}
+
+-(void) pressedGear {
+    if (_intIndex == 0) {
+        return;
+    }
+    _bolButtonPressed = true;
+    _intIndex = 0;
+    LVFSettingsController *impleViewController = [[LVFSettingsController alloc] initWithMainController:_mainController];
+    NSArray *viewControllers = nil;
+    
+    viewControllers = [NSArray arrayWithObjects:impleViewController, nil];
+    [_pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
+    
+}
+                          
+
+
+-(void) pressedLogo {
+    if (_intIndex == 1) {
+        return;
+    }
+    _bolButtonPressed = true;
+    _intIndex = 1;
+    LVFViewControllerTwo *impleViewController = [[LVFViewControllerTwo alloc] initWithMainController:_mainController];
+    NSArray *viewControllers = nil;
+    
+    viewControllers = [NSArray arrayWithObjects:impleViewController, nil];
+    if (_intIndex == 0) {
+        [_pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+    } else {
+        [_pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
+    }
+    
+}
+                          
+                          
+                          
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if (_bolButtonPressed) {
+        return;
+    }
     CGFloat percentage = scrollView.contentOffset.x / scrollView.contentSize.width;
     
-    NSLog(@"percentage: %f, %d", percentage, _currentIndex);
+
     percentage -= 0.333333;
     percentage *= 3;
     
@@ -225,9 +298,12 @@
 - (void) startTimer {
     _refreshTimer = [NSTimer timerWithTimeInterval:5 target:self selector:@selector(requestUpdate) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_refreshTimer forMode:NSDefaultRunLoopMode];
+    _countdownTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(tickDown) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:_countdownTimer forMode:NSDefaultRunLoopMode];
 }
 - (void) stopTimer {
     [_refreshTimer invalidate];
+    [_countdownTimer invalidate];
     //[countdownSlowTimer invalidate];
 }
 
@@ -235,6 +311,13 @@
 {
     NSLog(@"refreshing");
     [_connectionsHandler upAppPost];
+}
+
+-(void) tickDown
+{
+    if ([[_pageController.viewControllers objectAtIndex:0] isKindOfClass:[LVFViewControllerTwo class]]) {
+        [(LVFViewControllerTwo *)[_pageController.viewControllers objectAtIndex:0] tickDown];
+    }
 }
 
 - (void) receiveUpdate:(NSMutableArray*)array
@@ -338,9 +421,49 @@
 
 - (void) animateAppearance
 {
-    if (_bolFoundScrollView) {
+    if (!_bolButtonPressed) {
+        if (_bolFoundScrollView) {
+            return;
+        } else {
+            if (_currentIndex == 0) {
+                [_logoView setFrame:_rightItemRect];
+                [_listView setFrame:_outRightItemRect];
+                [_gearView setFrame:_centerItemRect];
+            } else if (_currentIndex == 1) {
+                [_logoView setFrame:_centerItemRect];
+                [_listView setFrame:_rightItemRect];
+                [_gearView setFrame:_leftItemRect];
+            } else if (_currentIndex == 2) {
+                [_logoView setFrame:_leftItemRect];
+                [_listView setFrame:_centerItemRect];
+                [_gearView setFrame:_outLeftItemRect];
+            }
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:0.5];
+            
+            if (_logoView.frame.origin.x == _centerItemRect.origin.x) {
+                [_logoView setAlpha:1];
+                [_listView setAlpha:0.4];
+                [_gearView setAlpha:0.4];
+            } else if (_listView.frame.origin.x == _centerItemRect.origin.x) {
+                [_logoView setAlpha:0.4];
+                [_listView setAlpha:1];
+                [_gearView setAlpha:0.4];
+            } else if (_gearView.frame.origin.x == _centerItemRect.origin.x) {
+                [_logoView setAlpha:0.4];
+                [_listView setAlpha:0.4];
+                [_gearView setAlpha:1];
+            }
+            [UIView commitAnimations];
+        }
+    } else if (!_bolButtonPressedHelper) {
         return;
     }
+    
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
     if (_currentIndex == 0) {
         [_logoView setFrame:_rightItemRect];
         [_listView setFrame:_outRightItemRect];
@@ -354,9 +477,6 @@
         [_listView setFrame:_centerItemRect];
         [_gearView setFrame:_outLeftItemRect];
     }
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.5];
-    
     if (_logoView.frame.origin.x == _centerItemRect.origin.x) {
         [_logoView setAlpha:1];
         [_listView setAlpha:0.4];
@@ -372,12 +492,36 @@
     }
     [UIView commitAnimations];
     
+    if (_bolAlreadyCounting) {
+        _bolSkipIt = true;
+    }
+    _bolAlreadyCounting = true;
+    NSTimer *tempTimer = [NSTimer timerWithTimeInterval:0.3 target:self selector:@selector(buttonTransDone) userInfo:nil repeats:NO];
+    [[NSRunLoop mainRunLoop] addTimer:tempTimer forMode:NSDefaultRunLoopMode];
+    
 }
+
+-(void) buttonTransDone
+{
+    if (_bolSkipIt) {
+        _bolSkipIt = false;
+        return;
+    }
+    _bolButtonPressed = false;
+    _bolButtonPressedHelper = false;
+    _bolAlreadyCounting = false;
+}
+
 - (void) animateDisappearance
 {
+    if (_bolButtonPressed) {
+        _bolButtonPressedHelper = true;
+        [self animateAppearance];
+    }
     if (_bolFoundScrollView) {
         return;
     }
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5];
     [_logoView setAlpha:0];
@@ -403,6 +547,7 @@
     } else if ([currentViewController isMemberOfClass:[LVFSettingsController class]]) {
         _intIndex = 0;
     }
+    
     
     
     //[_pcDots setCurrentPage:_intIndex];

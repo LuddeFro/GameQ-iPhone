@@ -35,11 +35,10 @@
 
 @property (assign, nonatomic) NSInteger index;
 
-@property (strong, nonatomic) NSTimer *countdownTimer;
 
 @property (strong, nonatomic) NSString *displayItem;
 
 - (id)initWithMainController:(LVFViewController*)controller;
 - (void)reload;
-
+- (void)tickDown;
 @end

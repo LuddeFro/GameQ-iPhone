@@ -38,17 +38,20 @@
 @property CGRect centerItemRect;
 @property CGRect outLeftItemRect;
 @property CGRect outRightItemRect;
-@property (strong, nonatomic) UIImageView *listView;
-@property (strong, nonatomic) UIImageView *logoView;
-@property (strong, nonatomic) UIImageView *gearView;
-
+@property (strong, nonatomic) UIButton *listView;
+@property (strong, nonatomic) UIButton *logoView;
+@property (strong, nonatomic) UIButton *gearView;
+@property bool bolButtonPressed;
+@property bool bolButtonPressedHelper;
 @property (strong, nonatomic) UIImageView *imgBackgroundView;
 
 @property bool bolFoundScrollView;
 @property (strong, nonatomic) NSTimer *refreshTimer;
 
 @property int intIndex;
-
+@property (strong, nonatomic) NSTimer *countdownTimer;
+@property bool bolAlreadyCounting;
+@property bool bolSkipIt;
 - (id)initWithMainController:(LVFViewController*)controller;
 - (void) requestUpdate;
 - (void) receiveUpdate:(NSMutableArray*)array;
