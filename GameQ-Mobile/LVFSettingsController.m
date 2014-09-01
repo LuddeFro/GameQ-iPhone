@@ -54,18 +54,20 @@
     _btnTop = [[UIButton alloc] init];
     _btnBot = [[UIButton alloc] init];
     
-    
+    CGRect frameImgLogo;
     if(self.view.frame.size.height < 568) {
         
         [_btnTop setFrame:CGRectMake(20, 400, self.view.frame.size.width-40, 30)];
         [_btnBot setFrame:CGRectMake(20, 438, self.view.frame.size.width-40, 30)];
          _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 90, self.view.frame.size.width-40, 30)];
+        frameImgLogo = CGRectMake(70, 136, 180, 180);
         
     } else if (self.view.frame.size.height == 568) {
         [_btnTop setFrame:CGRectMake(20, 490, self.view.frame.size.width-40, 30)];
         [_btnBot setFrame:CGRectMake(20, 528, self.view.frame.size.width-40, 30)];
         _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 90, self.view.frame.size.width-40, 30)];
-    }
+        frameImgLogo = CGRectMake(40, 136, 240, 240);
+    } else {frameImgLogo = CGRectMake(40, 136, 240, 240);} //should never be called
     
     [_btnTop addTarget:self action:@selector(topButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [_btnBot addTarget:self action:@selector(botButtonPressed) forControlEvents:UIControlEventTouchUpInside];
@@ -81,7 +83,6 @@
     [_btnTop setBackgroundColor:myRed];
     
     
-    CGRect frameImgLogo = CGRectMake(40, 136, 240, 240);
     _imgGameLogo = [[UIImageView alloc] initWithFrame:frameImgLogo];
     _imgGameLogo.layer.cornerRadius = 20.0;
     _imgGameLogo.layer.masksToBounds = YES;

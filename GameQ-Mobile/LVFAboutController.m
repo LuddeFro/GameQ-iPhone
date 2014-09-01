@@ -82,7 +82,7 @@
     [self.view addSubview:_btnDummy2];
     */
     _lblStatic = [[UILabel alloc] init];
-    [_lblStatic setFrame:CGRectMake(20, 12, self.view.frame.size.width-40, self.view.frame.size.height-105)];
+    [_lblStatic setFrame:CGRectMake(20, 40, self.view.frame.size.width-40, self.view.frame.size.height-105)];
     [_lblStatic setNumberOfLines:0];
     [_lblStatic setText:@"GameQ is the first and only App that allows you to leave your computer while queuing for your favourite games! No more worrying about bad starts and leaver stats! GameQ checks your queue for you and sends a notification to your smartphone when the game starts!\r\n\r\nSimply download and install desktop client from www.gameq.io. Log in to your GameQ account and let GameQ revolutionize your gaming experience! Take a bathroom break, enjoy a pre-game snack or call a friend - GameQ will take care of the rest!"];
     [_lblStatic setTextColor:myWhite];
