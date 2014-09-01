@@ -57,7 +57,7 @@
         
         
         if(self.view.frame.size.height < 568) {
-            [_imgLogo setFrame:CGRectMake((self.view.frame.size.width-128)/2, 35, 128, 128)];
+            [_imgLogo setFrame:CGRectMake((self.view.frame.size.width-128)/2, 65, 128, 128)];
             
             [_txtEmail setFrame:CGRectMake(20, 200, self.view.frame.size.width-40, 30)];
             [_txtPassword setFrame:CGRectMake(20, 238, self.view.frame.size.width-40, 30)];

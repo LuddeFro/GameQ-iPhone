@@ -22,9 +22,10 @@
 #define kAPPID @"GameQ"
 
 #define versionURL kGameQServerURL@"versionControl.php"
+#define URL_FACEBOOK @"https://www.facebook.com/GameQApp"
+#define URL_TWITTER @"https://twitter.com/GameQApp"
 #define URL_ABOUT @"http://www.gameQ.io#read-more"
 #define kVersion @"1.0"
-
 @interface LVFDefinitions : NSObject
 
 @end

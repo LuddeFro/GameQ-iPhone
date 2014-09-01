@@ -17,6 +17,9 @@
 @property UIButton *btnDummy2;
 @property UIButton *btnAbout;
 @property UILabel *lblStatic;
+@property UILabel *lblLikeUs;
+@property UIButton *btnFacebook;
+@property UIButton *btnTwitter;
 
 
 

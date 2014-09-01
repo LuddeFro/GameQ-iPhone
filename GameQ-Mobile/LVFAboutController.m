@@ -82,11 +82,35 @@
     [self.view addSubview:_btnDummy2];
     */
     _lblStatic = [[UILabel alloc] init];
-    [_lblStatic setFrame:CGRectMake(20, 55, self.view.frame.size.width-40, self.view.frame.size.height-105)];
+    [_lblStatic setFrame:CGRectMake(20, 12, self.view.frame.size.width-40, self.view.frame.size.height-105)];
     [_lblStatic setNumberOfLines:0];
-    [_lblStatic setText:@"GameQ is an application designed to help you save time while gaming. No longer do you have to fret leaving the screen for a second in fear of missing the queue pop. Whenever a queue ends on one of your connected computers, all your mobile devices will be notified, and so will you!\r\n\r\nFor more info or if you wish to download the app to your other devices, GameQ is available on the AppStore, GooglePlay and on our website at:"];
+    [_lblStatic setText:@"GameQ is the first and only App that allows you to leave your computer while queuing for your favourite games! No more worrying about bad starts and leaver stats! GameQ checks your queue for you and sends a notification to your smartphone when the game starts!\r\n\r\nSimply download and install desktop client from www.gameq.io. Log in to your GameQ account and let GameQ revolutionize your gaming experience! Take a bathroom break, enjoy a pre-game snack or call a friend - GameQ will take care of the rest!"];
     [_lblStatic setTextColor:myWhite];
     [self.view addSubview:_lblStatic];
+    
+    _lblLikeUs = [[UILabel alloc] init];
+    [_lblLikeUs setFrame:CGRectMake(20, self.view.frame.size.height-150, self.view.frame.size.width-40, 50)];
+    [_lblLikeUs setTextAlignment:NSTextAlignmentCenter];
+    [_lblLikeUs setNumberOfLines:0];
+    [_lblLikeUs setText:@"Follow/Like us on..."];
+    [_lblLikeUs setTextColor:myWhite];
+    [self.view addSubview:_lblLikeUs];
+    
+    _btnFacebook = [[UIButton alloc] initWithFrame:CGRectMake(100, _lblLikeUs.frame.origin.y + 45, 48, 48)];
+    [_btnFacebook setTitle:@"" forState:UIControlStateNormal];
+    [_btnFacebook setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
+    [_btnFacebook setEnabled:YES];
+    [_btnFacebook setBackgroundImage:[UIImage imageNamed:@"facebook48.png"] forState:UIControlStateNormal];
+    [_btnFacebook addTarget:self action:@selector(facebookSelected) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_btnFacebook];
+    
+    _btnTwitter = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width-(48+100), _lblLikeUs.frame.origin.y + 45, 48, 48)];
+    [_btnTwitter setTitle:@"" forState:UIControlStateNormal];
+    [_btnTwitter setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
+    [_btnTwitter setEnabled:YES];
+    [_btnTwitter setBackgroundImage:[UIImage imageNamed:@"twitter48.png"] forState:UIControlStateNormal];
+    [_btnTwitter addTarget:self action:@selector(twitterSelected) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_btnTwitter];
     
     _btnAbout = [[UIButton alloc] init];
     [_btnAbout setFrame:CGRectMake(20, self.view.frame.size.height-50, self.view.frame.size.width-40, 30)];
@@ -105,6 +129,29 @@
     [_lblTitle setTextColor:myWhite];
     [_lblTitle setFont:[UIFont boldSystemFontOfSize:20]];
     [self.view addSubview:_lblTitle];
+    
+    if(self.view.frame.size.height < 568) { //if less than 4 inch (== 3.5 inch)
+        [_lblStatic setFont:[UIFont systemFontOfSize:15]];
+        [_lblStatic setFrame:CGRectMake(_lblStatic.frame.origin.x, _lblStatic.frame.origin.y, _lblStatic.frame.size.width, _lblStatic.frame.size.height+15)];
+        
+    }
+    
+    
+}
+
+-(void)facebookSelected
+{
+    NSLog(@"Facebook selected");
+    [self.view endEditing:YES];
+    NSURL *urlAbout = [[NSURL alloc] initWithString:URL_FACEBOOK];
+    [[UIApplication sharedApplication] openURL:urlAbout];
+}
+-(void)twitterSelected
+{
+    NSLog(@"Twitter selected");
+    [self.view endEditing:YES];
+    NSURL *urlAbout = [[NSURL alloc] initWithString:URL_TWITTER];
+    [[UIApplication sharedApplication] openURL:urlAbout];
 }
 
 - (void)didReceiveMemoryWarning

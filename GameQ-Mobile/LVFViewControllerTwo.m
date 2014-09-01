@@ -137,6 +137,26 @@
     */
     [self reload];
     
+    if(self.view.frame.size.height < 568) { //if less than 4 inch (== 3.5 inch)
+        [_imgGameLogo setFrame:CGRectMake(_imgGameLogo.frame.origin.x + 10, _imgGameLogo.frame.origin.y -10, _imgGameLogo.frame.size.width-20, _imgGameLogo.frame.size.height-20)];
+        [_lblCountdown setFont:[UIFont fontWithName:@"helvetica neue" size:30]];
+        [_lblApproxTime setFont:[UIFont fontWithName:@"helvetica neue" size:18]];
+        [_lblStatus setFont:[UIFont fontWithName:@"helvetica neue" size:20]];
+        [_lblGame setFont:[UIFont fontWithName:@"helvetica neue" size:20]];
+        
+        CGRect framelblCountdown = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-45, 320, 35);
+        CGRect framelblApprox = CGRectMake(0, framelblCountdown.origin.y-30, 320, 25);
+        CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height-10, 320, 35);
+        CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y - 55, 320, 35);
+        
+        [_lblCountdown setFrame:framelblCountdown];
+        [_lblApproxTime setFrame:framelblApprox];
+        [_lblGame setFrame:framelblGame];
+        [_lblStatus setFrame:framelblStatus];
+        
+        
+    }
+    
 }
 
 -(void)tickDown

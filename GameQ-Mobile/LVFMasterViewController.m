@@ -184,16 +184,19 @@
         return;
     }
     _bolButtonPressed = true;
-    _intIndex = 1;
+    
     LVFViewControllerTwo *impleViewController = [[LVFViewControllerTwo alloc] initWithMainController:_mainController];
     NSArray *viewControllers = nil;
     
     viewControllers = [NSArray arrayWithObjects:impleViewController, nil];
     if (_intIndex == 0) {
+        _intIndex = 1;
         [_pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
     } else {
+        _intIndex = 1;
         [_pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
     }
+    
     
 }
                           
