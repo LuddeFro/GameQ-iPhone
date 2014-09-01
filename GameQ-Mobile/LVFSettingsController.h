@@ -31,6 +31,10 @@
 @property (strong, nonatomic) UIImageView *imgGameFrame;
 @property (strong, nonatomic) UIImageView *imgGameLogo;
 
+@property UILabel *lblLikeUs;
+@property UIButton *btnFacebook;
+@property UIButton *btnTwitter;
+
 
 @property (strong, nonatomic) UIButton *btnTop;
 
