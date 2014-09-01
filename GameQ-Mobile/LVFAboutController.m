@@ -88,29 +88,7 @@
     [_lblStatic setTextColor:myWhite];
     [self.view addSubview:_lblStatic];
     
-    _lblLikeUs = [[UILabel alloc] init];
-    [_lblLikeUs setFrame:CGRectMake(20, self.view.frame.size.height-150, self.view.frame.size.width-40, 50)];
-    [_lblLikeUs setTextAlignment:NSTextAlignmentCenter];
-    [_lblLikeUs setNumberOfLines:0];
-    [_lblLikeUs setText:@"Follow/Like us on..."];
-    [_lblLikeUs setTextColor:myWhite];
-    [self.view addSubview:_lblLikeUs];
     
-    _btnFacebook = [[UIButton alloc] initWithFrame:CGRectMake(100, _lblLikeUs.frame.origin.y + 45, 48, 48)];
-    [_btnFacebook setTitle:@"" forState:UIControlStateNormal];
-    [_btnFacebook setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
-    [_btnFacebook setEnabled:YES];
-    [_btnFacebook setBackgroundImage:[UIImage imageNamed:@"facebook48.png"] forState:UIControlStateNormal];
-    [_btnFacebook addTarget:self action:@selector(facebookSelected) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_btnFacebook];
-    
-    _btnTwitter = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width-(48+100), _lblLikeUs.frame.origin.y + 45, 48, 48)];
-    [_btnTwitter setTitle:@"" forState:UIControlStateNormal];
-    [_btnTwitter setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
-    [_btnTwitter setEnabled:YES];
-    [_btnTwitter setBackgroundImage:[UIImage imageNamed:@"twitter48.png"] forState:UIControlStateNormal];
-    [_btnTwitter addTarget:self action:@selector(twitterSelected) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_btnTwitter];
     
     _btnAbout = [[UIButton alloc] init];
     [_btnAbout setFrame:CGRectMake(20, self.view.frame.size.height-50, self.view.frame.size.width-40, 30)];
@@ -139,20 +117,7 @@
     
 }
 
--(void)facebookSelected
-{
-    NSLog(@"Facebook selected");
-    [self.view endEditing:YES];
-    NSURL *urlAbout = [[NSURL alloc] initWithString:URL_FACEBOOK];
-    [[UIApplication sharedApplication] openURL:urlAbout];
-}
--(void)twitterSelected
-{
-    NSLog(@"Twitter selected");
-    [self.view endEditing:YES];
-    NSURL *urlAbout = [[NSURL alloc] initWithString:URL_TWITTER];
-    [[UIApplication sharedApplication] openURL:urlAbout];
-}
+
 
 - (void)didReceiveMemoryWarning
 {
