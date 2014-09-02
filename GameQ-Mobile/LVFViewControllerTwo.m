@@ -77,8 +77,8 @@
     
     CGRect framelblCountdown = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-70, 320, 25);
     CGRect framelblApprox = CGRectMake(0, framelblCountdown.origin.y-45, 320, 35);
-    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+10, 320, 45);
-    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y - 55, 320, 45);
+    CGRect framelblGame = CGRectMake(0, frameImgLogo.origin.y+frameImgLogo.size.height+10, 320, 45);
+    CGRect framelblStatus = CGRectMake(0, frameImgLogo.origin.y - 55, 320, 45);
     
     
     CGRect frameImgGameFrame = CGRectMake(20, 90, 280, 316);
@@ -292,34 +292,35 @@
         
         switch ([[_displayItem substringWithRange:NSMakeRange(2, 2)] intValue]) {
             case kONLINE:
-                _lblStatus.text = [NSString stringWithFormat:@"Online"];
-                [_lblStatus setTextColor:[UIColor colorWithRed:0.98 green:0.98 blue:0 alpha:1]];
+                _lblStatus.text = [NSString stringWithFormat:@"In Lobby"];
+                [_lblStatus setTextColor:[UIColor whiteColor]];
                 NSLog(@"tjorren");
                 [_lblGame setAlpha:1];
                 break;
                 
             case kINGAME:
                 _lblStatus.text = [NSString stringWithFormat:@"In Game"];
-                [_lblStatus setTextColor:[UIColor colorWithRed:0 green:0.98 blue:0 alpha:1]];
+                [_lblStatus setTextColor:[UIColor whiteColor]];
                 NSLog(@"tjorrtvå");
                 [_lblGame setAlpha:1];
                 break;
                 
             case kOFF:
                 tempInt = kNOGAME;
-                _lblStatus.text = @"Connect a Computer";
-                [_lblStatus setTextColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]];
-                _lblGame.text = @"";
+                _lblStatus.text = @"Not Connected to GameQ";
+                [_lblStatus setTextColor:[UIColor whiteColor]];
+                _lblGame.text = @"Start GameQ on your Computer";
+                 [_lblGame setAlpha:1];
                 NSLog(@"tjorrtre");
-                [_lblGame setAlpha:0];
+                
                 break;
             case kOFFLINE:
-                _lblStatus.text = @"Not Gaming";
+                _lblStatus.text = @"Connected to GameQ";
                 tempInt = kNOGAME;
-                _lblGame.text = @"";
-                [_lblGame setAlpha:0];
-                [_lblStatus setTextColor:[UIColor colorWithRed:0.98 green:0 blue:0 alpha:1]];
+                _lblGame.text = @"Not Gaming";
+                [_lblStatus setTextColor:[UIColor whiteColor]];
                 NSLog(@"tjorrfyra");
+                 [_lblGame setAlpha:1];
                 break;
             default:
                 NSLog(@"status not found: %d", [[_displayItem substringWithRange:NSMakeRange(2, 2)] intValue]);
@@ -348,10 +349,10 @@
             [_imgGameLogo setImage:[UIImage imageNamed:@"honlogo.png"]];
             break;
         case kDOTA2:
-            [_imgGameLogo setImage:[UIImage imageNamed:@"cslogo.png"]];
+            [_imgGameLogo setImage:[UIImage imageNamed:@"dotalogo.png"]];
             break;
         case kCS_GO:
-            [_imgGameLogo setImage:[UIImage imageNamed:@"dotalogo.png"]];
+            [_imgGameLogo setImage:[UIImage imageNamed:@"cslogo.png"]];
             break;
         default:
             [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
