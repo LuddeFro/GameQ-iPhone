@@ -62,6 +62,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     _displayItem = @"";
     UIColor *myWhite = [UIColor colorWithWhite:1 alpha:1];
 //    UIColor *myRed = [UIColor colorWithRed:0.905 green:0.298 blue:0.235 alpha:1];
@@ -261,25 +262,26 @@
         [_lblCountdown setText:@""];
         
     } else {
-        
+        int tempInt;
         
         switch ([[_displayItem substringToIndex:2] intValue]) {
             case kNOGAME:
-                
+                tempInt = kNOGAME;
                 _lblStatus.text = @"Not Gaming";
                 _lblGame.text = @"Connected to GameQ";
                 break;
             case kHEROES_OF_NEWERTH:
+                tempInt = kHEROES_OF_NEWERTH;
                 _lblGame.text = @"Heroes of Newerth";
-                [_imgGameLogo setImage:[UIImage imageNamed:@"honlogo.png"]];
+                
                 break;
             case kDOTA2:
+                tempInt = kDOTA2;
                 _lblGame.text = @"Dota 2";
-                [_imgGameLogo setImage:[UIImage imageNamed:@"dotalogo.png"]];
                 break;
             case kCS_GO:
+                tempInt = kCS_GO;
                 _lblGame.text = @"Counter Strike: Global Offensive";
-                [_imgGameLogo setImage:[UIImage imageNamed:@"cslogo.png"]];
                 break;
                 
             default:
@@ -304,7 +306,7 @@
                 break;
                 
             case kOFF:
-                [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
+                tempInt = kNOGAME;
                 _lblStatus.text = @"Connect a Computer";
                 [_lblStatus setTextColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]];
                 _lblGame.text = @"";
@@ -313,9 +315,9 @@
                 break;
             case kOFFLINE:
                 _lblStatus.text = @"Not Gaming";
+                tempInt = kNOGAME;
                 _lblGame.text = @"";
                 [_lblGame setAlpha:0];
-                [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
                 [_lblStatus setTextColor:[UIColor colorWithRed:0.98 green:0 blue:0 alpha:1]];
                 NSLog(@"tjorrfyra");
                 break;
@@ -323,8 +325,42 @@
                 NSLog(@"status not found: %d", [[_displayItem substringWithRange:NSMakeRange(2, 2)] intValue]);
                 break;
         }
+        bool bolChanging = false;
+        if (tempInt != _lastPic) {
+            bolChanging = true;
+            _lastPic = tempInt;
+            [_imgGameLogo setAlpha:0];
+            NSTimer *aTimer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(showImage) userInfo:nil repeats:NO];
+            [[NSRunLoop mainRunLoop] addTimer:aTimer forMode:NSDefaultRunLoopMode];
+        }
         [UIView commitAnimations];
+        
     }
+}
+
+-(void)showImage
+{
+    switch (_lastPic) {
+        case kNOGAME:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
+            break;
+        case kHEROES_OF_NEWERTH:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"honlogo.png"]];
+            break;
+        case kDOTA2:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"cslogo.png"]];
+            break;
+        case kCS_GO:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"dotalogo.png"]];
+            break;
+        default:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
+            break;
+    }
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    [_imgGameLogo setAlpha:1];
+    [UIView commitAnimations];
 }
 
 /*

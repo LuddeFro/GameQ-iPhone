@@ -35,7 +35,7 @@
 
 @property (assign, nonatomic) NSInteger index;
 
-
+@property int lastPic;
 @property (strong, nonatomic) NSString *displayItem;
 
 - (id)initWithMainController:(LVFViewController*)controller;
