@@ -99,9 +99,9 @@
     
     [_lblApproxTime setText:@"Approximate time to accept queue:"];
     [_lblApproxTime setAlpha:0];
-    [_lblStatus setText:@"Connect a computer"];
-    [_lblGame setText:@""];
-    [_lblGame setAlpha:0];
+    [_lblStatus setText:@"Not Connected to GameQ"];
+    [_lblGame setText:@"Start GameQ on your Computer"];
+    [_lblGame setAlpha:1];
     [_lblCountdown setText:@"00:00"];
     [_lblCountdown setAlpha:0];
     
@@ -255,9 +255,9 @@
     NSLog(@"%@", _displayItem);
     if ([_displayItem isEqualToString:@""]) {
         NSLog(@"controller2 displayitem empty");
-        [_lblStatus setText:@"Start GameQ on a computer"];
+        [_lblStatus setText:@"Not Connected to GameQ"];
         [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
-        _lblGame.text = @"Not Connected";
+        _lblGame.text = @"Start GameQ on your Computer";
         _displayItem = @"";
         [_lblCountdown setText:@""];
         
