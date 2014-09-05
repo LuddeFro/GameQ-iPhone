@@ -55,8 +55,6 @@
 - (id)initWithMainController:(LVFViewController*)controller;
 - (void) requestUpdate;
 - (void) receiveUpdate:(NSMutableArray*)array;
-- (void) popController;
-- (NSString *) getDisplayItem;
 - (void) animateAppearance;
 - (void) animateDisappearance;
 @end

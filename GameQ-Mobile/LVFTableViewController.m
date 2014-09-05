@@ -12,6 +12,13 @@
 #define kHEROES_OF_NEWERTH 1
 #define kDOTA2 2
 #define kCS_GO 3
+#define kSMITE 4
+#define kSTRIFE 5
+#define kSC2 6
+#define kTF2 7
+#define kHOTS 8
+#define kLOL 9
+
 #define kOFF 4
 #define kOFFLINE 0
 #define kONLINE 1
@@ -332,7 +339,25 @@
                 gameString = @"Dota 2";
                 break;
             case kCS_GO:
-                gameString = @"CS: GO";
+                gameString = @"Counter Strike: Global Offensive";
+                break;
+            case kSMITE:
+                gameString = @"Smite";
+                break;
+            case kSTRIFE:
+                gameString = @"Strife";
+                break;
+            case kSC2:
+                gameString = @"StarCraft II";
+                break;
+            case kTF2:
+                gameString = @"Team Fortress 2";
+                break;
+            case kHOTS:
+                gameString = @"Heroes of the Storm";
+                break;
+            case kLOL:
+                gameString = @"League of Legends";
                 break;
                 
                 

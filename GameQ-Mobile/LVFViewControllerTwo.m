@@ -12,6 +12,13 @@
 #define kHEROES_OF_NEWERTH 1
 #define kDOTA2 2
 #define kCS_GO 3
+#define kSMITE 4
+#define kSTRIFE 5
+#define kSC2 6
+#define kTF2 7
+#define kHOTS 8
+#define kLOL 9
+
 #define kOFF 4
 #define kOFFLINE 0
 #define kONLINE 1
@@ -283,6 +290,30 @@
                 tempInt = kCS_GO;
                 _lblGame.text = @"Counter Strike: Global Offensive";
                 break;
+            case kSMITE:
+                tempInt = kSMITE;
+                _lblGame.text = @"Smite";
+                break;
+            case kSTRIFE:
+                tempInt = kSTRIFE;
+                _lblGame.text = @"Strife";
+                break;
+            case kSC2:
+                tempInt = kSC2;
+                _lblGame.text = @"StarCraft II";
+                break;
+            case kTF2:
+                tempInt = kTF2;
+                _lblGame.text = @"Team Fortress 2";
+                break;
+            case kHOTS:
+                tempInt = kHOTS;
+                _lblGame.text = @"Heroes of the Storm";
+                break;
+            case kLOL:
+                tempInt = kLOL;
+                _lblGame.text = @"League of Legends";
+                break;
                 
             default:
                 break;
@@ -353,6 +384,24 @@
             break;
         case kCS_GO:
             [_imgGameLogo setImage:[UIImage imageNamed:@"cslogo.png"]];
+            break;
+        case kSMITE:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"smitelogo.png"]];
+            break;
+        case kSTRIFE:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"strifelogo.png"]];
+            break;
+        case kSC2:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"sc2logo.png"]];
+            break;
+        case kTF2:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"tf2logo.png"]];
+            break;
+        case kHOTS:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"hotslogo.png"]];
+            break;
+        case kLOL:
+            [_imgGameLogo setImage:[UIImage imageNamed:@"lollogo.png"]];
             break;
         default:
             [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
