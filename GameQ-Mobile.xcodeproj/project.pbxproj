@@ -30,6 +30,17 @@
 		837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AA18181E7A000FCC76 /* LVFDataModel.m */; };
 		837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AD18184443000FCC76 /* LVFDefinitions.m */; };
 		839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839698F818A67BA900F2C417 /* StoreKit.framework */; };
+		83A8C2E719BA3BA1000ED612 /* hotslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2DC19BA3BA1000ED612 /* hotslogo.png */; };
+		83A8C2E819BA3BA1000ED612 /* hotslogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2DD19BA3BA1000ED612 /* hotslogo@2x.png */; };
+		83A8C2E919BA3BA1000ED612 /* hslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2DE19BA3BA1000ED612 /* hslogo.png */; };
+		83A8C2EA19BA3BA1000ED612 /* hslogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2DF19BA3BA1000ED612 /* hslogo@2x.png */; };
+		83A8C2EB19BA3BA1000ED612 /* lollogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2E019BA3BA1000ED612 /* lollogo.png */; };
+		83A8C2EC19BA3BA1000ED612 /* sc2logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2E119BA3BA1000ED612 /* sc2logo.png */; };
+		83A8C2ED19BA3BA1000ED612 /* smitelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2E219BA3BA1000ED612 /* smitelogo.png */; };
+		83A8C2EE19BA3BA1000ED612 /* smitelogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2E319BA3BA1000ED612 /* smitelogo@2x.png */; };
+		83A8C2EF19BA3BA1000ED612 /* strifelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2E419BA3BA1000ED612 /* strifelogo.png */; };
+		83A8C2F019BA3BA1000ED612 /* strifelogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2E519BA3BA1000ED612 /* strifelogo@2x.png */; };
+		83A8C2F119BA3BA1000ED612 /* tf2logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2E619BA3BA1000ED612 /* tf2logo.png */; };
 		83BFCFC019A61B67002C0DD6 /* cslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFBF19A61B67002C0DD6 /* cslogo.png */; };
 		83BFCFCB19A63476002C0DD6 /* listIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFC919A63476002C0DD6 /* listIcon@2x.png */; };
 		83BFCFCC19A63476002C0DD6 /* listIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFCA19A63476002C0DD6 /* listIcon.png */; };
@@ -108,6 +119,17 @@
 		837422AC18184443000FCC76 /* LVFDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDefinitions.h; sourceTree = "<group>"; };
 		837422AD18184443000FCC76 /* LVFDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFDefinitions.m; sourceTree = "<group>"; };
 		839698F818A67BA900F2C417 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		83A8C2DC19BA3BA1000ED612 /* hotslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotslogo.png; sourceTree = "<group>"; };
+		83A8C2DD19BA3BA1000ED612 /* hotslogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hotslogo@2x.png"; sourceTree = "<group>"; };
+		83A8C2DE19BA3BA1000ED612 /* hslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hslogo.png; sourceTree = "<group>"; };
+		83A8C2DF19BA3BA1000ED612 /* hslogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hslogo@2x.png"; sourceTree = "<group>"; };
+		83A8C2E019BA3BA1000ED612 /* lollogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lollogo.png; sourceTree = "<group>"; };
+		83A8C2E119BA3BA1000ED612 /* sc2logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sc2logo.png; sourceTree = "<group>"; };
+		83A8C2E219BA3BA1000ED612 /* smitelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smitelogo.png; sourceTree = "<group>"; };
+		83A8C2E319BA3BA1000ED612 /* smitelogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smitelogo@2x.png"; sourceTree = "<group>"; };
+		83A8C2E419BA3BA1000ED612 /* strifelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strifelogo.png; sourceTree = "<group>"; };
+		83A8C2E519BA3BA1000ED612 /* strifelogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "strifelogo@2x.png"; sourceTree = "<group>"; };
+		83A8C2E619BA3BA1000ED612 /* tf2logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tf2logo.png; sourceTree = "<group>"; };
 		83BFCFBF19A61B67002C0DD6 /* cslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cslogo.png; sourceTree = "<group>"; };
 		83BFCFC919A63476002C0DD6 /* listIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listIcon@2x.png"; sourceTree = "<group>"; };
 		83BFCFCA19A63476002C0DD6 /* listIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listIcon.png; sourceTree = "<group>"; };
@@ -270,6 +292,17 @@
 		837422A81815B0EF000FCC76 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				83A8C2DC19BA3BA1000ED612 /* hotslogo.png */,
+				83A8C2DD19BA3BA1000ED612 /* hotslogo@2x.png */,
+				83A8C2DE19BA3BA1000ED612 /* hslogo.png */,
+				83A8C2DF19BA3BA1000ED612 /* hslogo@2x.png */,
+				83A8C2E019BA3BA1000ED612 /* lollogo.png */,
+				83A8C2E119BA3BA1000ED612 /* sc2logo.png */,
+				83A8C2E219BA3BA1000ED612 /* smitelogo.png */,
+				83A8C2E319BA3BA1000ED612 /* smitelogo@2x.png */,
+				83A8C2E419BA3BA1000ED612 /* strifelogo.png */,
+				83A8C2E519BA3BA1000ED612 /* strifelogo@2x.png */,
+				83A8C2E619BA3BA1000ED612 /* tf2logo.png */,
 				83BFCFBF19A61B67002C0DD6 /* cslogo.png */,
 				83BFCFCD19A64B65002C0DD6 /* honlogo.png */,
 				83BFCFCE19A64B65002C0DD6 /* dotalogo.png */,
@@ -376,20 +409,31 @@
 				AE4A921819B3A621004CAF3A /* greyLight.png in Resources */,
 				AE4A921719B3A621004CAF3A /* greenLight@2x.png in Resources */,
 				83BFCFD019A64B65002C0DD6 /* dotalogo.png in Resources */,
+				83A8C2F019BA3BA1000ED612 /* strifelogo@2x.png in Resources */,
 				83BFCFCF19A64B65002C0DD6 /* honlogo.png in Resources */,
+				83A8C2EE19BA3BA1000ED612 /* smitelogo@2x.png in Resources */,
 				837422771815B0D4000FCC76 /* Images.xcassets in Resources */,
 				AE597B7F19B24A4F00419B16 /* sq-nb-ora@2x.png in Resources */,
 				AE597B7319B244A100419B16 /* sq-nb@2x.png in Resources */,
 				AE4A921D19B3A621004CAF3A /* yellowLight@2x.png in Resources */,
+				83A8C2EF19BA3BA1000ED612 /* strifelogo.png in Resources */,
 				AE4A921619B3A621004CAF3A /* greenLight.png in Resources */,
+				83A8C2E719BA3BA1000ED612 /* hotslogo.png in Resources */,
 				AE4A921A19B3A621004CAF3A /* redLight.png in Resources */,
+				83A8C2F119BA3BA1000ED612 /* tf2logo.png in Resources */,
 				83BFCFCB19A63476002C0DD6 /* listIcon@2x.png in Resources */,
 				83BFCFCC19A63476002C0DD6 /* listIcon.png in Resources */,
 				83BFCFD519A6D19D002C0DD6 /* iRate.bundle in Resources */,
 				AE4886A419B5068B00284DCC /* tw@2x.png in Resources */,
 				AE597B6B19B23D4D00419B16 /* blurred.png in Resources */,
+				83A8C2E819BA3BA1000ED612 /* hotslogo@2x.png in Resources */,
+				83A8C2EB19BA3BA1000ED612 /* lollogo.png in Resources */,
+				83A8C2ED19BA3BA1000ED612 /* smitelogo.png in Resources */,
 				83BFCFC019A61B67002C0DD6 /* cslogo.png in Resources */,
 				AE597B6F19B23F1800419B16 /* sqt@2x.png in Resources */,
+				83A8C2E919BA3BA1000ED612 /* hslogo.png in Resources */,
+				83A8C2EC19BA3BA1000ED612 /* sc2logo.png in Resources */,
+				83A8C2EA19BA3BA1000ED612 /* hslogo@2x.png in Resources */,
 				AE4886A219B5068B00284DCC /* fb@2x.png in Resources */,
 				AE4A921919B3A621004CAF3A /* greyLight@2x.png in Resources */,
 				AE597B6E19B23F1800419B16 /* sqt.png in Resources */,
