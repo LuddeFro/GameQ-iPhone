@@ -190,11 +190,17 @@
         ((currentTime - queueTime) > 0)) {
         if (bolCSGO) {
             [_lblCountdown setText:[NSString stringWithFormat:@"%ld", 15-(currentTime - queueTime)]];
+            [_lblCountdown setAlpha:1];
         } else if (bolDota) {
             [_lblCountdown setText:[NSString stringWithFormat:@"%ld", 42-(currentTime - queueTime)]];
+            
+        } else {
+            [_lblCountdown setText:@""];
+            [_lblCountdown setAlpha:0];
         }
         
         [_lblApproxTime setAlpha:1];
+        [_lblCountdown setAlpha:1];
     } else {
         [_lblCountdown setText:@""];
         [_lblApproxTime setAlpha:0];

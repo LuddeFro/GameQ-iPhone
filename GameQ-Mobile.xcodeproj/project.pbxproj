@@ -40,6 +40,7 @@
 		83A8C30319BA42E4000ED612 /* strifelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2F919BA42E4000ED612 /* strifelogo.png */; };
 		83A8C30419BA42E4000ED612 /* strifelogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2FA19BA42E4000ED612 /* strifelogo@2x.png */; };
 		83A8C30519BA42E4000ED612 /* tf2logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2FB19BA42E4000ED612 /* tf2logo.png */; };
+		83A8C30719BA5D1D000ED612 /* sc2logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C30619BA5D1D000ED612 /* sc2logo.png */; };
 		83BFCFC019A61B67002C0DD6 /* cslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFBF19A61B67002C0DD6 /* cslogo.png */; };
 		83BFCFCB19A63476002C0DD6 /* listIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFC919A63476002C0DD6 /* listIcon@2x.png */; };
 		83BFCFCC19A63476002C0DD6 /* listIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFCA19A63476002C0DD6 /* listIcon.png */; };
@@ -128,6 +129,7 @@
 		83A8C2F919BA42E4000ED612 /* strifelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strifelogo.png; sourceTree = "<group>"; };
 		83A8C2FA19BA42E4000ED612 /* strifelogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "strifelogo@2x.png"; sourceTree = "<group>"; };
 		83A8C2FB19BA42E4000ED612 /* tf2logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tf2logo.png; sourceTree = "<group>"; };
+		83A8C30619BA5D1D000ED612 /* sc2logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sc2logo.png; sourceTree = "<group>"; };
 		83BFCFBF19A61B67002C0DD6 /* cslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cslogo.png; sourceTree = "<group>"; };
 		83BFCFC919A63476002C0DD6 /* listIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listIcon@2x.png"; sourceTree = "<group>"; };
 		83BFCFCA19A63476002C0DD6 /* listIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listIcon.png; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				83A8C2F819BA42E4000ED612 /* smitelogo@2x.png */,
 				83A8C2F919BA42E4000ED612 /* strifelogo.png */,
 				83A8C2FA19BA42E4000ED612 /* strifelogo@2x.png */,
+				83A8C30619BA5D1D000ED612 /* sc2logo.png */,
 				83A8C2FB19BA42E4000ED612 /* tf2logo.png */,
 				83BFCFBF19A61B67002C0DD6 /* cslogo.png */,
 				83BFCFCD19A64B65002C0DD6 /* honlogo.png */,
@@ -411,6 +414,7 @@
 				AE4A921719B3A621004CAF3A /* greenLight@2x.png in Resources */,
 				83BFCFD019A64B65002C0DD6 /* dotalogo.png in Resources */,
 				83BFCFCF19A64B65002C0DD6 /* honlogo.png in Resources */,
+				83A8C30719BA5D1D000ED612 /* sc2logo.png in Resources */,
 				837422771815B0D4000FCC76 /* Images.xcassets in Resources */,
 				83A8C30219BA42E4000ED612 /* smitelogo@2x.png in Resources */,
 				83A8C2FC19BA42E4000ED612 /* hotslogo.png in Resources */,
