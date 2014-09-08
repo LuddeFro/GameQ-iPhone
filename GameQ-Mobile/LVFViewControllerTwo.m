@@ -104,7 +104,7 @@
     [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
     _imgGameLogo.contentMode = UIViewContentModeScaleAspectFit;
     
-    [_lblApproxTime setText:@"Approximate time to accept queue:"];
+    [_lblApproxTime setText:@"Approximate time left to accept queue:"];
     [_lblApproxTime setAlpha:0];
     [_lblStatus setText:@"Not Connected to GameQ"];
     [_lblGame setText:@"Start GameQ on your Computer"];
