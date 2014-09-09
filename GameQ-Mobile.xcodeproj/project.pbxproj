@@ -48,6 +48,8 @@
 		83BFCFD019A64B65002C0DD6 /* dotalogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFCE19A64B65002C0DD6 /* dotalogo.png */; };
 		83BFCFD319A6D191002C0DD6 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BFCFD219A6D191002C0DD6 /* iRate.m */; };
 		83BFCFD519A6D19D002C0DD6 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83BFCFD419A6D19D002C0DD6 /* iRate.bundle */; };
+		83C3F6AB19BF8AD3002056C1 /* sqt-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C3F6A919BF8AD3002056C1 /* sqt-red.png */; };
+		83C3F6AC19BF8AD3002056C1 /* sqt-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C3F6AA19BF8AD3002056C1 /* sqt-red@2x.png */; };
 		83EFA90719A4B80900DD1A16 /* LVFViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EFA90619A4B80900DD1A16 /* LVFViewControllerTwo.m */; };
 		83EFA91319A4D10D00DD1A16 /* LVFMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EFA91219A4D10D00DD1A16 /* LVFMasterViewController.m */; };
 		9C6852E319320BEF00652B0C /* kuggDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6852DF19320BEF00652B0C /* kuggDefault.png */; };
@@ -138,6 +140,8 @@
 		83BFCFD119A6D191002C0DD6 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
 		83BFCFD219A6D191002C0DD6 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 		83BFCFD419A6D19D002C0DD6 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		83C3F6A919BF8AD3002056C1 /* sqt-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sqt-red.png"; sourceTree = "<group>"; };
+		83C3F6AA19BF8AD3002056C1 /* sqt-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sqt-red@2x.png"; sourceTree = "<group>"; };
 		83EFA90519A4B80900DD1A16 /* LVFViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFViewControllerTwo.h; sourceTree = "<group>"; };
 		83EFA90619A4B80900DD1A16 /* LVFViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFViewControllerTwo.m; sourceTree = "<group>"; };
 		83EFA91119A4D10D00DD1A16 /* LVFMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFMasterViewController.h; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 				AE597B6A19B23D4D00419B16 /* blurred.png */,
 				AE597B6C19B23F1800419B16 /* sqt.png */,
 				AE597B6D19B23F1800419B16 /* sqt@2x.png */,
+				83C3F6A919BF8AD3002056C1 /* sqt-red.png */,
+				83C3F6AA19BF8AD3002056C1 /* sqt-red@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 				83A8C2FC19BA42E4000ED612 /* hotslogo.png in Resources */,
 				83A8C2FE19BA42E4000ED612 /* hslogo.png in Resources */,
 				AE597B7F19B24A4F00419B16 /* sq-nb-ora@2x.png in Resources */,
+				83C3F6AB19BF8AD3002056C1 /* sqt-red.png in Resources */,
 				AE597B7319B244A100419B16 /* sq-nb@2x.png in Resources */,
 				AE4A921D19B3A621004CAF3A /* yellowLight@2x.png in Resources */,
 				83A8C2FF19BA42E4000ED612 /* hslogo@2x.png in Resources */,
@@ -433,6 +440,7 @@
 				AE597B6B19B23D4D00419B16 /* blurred.png in Resources */,
 				83BFCFC019A61B67002C0DD6 /* cslogo.png in Resources */,
 				AE597B6F19B23F1800419B16 /* sqt@2x.png in Resources */,
+				83C3F6AC19BF8AD3002056C1 /* sqt-red@2x.png in Resources */,
 				83A8C30519BA42E4000ED612 /* tf2logo.png in Resources */,
 				AE4886A219B5068B00284DCC /* fb@2x.png in Resources */,
 				AE4A921919B3A621004CAF3A /* greyLight@2x.png in Resources */,

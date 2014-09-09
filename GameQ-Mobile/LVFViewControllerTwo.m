@@ -23,6 +23,7 @@
 #define kOFFLINE 0
 #define kONLINE 1
 #define kINGAME 2
+#define kNOTTRACKING 3
 
 @interface LVFViewControllerTwo ()
 
@@ -222,7 +223,7 @@
 
 - (void)reload
 {
-    int a = -1;
+    int a = -2;
     int b = 0;
     int c = 0;
     NSArray *array = self.mainController.secondViewController.deviceArray;
@@ -253,8 +254,15 @@
                     c=queueTime;
                 }
                 break;
+            case 3: //not tracking
+                if (a < -1) {
+                    a = -1;
+                    b = i;
+                }
+                
+                break;
             case 4: //Off / disconnected
-                if (a < 0) {
+                if (a < -1) {
                     b = i;
                 }
                 break;
@@ -358,6 +366,14 @@
                 [_lblStatus setTextColor:[UIColor whiteColor]];
                 NSLog(@"tjorrfyra");
                  [_lblGame setAlpha:1];
+                break;
+            case kNOTTRACKING:
+                _lblStatus.text = @"Connected to GameQ";
+                tempInt = kNOGAME;
+                _lblGame.text = @"Not Tracking Queues";
+                [_lblStatus setTextColor:[UIColor whiteColor]];
+                NSLog(@"tjorrfyra");
+                [_lblGame setAlpha:1];
                 break;
             default:
                 NSLog(@"status not found: %d", [[_displayItem substringWithRange:NSMakeRange(2, 2)] intValue]);

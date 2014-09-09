@@ -23,6 +23,7 @@
 #define kOFFLINE 0
 #define kONLINE 1
 #define kINGAME 2
+#define kNOTTRACKING 3
 
 @interface LVFTableViewController ()
 
@@ -110,6 +111,7 @@
     _array0 = [[NSMutableArray alloc] init];
     _array1 = [[NSMutableArray alloc] init];
     _array2 = [[NSMutableArray alloc] init];
+    _array3 = [[NSMutableArray alloc] init];
     _array4 = [[NSMutableArray alloc] init];
     
 }
@@ -146,6 +148,10 @@
             return 0;
         }
     } else if (section == 3) {
+        if (_array3.count == 0) {
+            return 0;
+        }
+    } else if (section == 4) {
         if (_array4.count == 0) {
             return 0;
         }
@@ -170,19 +176,24 @@
         if (_array2.count == 0) {
             [label setText:@"No Devices"];
         } else {
-            [label setText:@"In-Game"];
+            [label setText:@"In Game"];
         }
     } else if (section == 1) {
         if (_array1.count == 0) {
             return nil;
         }
-        [label setText:@"Online"];
+        [label setText:@"In Lobby"];
     } else if (section == 2) {
         if (_array0.count == 0) {
             return nil;
         }
         [label setText:@"Offline"];
     } else if (section == 3) {
+        if (_array3.count == 0) {
+            return nil;
+        }
+        [label setText:@"Not Tracking"];
+    } else if (section == 4) {
         if (_array4.count == 0) {
             return nil;
         }
@@ -220,6 +231,7 @@
     [_array0 removeAllObjects];
     [_array1 removeAllObjects];
     [_array2 removeAllObjects];
+    [_array3 removeAllObjects];
     [_array4 removeAllObjects];
     for (int i = 0; i < _deviceArray.count; i++) {
         
@@ -232,6 +244,9 @@
                     break;
                 case 2: //In-Game
                     [_array2 addObject:[_deviceArray objectAtIndex:i]];
+                    break;
+                case 3: //Not Tracking
+                    [_array3 addObject:[_deviceArray objectAtIndex:i]];
                     break;
                 case 4: //Off / disconnected
                     [_array4 addObject:[_deviceArray objectAtIndex:i]];
@@ -257,7 +272,7 @@
 {
     
     // Return the number of sections.
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -272,7 +287,9 @@
         return [_array1 count];
     } else if (section == 2) { //offline == 0
         return [_array0 count];
-    } else if (section == 3) { //off /disconnected =0 4
+    } else if (section == 3) { //not tracking
+        return [_array3 count];
+    } else if (section == 4) { //off /disconnected =0 4
         return [_array4 count];
     } else {
         return 0;
@@ -317,7 +334,9 @@
             item = [_array1 objectAtIndex:row];
         } else if (indexPath.section == 2) { // offline == 0
             item = [_array0 objectAtIndex:row];
-        } else if (indexPath.section == 3) { // off / disconnected = 4
+        } else if (indexPath.section == 3) { //not tracking
+            item = [_array3 objectAtIndex:row];
+        } else if (indexPath.section == 4) { // off / disconnected = 4
             item = [_array4 objectAtIndex:row];
         }
         

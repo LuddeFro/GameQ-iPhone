@@ -31,6 +31,7 @@
 @property (strong, nonatomic) NSMutableArray *array0;
 @property (strong, nonatomic) NSMutableArray *array1;
 @property (strong, nonatomic) NSMutableArray *array2;
+@property (strong, nonatomic) NSMutableArray *array3;
 @property (strong, nonatomic) NSMutableArray *array4;
 
 
