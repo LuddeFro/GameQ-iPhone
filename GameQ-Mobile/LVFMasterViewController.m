@@ -36,6 +36,11 @@
 
 - (void)viewDidLoad
 {
+    _coverUp = [[UIButton alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [_coverUp setTitle:@"" forState:UIControlStateNormal];
+    [_coverUp setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
+    
+    [_mainController.connectionsHandler getMyGamesForEmail:_mainController.dataHandler.getEmail];
     _bolButtonPressed = false;
     _bolButtonPressedHelper = false;
     _bolAlreadyCounting = false;
@@ -114,7 +119,7 @@
     [_listView addTarget:self action:@selector(pressedList) forControlEvents:UIControlEventTouchUpInside];
     [_gearView addTarget:self action:@selector(pressedGear) forControlEvents:UIControlEventTouchUpInside];
     [_logoView addTarget:self action:@selector(pressedLogo) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self.view addSubview:_coverUp];
     
    // UIView *navBorder = [[UIView alloc] initWithFrame:CGRectMake(0,_navBar.frame.size.height-1,_navBar.frame.size.width, 1)];
     
@@ -145,6 +150,8 @@
             
         }
     }
+    
+    
     
 }
 

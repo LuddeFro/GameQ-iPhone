@@ -30,7 +30,8 @@
     [_mainController.dataHandler setBolRegisteredForNotifications:[NSNumber numberWithBool:YES]];
     
     self.window.tintColor = [UIColor whiteColor];
-    
+    _storeObserver = [[LVFStoreObserver alloc] initWithMainController:_mainController];
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:_storeObserver];
     return YES;
 }
 

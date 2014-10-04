@@ -15,6 +15,7 @@
 #import "LVFTableViewController.h"
 #import "LVFViewControllerTwo.h"
 #import "LVFMasterViewController.h"
+#import "LVFStoreHandler.h"
 
 
 @class LVFDataModel;
@@ -34,6 +35,8 @@
 @property (strong, nonatomic) UITextField *txtSecretQ;
 @property BOOL bolIsRegging;
 @property BOOL bolIsUp;
+
+@property LVFStoreHandler* storeHandler;
 
 @property (strong, nonatomic) UIButton *btnTop;
 

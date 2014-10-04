@@ -32,6 +32,20 @@
     
 }
 
+- (void)getMyGamesForEmail:(NSString*)email
+{
+    NSString *postString = [NSString stringWithFormat:@"email=%@", email];
+    NSString *postUrl = getMyGamesURL;
+    [_gqConnect postNow:postString to:postUrl];
+    NSLog(@"getMyGames posted");
+}
+- (void)upMyGamesForEmail:(NSString*)email andNewGames:(NSString*)games
+{
+    NSString *postString = [NSString stringWithFormat:@"email=%@&games=%@", email, games];
+    NSString *postUrl = upMyGamesURL;
+    [_gqConnect postNow:postString to:postUrl];
+    NSLog(@"upMyGames posted");
+}
 - (void) chkVersion
 {
     NSString *postString = [NSString stringWithFormat:@"device=mac"];

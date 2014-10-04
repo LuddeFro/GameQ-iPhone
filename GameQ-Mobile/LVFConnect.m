@@ -141,6 +141,8 @@
             return;
         }
     }
+    
+    
     //check if newer version exists
     if (returnString.length >= 7) {
         if ([[returnString substringWithRange:NSMakeRange(0, 7)] isEqualToString:@"version"])
@@ -153,6 +155,40 @@
             
         }
     }
+    
+    
+    if (returnString.length>=7) {
+        if([[returnString substringToIndex:7] isEqualToString:@"mygames"]) {
+            NSLog(@"myGames Detected");
+            returnString = [returnString substringFromIndex:7];
+            if ([returnString isEqualToString:@"0"]) {
+                if (_mainController.storeHandler == NULL) {
+                    _store = [[LVFStoreHandler alloc] initWithMainController:_mainController settingsController:NULL andContentView:_mainController.secondViewController.view forPurchase:NO];
+                }
+            } else {
+                [_mainController.secondViewController.coverUp removeFromSuperview];
+                NSLog(@"updateForGames");
+                [_mainController.storeHandler updateForGames:returnString];
+            }
+        
+        }
+    }
+    
+    
+    if([returnString isEqualToString:@"gamesUp"]) {
+        if (_mainController.storeHandler.isPurchasing) {
+            [_mainController.connectionsHandler getMyGamesForEmail:_mainController.dataHandler.getEmail];
+        } else {
+            [_mainController.storeHandler.backgroundButton removeFromSuperview];
+            [_mainController.secondViewController.coverUp removeFromSuperview];
+        }
+    }
+    if([returnString isEqualToString:@"upGameFail"]) {
+        
+    }
+
+    
+    
     
     /* following statements used if support is added in-app for forgotten passwords
      also see getSecret and chkSecret methods in LVFConnections.m

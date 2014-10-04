@@ -50,27 +50,34 @@
     
     
     
-    
     _btnTop = [[UIButton alloc] init];
     _btnBot = [[UIButton alloc] init];
     
-    CGRect frameImgLogo;
+    
     if(self.view.frame.size.height < 568) {
         
         [_btnTop setFrame:CGRectMake(20, 400, self.view.frame.size.width-40, 30)];
         [_btnBot setFrame:CGRectMake(20, 438, self.view.frame.size.width-40, 30)];
-         _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 90, self.view.frame.size.width-40, 30)];
-        frameImgLogo = CGRectMake(70, 136, 180, 180);
-        
-    } else if (self.view.frame.size.height == 568) {
-        [_btnTop setFrame:CGRectMake(20, 490, self.view.frame.size.width-40, 30)];
-        [_btnBot setFrame:CGRectMake(20, 528, self.view.frame.size.width-40, 30)];
         _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 90, self.view.frame.size.width-40, 30)];
-        frameImgLogo = CGRectMake(40, 136, 240, 240);
-    } else {frameImgLogo = CGRectMake(40, 136, 240, 240);} //should never be called
+        _btnStore = [[UIButton alloc] initWithFrame:CGRectMake(20, 128, self.view.frame.size.width-40, 30)];
+        
+        
+    } else if (self.view.frame.size.height >= 568) {
+        [_btnTop setFrame:CGRectMake(20, [[UIScreen mainScreen] bounds].size.height - 78, self.view.frame.size.width-40, 30)];
+        [_btnBot setFrame:CGRectMake(20, [[UIScreen mainScreen] bounds].size.height - 40, self.view.frame.size.width-40, 30)];
+        _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 90, self.view.frame.size.width-40, 30)];
+        _btnStore = [[UIButton alloc] initWithFrame:CGRectMake(20, 128, self.view.frame.size.width-40, 30)];
+        
+    } else { // should never be called aka dead code
+        [_btnTop setFrame:CGRectMake(20, [[UIScreen mainScreen] bounds].size.height - 78, self.view.frame.size.width-40, 30)];
+        [_btnBot setFrame:CGRectMake(20, [[UIScreen mainScreen] bounds].size.height - 40, self.view.frame.size.width-40, 30)];
+        _btnToggleNotifications = [[UIButton alloc] initWithFrame:CGRectMake(20, 90, self.view.frame.size.width-40, 30)];
+        _btnStore = [[UIButton alloc] initWithFrame:CGRectMake(20, 128, self.view.frame.size.width-40, 30)];
+    }
     
     [_btnTop addTarget:self action:@selector(topButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [_btnBot addTarget:self action:@selector(botButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [_btnStore addTarget:self action:@selector(showStore) forControlEvents:UIControlEventTouchUpInside];
     
     
     [_btnTop setTitle:@"About" forState:UIControlStateNormal];
@@ -82,16 +89,11 @@
     [_btnBot setBackgroundColor:myRed];
     [_btnTop setBackgroundColor:myRed];
     
-    
-    _imgGameLogo = [[UIImageView alloc] initWithFrame:frameImgLogo];
-    _imgGameLogo.layer.cornerRadius = 20.0;
-    _imgGameLogo.layer.masksToBounds = YES;
-    [_imgGameLogo setImage:[UIImage imageNamed:@"sqt.png"]];
-    _imgGameLogo.contentMode = UIViewContentModeScaleAspectFit;
-    
-    [self.view addSubview:_imgGameFrame];
-    [self.view addSubview:_imgGameLogo];
-    
+    [_btnStore setTitle:@"Get More Games" forState:UIControlStateNormal];
+    [_btnStore setTitleColor:myWhite forState:UIControlStateNormal];
+    [_btnStore setTitleColor:myTransWhite forState:UIControlStateHighlighted];
+    [_btnStore setBackgroundColor:myRed];
+    [_btnStore setTitleColor:myTransWhite forState:UIControlStateDisabled];
     
     
     _lblLikeUs = [[UILabel alloc] init];
@@ -178,6 +180,7 @@
     
     [self.view addSubview:_btnTop];
     [self.view addSubview:_btnBot];
+    [self.view addSubview:_btnStore];
     
     _lblTitle = [[UILabel alloc] init];
     [_lblTitle setFrame:CGRectMake(0, 30, self.view.frame.size.width, 30)];
@@ -190,6 +193,16 @@
     
     
 }
+
+-(void) showStore
+{
+    if (_store == NULL) {
+        _store = [[LVFStoreHandler alloc] initWithMainController:_mainController settingsController:self andContentView:_mainController.secondViewController.view forPurchase:YES];
+    }
+    [_mainController.secondViewController.view addSubview:_store.backgroundButton];
+    [_btnStore setEnabled:false];
+}
+
 
 -(void) reload{
     return;

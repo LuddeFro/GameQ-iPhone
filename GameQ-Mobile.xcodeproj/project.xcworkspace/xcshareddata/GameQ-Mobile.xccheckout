@@ -10,29 +10,29 @@
 	<string>GameQ-Mobile</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>12F61B19-26CC-4A23-8DAA-EE97FDAECD44</key>
+		<key>EDB43801E6D3915DB5E4A241FAA17445615C8B31</key>
 		<string>https://github.com/LuddeFro/GameQ-iPhone.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GameQ-Mobile.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>12F61B19-26CC-4A23-8DAA-EE97FDAECD44</key>
+		<key>EDB43801E6D3915DB5E4A241FAA17445615C8B31</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/LuddeFro/GameQ-iPhone.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>12F61B19-26CC-4A23-8DAA-EE97FDAECD44</string>
+	<string>EDB43801E6D3915DB5E4A241FAA17445615C8B31</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>12F61B19-26CC-4A23-8DAA-EE97FDAECD44</string>
+			<string>EDB43801E6D3915DB5E4A241FAA17445615C8B31</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GameQ-iPhone</string>
 		</dict>

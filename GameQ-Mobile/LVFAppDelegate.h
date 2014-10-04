@@ -10,10 +10,11 @@
 #import "LVFViewController.h"
 #import "LVFDefinitions.h"
 #import "iRate.h"
+#import "LVFStoreObserver.h"
 
 
 @class  LVFViewController;
-
+@class LVFStoreObserver;
 
 @interface LVFAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -23,6 +24,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) LVFViewController *mainController;
+@property (strong, nonatomic) LVFStoreObserver *storeObserver;
 
 
 - (void)saveContext;

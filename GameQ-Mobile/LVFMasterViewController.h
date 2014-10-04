@@ -31,7 +31,7 @@
 
 @property (strong, nonatomic) LVFTableViewController *tableViewController;
 @property (strong, nonatomic) LVFViewControllerTwo *simpleViewController;
-
+@property UIButton *coverUp;
 @property int currentIndex;
 @property CGRect leftItemRect;
 @property CGRect rightItemRect;

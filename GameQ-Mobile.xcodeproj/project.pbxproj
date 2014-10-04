@@ -30,6 +30,10 @@
 		837422AB18181E7A000FCC76 /* LVFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AA18181E7A000FCC76 /* LVFDataModel.m */; };
 		837422AE18184443000FCC76 /* LVFDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 837422AD18184443000FCC76 /* LVFDefinitions.m */; };
 		839698F918A67BA900F2C417 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839698F818A67BA900F2C417 /* StoreKit.framework */; };
+		83A26A2E19DEEB3C00C74C2F /* LVFStoreHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A26A2D19DEEB3C00C74C2F /* LVFStoreHandler.m */; };
+		83A26A3119DEEE1600C74C2F /* LVFProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A26A3019DEEE1600C74C2F /* LVFProduct.m */; };
+		83A26A3319DF032D00C74C2F /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A26A3219DF032D00C74C2F /* View.xib */; };
+		83A26A3619E0393900C74C2F /* LVFStoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A26A3519E0393900C74C2F /* LVFStoreObserver.m */; };
 		83A8C2FC19BA42E4000ED612 /* hotslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2F219BA42E4000ED612 /* hotslogo.png */; };
 		83A8C2FD19BA42E4000ED612 /* hotslogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2F319BA42E4000ED612 /* hotslogo@2x.png */; };
 		83A8C2FE19BA42E4000ED612 /* hslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A8C2F419BA42E4000ED612 /* hslogo.png */; };
@@ -121,6 +125,13 @@
 		837422AC18184443000FCC76 /* LVFDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFDefinitions.h; sourceTree = "<group>"; };
 		837422AD18184443000FCC76 /* LVFDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFDefinitions.m; sourceTree = "<group>"; };
 		839698F818A67BA900F2C417 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		83A26A2C19DEEB3C00C74C2F /* LVFStoreHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFStoreHandler.h; sourceTree = "<group>"; };
+		83A26A2D19DEEB3C00C74C2F /* LVFStoreHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFStoreHandler.m; sourceTree = "<group>"; };
+		83A26A2F19DEEE1600C74C2F /* LVFProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFProduct.h; sourceTree = "<group>"; };
+		83A26A3019DEEE1600C74C2F /* LVFProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFProduct.m; sourceTree = "<group>"; };
+		83A26A3219DF032D00C74C2F /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		83A26A3419E0393900C74C2F /* LVFStoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFStoreObserver.h; sourceTree = "<group>"; };
+		83A26A3519E0393900C74C2F /* LVFStoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFStoreObserver.m; sourceTree = "<group>"; };
 		83A8C2F219BA42E4000ED612 /* hotslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotslogo.png; sourceTree = "<group>"; };
 		83A8C2F319BA42E4000ED612 /* hotslogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hotslogo@2x.png"; sourceTree = "<group>"; };
 		83A8C2F419BA42E4000ED612 /* hslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hslogo.png; sourceTree = "<group>"; };
@@ -237,6 +248,13 @@
 				833403DE18C63A3000A8B6E0 /* LVFSettingsController.m */,
 				833403E018C63A6800A8B6E0 /* LVFAboutController.h */,
 				833403E118C63A6800A8B6E0 /* LVFAboutController.m */,
+				83A26A2C19DEEB3C00C74C2F /* LVFStoreHandler.h */,
+				83A26A2D19DEEB3C00C74C2F /* LVFStoreHandler.m */,
+				83A26A3419E0393900C74C2F /* LVFStoreObserver.h */,
+				83A26A3519E0393900C74C2F /* LVFStoreObserver.m */,
+				83A26A3219DF032D00C74C2F /* View.xib */,
+				83A26A2F19DEEE1600C74C2F /* LVFProduct.h */,
+				83A26A3019DEEE1600C74C2F /* LVFProduct.m */,
 				833403DA18C5FA7E00A8B6E0 /* LVFCell.h */,
 				833403DB18C5FA7E00A8B6E0 /* LVFCell.m */,
 				8365A706182BEFFE003F7301 /* LVFTableView.h */,
@@ -434,6 +452,7 @@
 				AE4A921619B3A621004CAF3A /* greenLight.png in Resources */,
 				AE4A921A19B3A621004CAF3A /* redLight.png in Resources */,
 				83BFCFCB19A63476002C0DD6 /* listIcon@2x.png in Resources */,
+				83A26A3319DF032D00C74C2F /* View.xib in Resources */,
 				83BFCFCC19A63476002C0DD6 /* listIcon.png in Resources */,
 				83BFCFD519A6D19D002C0DD6 /* iRate.bundle in Resources */,
 				AE4886A419B5068B00284DCC /* tw@2x.png in Resources */,
@@ -461,8 +480,10 @@
 				83EFA91319A4D10D00DD1A16 /* LVFMasterViewController.m in Sources */,
 				837422A21815B0DF000FCC76 /* LVFConnections.m in Sources */,
 				83EFA90719A4B80900DD1A16 /* LVFViewControllerTwo.m in Sources */,
+				83A26A3119DEEE1600C74C2F /* LVFProduct.m in Sources */,
 				8374226E1815B0D4000FCC76 /* main.m in Sources */,
 				837422A01815B0DF000FCC76 /* LVFViewController.m in Sources */,
+				83A26A3619E0393900C74C2F /* LVFStoreObserver.m in Sources */,
 				833403DF18C63A3000A8B6E0 /* LVFSettingsController.m in Sources */,
 				837422A31815B0DF000FCC76 /* LVFConnect.m in Sources */,
 				833403E218C63A6800A8B6E0 /* LVFAboutController.m in Sources */,
@@ -474,6 +495,7 @@
 				8311E3E51847A1DF0011212C /* KeychainItemWrapper.m in Sources */,
 				837422721815B0D4000FCC76 /* LVFAppDelegate.m in Sources */,
 				837422751815B0D4000FCC76 /* GameQ_Mobile.xcdatamodeld in Sources */,
+				83A26A2E19DEEB3C00C74C2F /* LVFStoreHandler.m in Sources */,
 				8365A70B182BF09E003F7301 /* LVFTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,7 +557,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "9937E5C4-60DF-4734-9230-C980112A532C";
+				PROVISIONING_PROFILE = "C2D534A3-40F8-4E90-A63A-65E7D1D5327A";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -569,7 +591,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "9937E5C4-60DF-4734-9230-C980112A532C";
+				PROVISIONING_PROFILE = "C2D534A3-40F8-4E90-A63A-65E7D1D5327A";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -581,13 +603,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: GameQ AB (NZ5DEAP476)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: GameQ AB (NZ5DEAP476)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameQ-Mobile/GameQ-Mobile-Prefix.pch";
 				INFOPLIST_FILE = "GameQ-Mobile/GameQ-Mobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9937E5C4-60DF-4734-9230-C980112A532C";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -598,13 +620,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: GameQ AB (NZ5DEAP476)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: GameQ AB (NZ5DEAP476)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameQ-Mobile/GameQ-Mobile-Prefix.pch";
 				INFOPLIST_FILE = "GameQ-Mobile/GameQ-Mobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9937E5C4-60DF-4734-9230-C980112A532C";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

@@ -26,4 +26,8 @@
 - (void)registerWithEmail:(NSString*)email andPass:(NSString*)losenord andSecretQuestion:(NSString*)secretQuestion andSecret:(NSString*)secret;
 //- (void) upTokenWithToken:(NSString *)token andDeviceName:(NSString *)name andEmail:(NSString *)email;
 - (void) chkVersion;
+
+- (void)getMyGamesForEmail:(NSString*)email;
+- (void)upMyGamesForEmail:(NSString*)email andNewGames:(NSString*)games;
+
 @end

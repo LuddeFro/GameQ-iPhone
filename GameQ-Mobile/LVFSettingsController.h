@@ -10,10 +10,12 @@
 #import "LVFDataModel.h"
 #import "LVFViewController.h"
 #import "LVFAboutController.h"
+#import "LVFStoreHandler.h"
 
 @class LVFViewController;
 @class LVFDataModel;
 @class LVFAboutController;
+@class LVFStoreHandler;
 
 @interface LVFSettingsController : UIViewController
 
@@ -28,12 +30,12 @@
 @property UILabel *lblTitle;
 @property (strong, nonatomic) LVFAboutController *aboutController;
 
-@property (strong, nonatomic) UIImageView *imgGameFrame;
-@property (strong, nonatomic) UIImageView *imgGameLogo;
+@property (strong, nonatomic) UIButton *btnStore;
 
 @property UILabel *lblLikeUs;
 @property UIButton *btnFacebook;
 @property UIButton *btnTwitter;
+@property LVFStoreHandler *store;
 
 
 @property (strong, nonatomic) UIButton *btnTop;
