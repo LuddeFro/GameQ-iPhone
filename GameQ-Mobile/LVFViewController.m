@@ -146,9 +146,12 @@
         [self.view addSubview:_btnTop];
         [self.view addSubview:_btnBot];
         
-        
-        
-        
+        /*
+        UIButton *PullansKnapp = [[UIButton alloc] initWithFrame:CGRectMake(0, 200, 320, 40)];
+        [PullansKnapp setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+        [PullansKnapp setTitle:@"PullansKnapp" forState:UIControlStateNormal];
+        [self.view addSubview:PullansKnapp];
+        */
         
     }
     
@@ -294,7 +297,7 @@
 
 - (void)log {
     [self.view endEditing:YES];
-    [_dataHandler setEmail:_txtEmail.text];
+    [_dataHandler setEmail:_txtEmail.text.lowercaseString];
     
     //checks if any text exists in the fields
     if (![_txtEmail.text isEqual:@""] && ![_txtPassword.text isEqual:@""]) {
@@ -306,7 +309,7 @@
                 if ([_txtEmail.text rangeOfString:@"\""].location == NSNotFound && [_txtPassword.text rangeOfString:@"\""].location == NSNotFound &&
                     [_txtEmail.text rangeOfString:@"\\"].location == NSNotFound && [_txtPassword.text rangeOfString:@"\\"].location == NSNotFound) {
                     //what we wanna do
-                    [_connectionsHandler loginWithUser:_txtEmail.text andPass:_txtPassword.text];
+                    [_connectionsHandler loginWithUser:_txtEmail.text.lowercaseString andPass:_txtPassword.text];
                     [_btnTop setEnabled:NO];
                     [_btnBot setEnabled:NO];
                     
@@ -351,7 +354,7 @@
                     [_txtSecretQ.text rangeOfString:@"\\"].location == NSNotFound && [_txtSecret.text rangeOfString:@"\\"].location == NSNotFound) {
                     //what we wanna do
                     [self.view endEditing:YES];
-                    [_connectionsHandler registerWithEmail:_txtEmail.text andPass:_txtPassword.text andSecretQuestion:_txtSecretQ.text andSecret:_txtSecret.text];
+                    [_connectionsHandler registerWithEmail:_txtEmail.text.lowercaseString andPass:_txtPassword.text andSecretQuestion:_txtSecretQ.text andSecret:_txtSecret.text];
                     [_btnTop setEnabled:NO];
                     [_btnBot setEnabled:NO];
                     

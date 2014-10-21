@@ -197,7 +197,7 @@
     [sender setTitle:@"Processing" forState:UIControlStateNormal];
     [sender setEnabled:NO];
     for (LVFProduct* product in _displayArray) {
-        NSLog(@"tag::::==::::: %d", sender.tag);
+        NSLog(@"tag::::==::::: %ld", (long)sender.tag);
         if (product.tag == sender.tag) {
             NSString *gameString = @"";
             if ([product.product.productIdentifier isEqualToString:productCsgo]) {
@@ -236,7 +236,7 @@
     for (NSString* game in games) {
         NSLog(@"game:::: %@", game);
         for (UIButton* button in _buttons) {
-            NSLog(@"gameStringIntVal: %d, Tag: %d", game.integerValue, button.tag);
+            NSLog(@"gameStringIntVal: %ld, Tag: %ld", (long)game.integerValue, (long)button.tag);
             if (game.integerValue == button.tag) {
                 
                 NSLog(@"same button");
@@ -251,7 +251,7 @@
             }
         }
         for (UILabel* label in _prices) {
-            NSLog(@"gameStringIntVal: %d, lblTag: %d", game.integerValue, label.tag);
+            NSLog(@"gameStringIntVal: %ld, lblTag: %ld", (long)game.integerValue, (long)label.tag);
             if (game.integerValue == label.tag) {
                 NSLog(@"same label");
                 [label setText:@"Already Owned"];

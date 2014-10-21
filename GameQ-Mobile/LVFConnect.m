@@ -161,14 +161,16 @@
         if([[returnString substringToIndex:7] isEqualToString:@"mygames"]) {
             NSLog(@"myGames Detected");
             returnString = [returnString substringFromIndex:7];
-            if ([returnString isEqualToString:@"0"]) {
+            NSArray *tmpArray = [returnString componentsSeparatedByString:@";"];
+            _mainController.lastGames = tmpArray;
+            if ([[tmpArray objectAtIndex:0] isEqualToString:@"0"]) {
                 if (_mainController.storeHandler == NULL) {
                     _store = [[LVFStoreHandler alloc] initWithMainController:_mainController settingsController:NULL andContentView:_mainController.secondViewController.view forPurchase:NO];
                 }
             } else {
                 [_mainController.secondViewController.coverUp removeFromSuperview];
                 NSLog(@"updateForGames");
-                [_mainController.storeHandler updateForGames:returnString];
+                [_mainController.storeHandler updateForGames:[tmpArray objectAtIndex:0]];
             }
         
         }
@@ -186,7 +188,10 @@
     if([returnString isEqualToString:@"upGameFail"]) {
         
     }
-
+    if([returnString isEqualToString:@"piracy"]) {
+        [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"Something went wrong, contact GameQ support at: support@gameq.io" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        return;
+    }
     
     
     

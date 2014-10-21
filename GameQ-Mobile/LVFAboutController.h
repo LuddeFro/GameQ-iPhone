@@ -24,4 +24,5 @@
 @property (strong, nonatomic) UIImageView *imgBackgroundView;
 
 @property UILabel *lblTitle;
+
 @end

@@ -41,7 +41,9 @@
 }
 - (void)upMyGamesForEmail:(NSString*)email andNewGames:(NSString*)games
 {
-    NSString *postString = [NSString stringWithFormat:@"email=%@&games=%@", email, games];
+    NSString *vCode = [[NSString stringWithFormat:@"%@%@%@", [_mainController.lastGames objectAtIndex:1], _mainController.dataHandler.getEmail.lowercaseString, [_mainController.lastGames objectAtIndex:0] ] SHA256];
+    
+    NSString *postString = [NSString stringWithFormat:@"email=%@&games=%@&vCode=%@", email, games, vCode];
     NSString *postUrl = upMyGamesURL;
     [_gqConnect postNow:postString to:postUrl];
     NSLog(@"upMyGames posted");

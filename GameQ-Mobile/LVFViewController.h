@@ -37,7 +37,7 @@
 @property BOOL bolIsUp;
 
 @property LVFStoreHandler* storeHandler;
-
+@property NSArray* lastGames;
 @property (strong, nonatomic) UIButton *btnTop;
 
 @property (strong, nonatomic) UIImageView *imgLogo;

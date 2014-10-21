@@ -121,7 +121,7 @@
 }
 - (void) setEmail:(NSString *)email
 {
-    [self setSomething:email forField:@"email"];
+    [self setSomething:email.lowercaseString forField:@"email"];
 }
 - (void) setBolIsLoggedIn:(NSNumber *)isLoggedIn
 {
