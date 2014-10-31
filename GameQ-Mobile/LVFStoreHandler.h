@@ -37,9 +37,10 @@
 @property NSMutableArray* buttons;
 @property NSMutableArray* prices;
 @property BOOL checkedOwnedGames;
+@property BOOL showing;
 @property NSString* reUpdateString;
 - (id)initWithMainController:(LVFViewController*)controller settingsController:(LVFSettingsController*)settingsCon andContentView:(UIView*)view forPurchase:(BOOL)isPurchasing;
 -(void) updateForGames:(NSString*)string;
 -(void) stopProcessing:(NSString*)string;
-
+- (void) displayStoreUI;
 @end

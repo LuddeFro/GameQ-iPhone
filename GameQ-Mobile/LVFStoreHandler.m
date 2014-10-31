@@ -16,6 +16,7 @@
     self = [super init];
     if (self) {
         // Custom initialization
+        _showing = true;
         _displayArray = [[NSMutableArray alloc] init];
         _buttons = [[NSMutableArray alloc] init];
         _prices = [[NSMutableArray alloc] init];
@@ -175,6 +176,7 @@
         [_buttons addObject:btnBuy];
         [_prices addObject:lblPrice];
         product.tag = gameI;
+        NSLog(@"lbldesc: text, alpha, hidden, %@ %f %d", lblDesc.text, lblDesc.alpha, lblDesc.isHidden);
         
         i++;
     }
@@ -266,7 +268,7 @@
 
 - (void) quitStore:(UIButton *)sender
 {
-    
+    _showing = false;
     if (_settingsController != NULL) {
         [[_settingsController btnStore]  setEnabled:YES];
         [sender removeFromSuperview];

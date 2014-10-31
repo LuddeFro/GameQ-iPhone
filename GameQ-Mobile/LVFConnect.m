@@ -166,6 +166,14 @@
             if ([[tmpArray objectAtIndex:0] isEqualToString:@"0"]) {
                 if (_mainController.storeHandler == NULL) {
                     _store = [[LVFStoreHandler alloc] initWithMainController:_mainController settingsController:NULL andContentView:_mainController.secondViewController.view forPurchase:NO];
+                } else {
+                    
+                    if (!_store.showing) {
+                        NSLog(@"store not showing");
+                        _store = [[LVFStoreHandler alloc] initWithMainController:_mainController settingsController:NULL andContentView:_mainController.secondViewController.view forPurchase:NO];
+                    } else {
+                        NSLog(@"store showing");
+                    }
                 }
             } else {
                 [_mainController.secondViewController.coverUp removeFromSuperview];
@@ -181,6 +189,7 @@
         if (_mainController.storeHandler.isPurchasing) {
             [_mainController.connectionsHandler getMyGamesForEmail:_mainController.dataHandler.getEmail];
         } else {
+            _mainController.storeHandler.showing = false;
             [_mainController.storeHandler.backgroundButton removeFromSuperview];
             [_mainController.secondViewController.coverUp removeFromSuperview];
         }
@@ -314,7 +323,7 @@
     {
         //ios alert
         [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"Invalid log in details, Please try again!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        
+        [_mainController.connectionsHandler logoutPostFromToken:[_mainController.dataHandler getToken]];
         //osx alert
         //[[NSAlert alertWithMessageText:@"Invalid login details" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"You entered an invalid password - username combination, please try again.\r\n\r\nToo many failed attempts may lock your account for up to 2 hours."] runModal];
         return;

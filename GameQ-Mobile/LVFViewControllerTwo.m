@@ -180,9 +180,9 @@
     [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"Europe/Stockholm"]];
     NSString *date = [dateFormatter stringFromDate:dateValue];
-    long currentTime = date.longLongValue;
-    long queueTime = [_displayItem substringWithRange:NSMakeRange(_displayItem.length-14, 14)].longLongValue;
-    NSLog(@"date:%ld, date2:%ld", currentTime, queueTime);
+    long long currentTime = date.longLongValue;
+    long long queueTime = [_displayItem substringWithRange:NSMakeRange(_displayItem.length-14, 14)].longLongValue;
+    NSLog(@"date:%lld, date2:%lld", currentTime, queueTime);
     bool bolCSGO = ([_displayItem substringWithRange:NSMakeRange(0, 2)].intValue == 3);
     bool bolDota = ([_displayItem substringWithRange:NSMakeRange(0, 2)].intValue == 2);
     
@@ -190,10 +190,10 @@
         (currentTime - queueTime < 15 && bolCSGO)) &&
         ((currentTime - queueTime) > 0)) {
         if (bolCSGO) {
-            [_lblCountdown setText:[NSString stringWithFormat:@"%ld", 15-(currentTime - queueTime)]];
+            [_lblCountdown setText:[NSString stringWithFormat:@"%lld", 15-(currentTime - queueTime)]];
             [_lblCountdown setAlpha:1];
         } else if (bolDota) {
-            [_lblCountdown setText:[NSString stringWithFormat:@"%ld", 42-(currentTime - queueTime)]];
+            [_lblCountdown setText:[NSString stringWithFormat:@"%lld", 42-(currentTime - queueTime)]];
             
         } else {
             [_lblCountdown setText:@""];

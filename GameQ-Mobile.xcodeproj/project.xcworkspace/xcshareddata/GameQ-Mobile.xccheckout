@@ -14,7 +14,7 @@
 		<string>https://github.com/LuddeFro/GameQ-iPhone.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GameQ-Mobile.xcodeproj/project.xcworkspace</string>
+	<string>GameQ-Mobile.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EDB43801E6D3915DB5E4A241FAA17445615C8B31</key>

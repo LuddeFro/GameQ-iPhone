@@ -42,7 +42,7 @@
 - (NSString *) getEmail
 {
     NSError *error;
-    NSArray *objects = [_context executeFetchRequest:_request error:&error];
+    NSArray *objects = [[((LVFAppDelegate*)[[UIApplication sharedApplication] delegate]) managedObjectContext] executeFetchRequest:_request error:&error];
     if (objects == Nil) {
         NSLog(@"Storage files not found");
     }
@@ -57,7 +57,7 @@
 - (NSNumber *) getBolIsLoggedIn
 {
     NSError *error;
-    NSArray *objects = [_context executeFetchRequest:_request error:&error];
+    NSArray *objects = [[((LVFAppDelegate*)[[UIApplication sharedApplication] delegate]) managedObjectContext] executeFetchRequest:_request error:&error];
     if (objects == Nil) {
         NSLog(@"Storage files not found");
     }
@@ -72,7 +72,7 @@
 - (NSNumber *) getDeviceID
 {
     NSError *error;
-    NSArray *objects = [_context executeFetchRequest:_request error:&error];
+    NSArray *objects = [[((LVFAppDelegate*)[[UIApplication sharedApplication] delegate]) managedObjectContext] executeFetchRequest:_request error:&error];
     if (objects == Nil) {
         NSLog(@"Storage files not found");
     }
@@ -84,15 +84,25 @@
 }
 - (NSString *) getPass
 {
+    NSError *error;
+    NSArray *objects = [[((LVFAppDelegate*)[[UIApplication sharedApplication] delegate]) managedObjectContext] executeFetchRequest:_request error:&error];
+    if (objects == Nil) {
+        NSLog(@"Storage files not found");
+    }
+    for (NSManagedObject *oneObject in objects) {
+        return [oneObject valueForKey:@"pass"];
+    }
+    return nil;
+    /*
     KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:kAPPID accessGroup:nil];
     NSString *passString = [keyChain objectForKey:(__bridge id)kSecValueData];
     return passString;
-    
+    */
 }
 - (NSNumber *) getBolRegisteredForNotifications
 {
     NSError *error;
-    NSArray *objects = [_context executeFetchRequest:_request error:&error];
+    NSArray *objects = [[((LVFAppDelegate*)[[UIApplication sharedApplication] delegate]) managedObjectContext] executeFetchRequest:_request error:&error];
     if (objects == Nil) {
         NSLog(@"Storage files not found");
     }
@@ -112,8 +122,9 @@
 }
 - (void) setPass:(NSString *)pass
 {
-    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:kAPPID accessGroup:nil];
-    [keyChain setObject:pass forKey:(__bridge id)kSecValueData];
+    [self setSomething:pass forField:@"pass"];
+    //KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:kAPPID accessGroup:nil];
+    //[keyChain setObject:pass forKey:(__bridge id)kSecValueData];
 }
 - (void) setToken:(NSString *)token
 {
@@ -131,7 +142,7 @@
 {
     NSManagedObject *anObject = nil;
     NSError *error;
-    NSArray *objects = [_context executeFetchRequest:_request error:&error];
+    NSArray *objects = [[((LVFAppDelegate*)[[UIApplication sharedApplication] delegate]) managedObjectContext] executeFetchRequest:_request error:&error];
     if (objects == nil) {
         NSLog(@"objects == nil  ......    (error)");
         //code should be unreachable
@@ -145,9 +156,21 @@
         }
     } else {
         NSLog(@"for loop isn't called - datamodel objects <= 0");
-        anObject = [NSEntityDescription insertNewObjectForEntityForName:@"LoginEntity" inManagedObjectContext:_context];
+        anObject = [NSEntityDescription insertNewObjectForEntityForName:@"LoginEntity" inManagedObjectContext:[((LVFAppDelegate*)[[UIApplication sharedApplication] delegate]) managedObjectContext]];
         [anObject setValue:value forKey:field];
     }
-    [_context save:&error];
+    [self saveCoreDataContext];
+}
+
+- (void)saveCoreDataContext
+{
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = [((LVFAppDelegate*)[[UIApplication sharedApplication] delegate]) managedObjectContext];
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
 @end
