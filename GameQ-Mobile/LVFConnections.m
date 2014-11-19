@@ -96,6 +96,7 @@
 - (void)registerWithEmail:(NSString*)email andPass:(NSString*)losenord andSecretQuestion:(NSString*)secretQuestion andSecret:(NSString*)secret
 {
     losenord = [losenord SHA256];
+    secret = [secret SHA256];
     NSString *postString = [NSString stringWithFormat:@"email=%@&losenord=%@&secretq=%@&secret=%@&gender=&country=&yob=&firstname=&lastname=",email, losenord, secretQuestion, secret];
     NSString *postUrl = registerURL;
     [_gqConnect postNow:postString to:postUrl];

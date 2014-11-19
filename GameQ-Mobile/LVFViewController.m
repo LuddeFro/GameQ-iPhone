@@ -217,7 +217,11 @@
     }
     NSLog(@"stored data:\r\nloggedin: %@\r\nemail: %@\r\ntoken: %@\r\npassword: like I would tell you :P \r\ndeviceID:%@", [_dataHandler getBolIsLoggedIn], [_dataHandler getEmail], [_dataHandler getToken], [_dataHandler getDeviceID]);
     if (_bolLoggedIn) {
-        [_connectionsHandler loginWithUser:[_dataHandler getEmail] andPass:[_dataHandler getPass]];
+        NSString *tmpEmail = [_dataHandler getEmail];
+        NSString *tmpPass = [_dataHandler getPass];
+        [_txtEmail setText:tmpEmail];
+        [_txtPassword setText:tmpPass];
+        [_connectionsHandler loginWithUser:tmpEmail andPass:tmpPass];
     }
     [_connectionsHandler chkVersion];
     

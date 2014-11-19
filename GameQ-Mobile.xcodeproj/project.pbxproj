@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830954FA1A1C3B520010F432 /* blurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 830954F91A1C3B520010F432 /* blurred.png */; };
 		8311E3E51847A1DF0011212C /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8311E3E41847A1DF0011212C /* KeychainItemWrapper.m */; };
 		8311E3E71847A27A0011212C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8311E3E61847A27A0011212C /* Security.framework */; };
 		833403DC18C5FA7E00A8B6E0 /* LVFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 833403DB18C5FA7E00A8B6E0 /* LVFCell.m */; };
@@ -72,7 +73,6 @@
 		AE4A921B19B3A621004CAF3A /* redLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4A921319B3A621004CAF3A /* redLight@2x.png */; };
 		AE4A921C19B3A621004CAF3A /* yellowLight.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4A921419B3A621004CAF3A /* yellowLight.png */; };
 		AE4A921D19B3A621004CAF3A /* yellowLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4A921519B3A621004CAF3A /* yellowLight@2x.png */; };
-		AE597B6B19B23D4D00419B16 /* blurred.png in Resources */ = {isa = PBXBuildFile; fileRef = AE597B6A19B23D4D00419B16 /* blurred.png */; };
 		AE597B6E19B23F1800419B16 /* sqt.png in Resources */ = {isa = PBXBuildFile; fileRef = AE597B6C19B23F1800419B16 /* sqt.png */; };
 		AE597B6F19B23F1800419B16 /* sqt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE597B6D19B23F1800419B16 /* sqt@2x.png */; };
 		AE597B7219B244A100419B16 /* sq-nb.png in Resources */ = {isa = PBXBuildFile; fileRef = AE597B7019B244A100419B16 /* sq-nb.png */; };
@@ -82,6 +82,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		830954F91A1C3B520010F432 /* blurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blurred.png; sourceTree = "<group>"; };
 		8311E3E31847A1DF0011212C /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		8311E3E41847A1DF0011212C /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		8311E3E61847A27A0011212C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -173,7 +174,6 @@
 		AE4A921319B3A621004CAF3A /* redLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redLight@2x.png"; sourceTree = "<group>"; };
 		AE4A921419B3A621004CAF3A /* yellowLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowLight.png; sourceTree = "<group>"; };
 		AE4A921519B3A621004CAF3A /* yellowLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellowLight@2x.png"; sourceTree = "<group>"; };
-		AE597B6A19B23D4D00419B16 /* blurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blurred.png; sourceTree = "<group>"; };
 		AE597B6C19B23F1800419B16 /* sqt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sqt.png; sourceTree = "<group>"; };
 		AE597B6D19B23F1800419B16 /* sqt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sqt@2x.png"; sourceTree = "<group>"; };
 		AE597B7019B244A100419B16 /* sq-nb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sq-nb.png"; sourceTree = "<group>"; };
@@ -314,6 +314,7 @@
 		837422A81815B0EF000FCC76 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				830954F91A1C3B520010F432 /* blurred.png */,
 				83A8C2F219BA42E4000ED612 /* hotslogo.png */,
 				83A8C2F319BA42E4000ED612 /* hotslogo@2x.png */,
 				83A8C2F419BA42E4000ED612 /* hslogo.png */,
@@ -350,7 +351,6 @@
 				AE597B7C19B24A4F00419B16 /* sq-nb-ora.png */,
 				AE597B7D19B24A4F00419B16 /* sq-nb-ora@2x.png */,
 				AE597B7119B244A100419B16 /* sq-nb@2x.png */,
-				AE597B6A19B23D4D00419B16 /* blurred.png */,
 				AE597B6C19B23F1800419B16 /* sqt.png */,
 				AE597B6D19B23F1800419B16 /* sqt@2x.png */,
 				83C3F6A919BF8AD3002056C1 /* sqt-red.png */,
@@ -439,6 +439,7 @@
 				83BFCFD019A64B65002C0DD6 /* dotalogo.png in Resources */,
 				83BFCFCF19A64B65002C0DD6 /* honlogo.png in Resources */,
 				83A8C30719BA5D1D000ED612 /* sc2logo.png in Resources */,
+				830954FA1A1C3B520010F432 /* blurred.png in Resources */,
 				837422771815B0D4000FCC76 /* Images.xcassets in Resources */,
 				83A8C30219BA42E4000ED612 /* smitelogo@2x.png in Resources */,
 				83A8C2FC19BA42E4000ED612 /* hotslogo.png in Resources */,
@@ -456,7 +457,6 @@
 				83BFCFCC19A63476002C0DD6 /* listIcon.png in Resources */,
 				83BFCFD519A6D19D002C0DD6 /* iRate.bundle in Resources */,
 				AE4886A419B5068B00284DCC /* tw@2x.png in Resources */,
-				AE597B6B19B23D4D00419B16 /* blurred.png in Resources */,
 				83BFCFC019A61B67002C0DD6 /* cslogo.png in Resources */,
 				AE597B6F19B23F1800419B16 /* sqt@2x.png in Resources */,
 				83C3F6AC19BF8AD3002056C1 /* sqt-red@2x.png in Resources */,
