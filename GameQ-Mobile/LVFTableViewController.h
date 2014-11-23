@@ -11,6 +11,7 @@
 #import "LVFViewController.h"
 #import "LVFTableViewController.h"
 #import "LVFSettingsController.h"
+#import "LVFStoreHandler.h"
 
 #import "LVFTableView.h"
 #import "LVFCell.h"
@@ -19,6 +20,7 @@
 @class LVFViewController;
 @class LVFTableView;
 @class LVFSettingsController;
+@class LVFStoreHandler;
 
 @interface LVFTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -34,8 +36,10 @@
 @property (strong, nonatomic) NSMutableArray *array3;
 @property (strong, nonatomic) NSMutableArray *array4;
 
+@property (strong, nonatomic) UIButton *btnStore;
 
 
+@property LVFStoreHandler *store;
 @property (strong, nonatomic) NSTimer *refreshTimer;
 
 - (id)initWithMainController:(LVFViewController*)controller;

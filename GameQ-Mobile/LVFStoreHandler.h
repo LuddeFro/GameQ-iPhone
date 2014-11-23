@@ -13,7 +13,7 @@
 #import "LVFSettingsController.h"
 #import <CommonCrypto/CommonCrypto.h>
 #import "LVFAppDelegate.h"
-
+#import "LVFTableViewController.h"
 
 #define productDota @"dota2Access"
 #define productCsgo @"csgoAccess"
@@ -21,6 +21,7 @@
 
 @class LVFSettingsController;
 @class LVFViewController;
+@class LVFTableViewController;
 
 @interface LVFStoreHandler : NSObject <SKProductsRequestDelegate>
 
@@ -33,6 +34,7 @@
 @property BOOL isPurchasing;
 @property NSMutableArray* orderedTagList;
 @property LVFSettingsController* settingsController;
+@property LVFTableViewController* tableController;
 @property UIButton* backgroundButton;
 @property NSMutableArray* buttons;
 @property NSMutableArray* prices;
@@ -40,6 +42,7 @@
 @property BOOL showing;
 @property NSString* reUpdateString;
 - (id)initWithMainController:(LVFViewController*)controller settingsController:(LVFSettingsController*)settingsCon andContentView:(UIView*)view forPurchase:(BOOL)isPurchasing;
+- (id)initWithMainController:(LVFViewController*)controller tableController:(LVFTableViewController*)tableCon andContentView:(UIView*)view forPurchase:(BOOL)isPurchasing;
 -(void) updateForGames:(NSString*)string;
 -(void) stopProcessing:(NSString*)string;
 - (void) displayStoreUI;

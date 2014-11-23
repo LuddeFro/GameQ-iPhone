@@ -41,6 +41,36 @@
     }
     return self;
 }
+- (id)initWithMainController:(LVFViewController*)controller tableController:(LVFTableViewController*)tableCon andContentView:(UIView*)view forPurchase:(BOOL)isPurchasing
+{
+    self = [super init];
+    if (self) {
+        // Custom initialization
+        _showing = true;
+        _displayArray = [[NSMutableArray alloc] init];
+        _buttons = [[NSMutableArray alloc] init];
+        _prices = [[NSMutableArray alloc] init];
+        
+        if(isPurchasing) {
+            _checkedOwnedGames = false;
+        } else {
+            _checkedOwnedGames = true;
+        }
+        _mainController = controller;
+        _mainView = view;
+        _isPurchasing = isPurchasing;
+        _productIdentifiers = [[NSArray alloc] initWithObjects:productCsgo, productDota, productHon, nil];
+        _tableController = tableCon;
+        _mainController.storeHandler = self;
+        [self validateProductIdentifiers:_productIdentifiers];
+        if (isPurchasing) {
+            [_mainController.connectionsHandler getMyGamesForEmail:_mainController.dataHandler.getEmail];
+        }
+        
+        
+    }
+    return self;
+}
 
 
 
@@ -272,7 +302,10 @@
     if (_settingsController != NULL) {
         [[_settingsController btnStore]  setEnabled:YES];
         [sender removeFromSuperview];
-    } 
+    } else if (_tableController != NULL) {
+        [[_tableController btnStore]  setEnabled:YES];
+        [sender removeFromSuperview];
+    }
 }
 
 

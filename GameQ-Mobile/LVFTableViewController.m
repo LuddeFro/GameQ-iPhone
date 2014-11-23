@@ -108,6 +108,22 @@
     [_navBar setBarTintColor:myRed];
     [_navBar setTranslucent:NO];
     
+    
+    
+    UIColor *myTransWhite = [UIColor colorWithWhite:1 alpha:0.5];
+    
+    _btnStore = [[UIButton alloc] initWithFrame:CGRectMake(20, self.view.frame.size.height-50, self.view.frame.size.width-40, 40)];
+    [_btnStore addTarget:self action:@selector(showStore) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_btnStore setTitle:@"Get More Games" forState:UIControlStateNormal];
+    [_btnStore setTitleColor:myWhite forState:UIControlStateNormal];
+    [_btnStore setTitleColor:myTransWhite forState:UIControlStateHighlighted];
+    [_btnStore setBackgroundColor:myRed];
+    [_btnStore setTitleColor:myTransWhite forState:UIControlStateDisabled];
+    
+    [self.view addSubview:_btnStore];
+    
+    
     _array0 = [[NSMutableArray alloc] init];
     _array1 = [[NSMutableArray alloc] init];
     _array2 = [[NSMutableArray alloc] init];
@@ -116,7 +132,14 @@
     
 }
 
-
+-(void) showStore
+{
+    if (_store == NULL) {
+        _store = [[LVFStoreHandler alloc] initWithMainController:_mainController tableController:self andContentView:_mainController.secondViewController.view forPurchase:YES];
+    }
+    [_mainController.secondViewController.view addSubview:_store.backgroundButton];
+    [_btnStore setEnabled:false];
+}
 
 -(void)dummy
 {
