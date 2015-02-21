@@ -96,7 +96,7 @@
 		8365A707182BEFFE003F7301 /* LVFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFTableView.m; sourceTree = "<group>"; };
 		8365A709182BF09E003F7301 /* LVFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFTableViewController.h; sourceTree = "<group>"; };
 		8365A70A182BF09E003F7301 /* LVFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFTableViewController.m; sourceTree = "<group>"; };
-		8374225C1815B0D4000FCC76 /* GameQ-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameQ-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8374225C1815B0D4000FCC76 /* GameQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8374225F1815B0D4000FCC76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		837422611815B0D4000FCC76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		837422631815B0D4000FCC76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -212,7 +212,7 @@
 		8374225D1815B0D4000FCC76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8374225C1815B0D4000FCC76 /* GameQ-Mobile.app */,
+				8374225C1815B0D4000FCC76 /* GameQ.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -376,7 +376,7 @@
 			);
 			name = "GameQ-Mobile";
 			productName = "GameQ-Mobile";
-			productReference = 8374225C1815B0D4000FCC76 /* GameQ-Mobile.app */;
+			productReference = 8374225C1815B0D4000FCC76 /* GameQ.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -608,7 +608,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameQ-Mobile/GameQ-Mobile-Prefix.pch";
 				INFOPLIST_FILE = "GameQ-Mobile/GameQ-Mobile-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GameQ;
 				PROVISIONING_PROFILE = "9937E5C4-60DF-4734-9230-C980112A532C";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -625,7 +625,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameQ-Mobile/GameQ-Mobile-Prefix.pch";
 				INFOPLIST_FILE = "GameQ-Mobile/GameQ-Mobile-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GameQ;
 				PROVISIONING_PROFILE = "9937E5C4-60DF-4734-9230-C980112A532C";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

@@ -17,7 +17,7 @@
     if (self) {
         // Custom initialization
         _mainController = mainC;
-        
+        _processingTrans = [[NSMutableDictionary alloc] init];
         
     }
     return self;
@@ -31,12 +31,15 @@
                 // Call the appropriate custom method.
             case SKPaymentTransactionStatePurchased:
                 [self completeTransaction:transaction];
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:
                 [self failedTransaction:transaction];
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:
                 [self restoreTransaction:transaction];
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
             default:
                 break;
         }
@@ -93,6 +96,12 @@
     [_processingTrans removeObjectForKey:game];
     if (transaction != nil) {
         [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    }
+}
+-(void) finishAllPayments
+{
+    for (int i = 0; i < kNumGames; i++) {
+        [self setPaymentFinishedForGamesTransactionWithGame:[NSString stringWithFormat:@"%d", i]];
     }
 }
 @end

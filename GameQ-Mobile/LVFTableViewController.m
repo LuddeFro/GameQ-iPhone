@@ -8,22 +8,7 @@
 
 #import "LVFTableViewController.h"
 
-#define kNOGAME 0
-#define kHEROES_OF_NEWERTH 1
-#define kDOTA2 2
-#define kCS_GO 3
-#define kSMITE 4
-#define kSTRIFE 5
-#define kSC2 6
-#define kTF2 7
-#define kHOTS 8
-#define kLOL 9
 
-#define kOFF 4
-#define kOFFLINE 0
-#define kONLINE 1
-#define kINGAME 2
-#define kNOTTRACKING 3
 
 @interface LVFTableViewController ()
 

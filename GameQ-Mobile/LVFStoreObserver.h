@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 #import "LVFViewController.h"
+#import "LVFDefinitions.h"
 @class LVFViewController;
 
 @interface LVFStoreObserver : NSObject <SKPaymentTransactionObserver>
@@ -22,4 +23,5 @@
 
 -(id)initWithMainController:(LVFViewController*)mainC;
 -(void) setPaymentFinishedForGamesTransactionWithGame:(NSString *)game;
+-(void) finishAllPayments;
 @end

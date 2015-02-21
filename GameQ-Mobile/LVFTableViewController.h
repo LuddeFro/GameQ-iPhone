@@ -12,6 +12,7 @@
 #import "LVFTableViewController.h"
 #import "LVFSettingsController.h"
 #import "LVFStoreHandler.h"
+#import "LVFDefinitions.h"
 
 #import "LVFTableView.h"
 #import "LVFCell.h"

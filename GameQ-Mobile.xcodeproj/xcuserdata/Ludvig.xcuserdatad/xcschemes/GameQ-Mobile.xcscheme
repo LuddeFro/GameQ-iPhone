@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8374225B1815B0D4000FCC76"
-               BuildableName = "GameQ-Mobile.app"
+               BuildableName = "GameQ.app"
                BlueprintName = "GameQ-Mobile"
                ReferencedContainer = "container:GameQ-Mobile.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8374225B1815B0D4000FCC76"
-            BuildableName = "GameQ-Mobile.app"
+            BuildableName = "GameQ.app"
             BlueprintName = "GameQ-Mobile"
             ReferencedContainer = "container:GameQ-Mobile.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8374225B1815B0D4000FCC76"
-            BuildableName = "GameQ-Mobile.app"
+            BuildableName = "GameQ.app"
             BlueprintName = "GameQ-Mobile"
             ReferencedContainer = "container:GameQ-Mobile.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8374225B1815B0D4000FCC76"
-            BuildableName = "GameQ-Mobile.app"
+            BuildableName = "GameQ.app"
             BlueprintName = "GameQ-Mobile"
             ReferencedContainer = "container:GameQ-Mobile.xcodeproj">
          </BuildableReference>

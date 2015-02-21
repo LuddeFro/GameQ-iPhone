@@ -400,7 +400,7 @@
     [_txtSecret setAlpha:1];
     [_txtSecretQ setAlpha:1];
     
-    [_btnTop setTitle:@"Sign Up" forState:UIControlStateNormal];
+    [_btnTop setTitle:@"Create Account" forState:UIControlStateNormal];
     [_btnBot setTitle:@"Cancel" forState:UIControlStateNormal];
 }
 
@@ -458,7 +458,7 @@
     [_txtPassword setText:@""];
     NSLog(@"changes saved");
     [_connectionsHandler.gqConnect postNow:[NSString stringWithFormat:@"token=%@&deviceName=%@&email=%@", [_dataHandler getToken], [_dataHandler getDeviceID], [_dataHandler getEmail]] to:updateTokenURL];
-    NSLog(@"stored data:\r\nloggedin: %@\r\nemail: %@\r\ntoken: %@\r\npassword: like I would tell you %@ :P \r\ndeviceID:%@", [_dataHandler getBolIsLoggedIn], [_dataHandler getEmail], [_dataHandler getToken], [_dataHandler getPass], [_dataHandler getDeviceID]);
+    NSLog(@"stored data:\r\nloggedin: %@\r\nemail: %@\r\ntoken: %@\r\npassword: like I would tell you  :P \r\ndeviceID:%@", [_dataHandler getBolIsLoggedIn], [_dataHandler getEmail], [_dataHandler getToken],  [_dataHandler getDeviceID]);
     [self pushSecondViewController];
 }
 

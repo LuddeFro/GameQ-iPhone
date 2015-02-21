@@ -187,6 +187,7 @@
     
     if([returnString isEqualToString:@"gamesUp"]) {
         if (_mainController.storeHandler.isPurchasing) {
+            [((LVFAppDelegate *)[[UIApplication sharedApplication] delegate]).storeObserver finishAllPayments];
             [_mainController.connectionsHandler getMyGamesForEmail:_mainController.dataHandler.getEmail];
         } else {
             _mainController.storeHandler.showing = false;
@@ -286,14 +287,13 @@
     
     if ([returnString isEqualToString:@"signing upmailerr"])
     {
-        //ios alert
+        
         [_mainController setupNothing];
-        [_mainController.txtPassword setText:@""];
         [_mainController.btnTop setEnabled:YES];
         [_mainController.btnBot setEnabled:YES];
         [_mainController.txtSecret setText:@""];
         [_mainController.txtSecretQ setText:@""];
-        [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"Welcome to GameQ, you can sign in immediately!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [_mainController setConnected];
         return;
     }
     
@@ -316,6 +316,17 @@
     {
         //ios alert
         [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"Something went wrong, the GameQ servers may be down" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+    // if accoutn locked
+    if ([returnString isEqualToString:@"lockedsign in failed"])
+    {
+        //ios alert
+        [[[UIAlertView alloc] initWithTitle:@"GameQ" message:@"Your account has been locked for up to two hours due to too many failed sign in attempts. You can unlock it by resetting your password." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [_mainController.connectionsHandler logoutPostFromToken:[_mainController.dataHandler getToken]];
+        //osx alert
+        //[[NSAlert alertWithMessageText:@"Invalid login details" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"You entered an invalid password - username combination, please try again.\r\n\r\nToo many failed attempts may lock your account for up to 2 hours."] runModal];
+        return;
     }
     
     // if sign in failed

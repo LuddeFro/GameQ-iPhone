@@ -182,7 +182,7 @@
     NSString *date = [dateFormatter stringFromDate:dateValue];
     long long currentTime = date.longLongValue;
     long long queueTime = [_displayItem substringWithRange:NSMakeRange(_displayItem.length-14, 14)].longLongValue;
-    NSLog(@"date:%lld, date2:%lld", currentTime, queueTime);
+    //NSLog(@"date:%lld, date2:%lld", currentTime, queueTime);
     bool bolCSGO = ([_displayItem substringWithRange:NSMakeRange(0, 2)].intValue == 3);
     bool bolDota = ([_displayItem substringWithRange:NSMakeRange(0, 2)].intValue == 2);
     

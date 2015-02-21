@@ -224,8 +224,12 @@
 {
     NSLog(@"Facebook selected");
     [self.view endEditing:YES];
-    NSURL *urlAbout = [[NSURL alloc] initWithString:URL_FACEBOOK];
-    [[UIApplication sharedApplication] openURL:urlAbout];
+    NSURL *facebookURL = [NSURL URLWithString:URL_FACEBOOK];
+    if ([[UIApplication sharedApplication] canOpenURL:facebookURL]) {
+        [[UIApplication sharedApplication] openURL:facebookURL];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/GameQApp"]];
+    }
 }
 -(void)twitterSelected
 {
